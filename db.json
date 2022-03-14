@@ -97,14 +97,24 @@
       "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
     }
   ],
-  "comments": [
+  "user": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "admin@email.com",
+      "password": "12345admin",
+      "isadmin": true
+    },
+    {
+      "id": 2,
+      "email": "student@email.com",
+      "password": "12345stud",
+      "isadmin": false
+    },
+    {
+      "id": 3,
+      "email": "student01@email.com",
+      "password": "12345tud",
+      "isadmin": false
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

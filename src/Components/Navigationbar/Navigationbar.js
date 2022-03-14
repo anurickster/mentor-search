@@ -21,7 +21,7 @@ const Navigationbar = () => {
             </Nav.Link>
 
             <Nav.Link as={Link} to='/admin' className='navlink'>
-              Admin
+              Add Mentor
             </Nav.Link>
           </Nav>
         </Container>
