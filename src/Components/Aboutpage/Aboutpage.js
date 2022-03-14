@@ -5,6 +5,7 @@ const Aboutpage = () => {
     <div>
       <h1>Aboutpage</h1>
       <h1>Changed</h1>
+      <h2>New Chnage</h2>
     </div>
   );
 };
