@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Aboutpage = () => {
   return (
-    <div>
-      <h1>Aboutpage</h1>
-    </div>
+    <>
+      <Navigationbar />
+      <div>
+        <h1>Aboutpage</h1>
+      </div>
+    </>
   );
 };
 

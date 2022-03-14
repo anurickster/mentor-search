@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, Button } from 'react-bootstrap';
 import './module.Homepage.css';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Homepage = () => {
   const [mentorCard, setMentorCard] = useState([]);
@@ -29,7 +30,12 @@ const Homepage = () => {
     </Card>
   ));
 
-  return <div className='Post-container'>{mentorPosts}</div>;
+  return (
+    <>
+      <Navigationbar />
+      <div className='Post-container'>{mentorPosts}</div>
+    </>
+  );
 };
 
 export default Homepage;

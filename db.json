@@ -95,6 +95,62 @@
       "yearExperience": 0,
       "monthExperience": 7,
       "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 13
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 14
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 15
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 16
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 17
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 18
+    },
+    {
+      "mentorName": "Ashwini Rathod",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": 2,
+      "monthExperience": 10,
+      "mentorSkills": ["C++", "C", "Node.js", "React.js"],
+      "id": 19
     }
   ],
   "user": [
