@@ -4,8 +4,7 @@ const Aboutpage = () => {
   return (
     <div>
       <h1>Aboutpage</h1>
-      <h1>Changed</h1>
-      <h2>New Chnage</h2>
+      <h2>New Change 2</h2>
     </div>
   );
 };
