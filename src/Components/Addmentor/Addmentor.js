@@ -5,7 +5,7 @@ import './module.Addmentor.css';
 
 const Addmentor = () => {
   const onAddMentor = () => {
-    axios.post('http://localhost:9000/usrr', {
+    axios.post('http://localhost:9000/posts', {
       mentorName: 'Ashwini Rathod',
       imgUrl: 'https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png',
       yearExperience: 2,
