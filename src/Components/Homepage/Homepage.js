@@ -13,7 +13,7 @@ const Homepage = () => {
   }, []);
 
   const mentorPosts = mentorCard.map((mentorEl, index) => (
-    <Card key={'mentor' + mentorEl.id} >
+    <Card key={'mentor' + mentorEl.id}>
       <Card.Img variant='top' src={mentorEl.imgUrl} />
       <Card.Body>
         <Card.Title>{mentorEl.mentorName}</Card.Title>
@@ -22,7 +22,7 @@ const Homepage = () => {
             ? 'Experience: Fresh Volunteer'
             : `Experience: ${mentorEl.yearExperience} Years ${mentorEl.monthExperience} months`}
           <br />
-          {`Skillset:  ${mentorEl.mentorSkills}`}
+          {`Skillset:  ${mentorEl.mentorSkills.join(', ')}`}
         </Card.Text>
         <Button variant='primary'>Go somewhere</Button>
       </Card.Body>
