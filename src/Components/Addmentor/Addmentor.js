@@ -1,16 +1,16 @@
-import axios from 'axios';
-import React from 'react';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import './module.Addmentor.css';
+import axios from "axios";
+import React from "react";
+import Navigationbar from "../Navigationbar/Navigationbar";
+import "./module.Addmentor.css";
 
 const Addmentor = () => {
   const onAddMentor = () => {
-    axios.post('http://localhost:9000/usrr', {
-      mentorName: 'Ashwini Rathod',
-      imgUrl: 'https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png',
+    axios.post("http://localhost:9000/posts", {
+      mentorName: "Ashwini Rathod",
+      imgUrl: "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
       yearExperience: 2,
       monthExperience: 10,
-      mentorSkills: ['C++', 'C', 'Node.js', 'React.js'],
+      mentorSkills: ["C++", "C", "Node.js", "React.js"],
     });
   };
 
