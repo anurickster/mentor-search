@@ -162,6 +162,19 @@
         "React.js"
       ],
       "id": 13
+    },
+    {
+      "mentorName": "upendhar",
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "yearExperience": "2",
+      "monthExperience": "7",
+      "mentorSkills": [
+        "C++",
+        "C",
+        "Node.js",
+        "React.js"
+      ],
+      "id": 14
     }
   ],
   "user": [
