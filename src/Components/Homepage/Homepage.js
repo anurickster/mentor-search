@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './module.Homepage.css';
 import Navigationbar from '../Navigationbar/Navigationbar';
+import { fetchPosts } from '../../store/post-reducer';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Homepage = () => {
-  const [mentorCard, setMentorCard] = useState([]);
+  const mentorCard = useSelector((state) => {
+    console.log(state);
+    return state.posts;
+  });
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get('http://localhost:9000/posts').then((response) => {
-      setMentorCard(response.data);
-    });
-  }, []);
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
   const mentorPosts = mentorCard.map((mentorEl, index) => (
     <Card key={'mentor' + mentorEl.id}>

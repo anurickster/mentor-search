@@ -6,10 +6,7 @@
       "mentorName": "Puneet Vashist",
       "yearExperience": 3,
       "monthExperience": 6,
-      "mentorSkills": [
-        "Python",
-        "C"
-      ]
+      "mentorSkills": ["Python", "C"]
     },
     {
       "id": 2,
@@ -17,11 +14,7 @@
       "mentorName": "Akshay Mittal",
       "yearExperience": 5,
       "monthExperience": 3,
-      "mentorSkills": [
-        "C++",
-        "C#",
-        "Ruby"
-      ]
+      "mentorSkills": ["C++", "C#", "Ruby"]
     },
     {
       "id": 3,
@@ -29,11 +22,7 @@
       "mentorName": "Manju Yadav",
       "yearExperience": 0,
       "monthExperience": 8,
-      "mentorSkills": [
-        "Kotlin",
-        "Java",
-        "Python"
-      ]
+      "mentorSkills": ["Kotlin", "Java", "Python"]
     },
     {
       "id": 4,
@@ -41,11 +30,7 @@
       "mentorName": "Ananya Anandita",
       "yearExperience": 1,
       "monthExperience": 4,
-      "mentorSkills": [
-        "AWS",
-        "Google Cloud",
-        "Go Lang"
-      ]
+      "mentorSkills": ["AWS", "Google Cloud", "Go Lang"]
     },
     {
       "id": 5,
@@ -53,13 +38,7 @@
       "mentorName": "Mohit Ajay Gandhewar",
       "yearExperience": 0,
       "monthExperience": 0,
-      "mentorSkills": [
-        "React.js",
-        "Node.js",
-        "HTML",
-        "CSS",
-        "Java Script"
-      ]
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
     },
     {
       "id": 6,
@@ -67,13 +46,7 @@
       "mentorName": "Dipanshu Partap Singh",
       "yearExperience": 0,
       "monthExperience": 7,
-      "mentorSkills": [
-        "React.js",
-        "Node.js",
-        "HTML",
-        "CSS",
-        "Java Script"
-      ]
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
     },
     {
       "id": 7,
@@ -81,10 +54,7 @@
       "mentorName": "Puneet Vashist",
       "yearExperience": 3,
       "monthExperience": 6,
-      "mentorSkills": [
-        "Python",
-        "C"
-      ]
+      "mentorSkills": ["Python", "C"]
     },
     {
       "id": 8,
@@ -92,11 +62,7 @@
       "mentorName": "Akshay Mittal",
       "yearExperience": 5,
       "monthExperience": 3,
-      "mentorSkills": [
-        "C++",
-        "C#",
-        "Ruby"
-      ]
+      "mentorSkills": ["C++", "C#", "Ruby"]
     },
     {
       "id": 9,
@@ -104,11 +70,7 @@
       "mentorName": "Manju Yadav",
       "yearExperience": 0,
       "monthExperience": 8,
-      "mentorSkills": [
-        "Kotlin",
-        "Java",
-        "Python"
-      ]
+      "mentorSkills": ["Kotlin", "Java", "Python"]
     },
     {
       "id": 10,
@@ -116,11 +78,7 @@
       "mentorName": "Ananya Anandita",
       "yearExperience": 1,
       "monthExperience": 4,
-      "mentorSkills": [
-        "AWS",
-        "Google Cloud",
-        "Go Lang"
-      ]
+      "mentorSkills": ["AWS", "Google Cloud", "Go Lang"]
     },
     {
       "id": 11,
@@ -128,13 +86,7 @@
       "mentorName": "Mohit Ajay Gandhewar",
       "yearExperience": 0,
       "monthExperience": 0,
-      "mentorSkills": [
-        "React.js",
-        "Node.js",
-        "HTML",
-        "CSS",
-        "Java Script"
-      ]
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
     },
     {
       "id": 12,
@@ -142,39 +94,15 @@
       "mentorName": "Dipanshu Partap Singh",
       "yearExperience": 0,
       "monthExperience": 7,
-      "mentorSkills": [
-        "React.js",
-        "Node.js",
-        "HTML",
-        "CSS",
-        "Java Script"
-      ]
+      "mentorSkills": ["React.js", "Node.js", "HTML", "CSS", "Java Script"]
     },
     {
-      "mentorName": "AAAAAAAAAAAAAA",
+      "mentorName": "Anurag Singh Rajpoot",
+      "yearExperience": 3,
+      "monthExperience": 9,
       "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
-      "yearExperience": "00",
-      "monthExperience": "00",
-      "mentorSkills": [
-        "C++",
-        "C",
-        "Node.js",
-        "React.js"
-      ],
+      "mentorSkills": ["React", "Node"],
       "id": 13
-    },
-    {
-      "mentorName": "upendhar",
-      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
-      "yearExperience": "2",
-      "monthExperience": "7",
-      "mentorSkills": [
-        "C++",
-        "C",
-        "Node.js",
-        "React.js"
-      ],
-      "id": 14
     }
   ],
   "user": [
