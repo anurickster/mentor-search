@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import "./Login.scss";
-import { Link } from "react-router-dom";
+/*
+import React, { useState } from 'react';
+import './Login.scss';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [emailval, setemailval] = useState("");
@@ -47,7 +47,12 @@ function Login() {
     </div>
   );
 }
-=======
+
+export default Login;
+
+// */
+
+// /* upendhar code
 import React from 'react';
 import { useState } from 'react';
 import './module.Login.css';
@@ -108,71 +113,76 @@ export default function Login() {
         <br />
         <span>{error}</span>
         <br />
-        <input type='submit' onClick={handlesubmit} className='button' />
+        <input
+          type='submit'
+          onClick={handlesubmit}
+          className='btn btn-primary'
+        />
       </form>
     </center>
   );
 }
 
-// import React from 'react';
-// import { Formik, Form } from 'formik';
-// import * as Yup from 'yup';
-// import FormikControl from './FormikControl';
+// */
 
-// function Login() {
-//   const initialValues = {
-//     email: '',
-//     password: '',
-//   };
+/*
+//Anurag Code
+import React from 'react';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import FormikControl from './FormikControl';
+function Login() {
+  const initialValues = {
+    email: '',
+    password: '',
+  };
 
-//   const validationSchma = Yup.object({
-//     email: Yup.string()
-//       .email('Invalid email')
-//       .required('Required'),
-//     password: Yup.string.required('Required'),
-//   });
+  const validationSchma = Yup.object({
+    email: Yup.string()
+      .email('Invalid email')
+      .required('Required'),
+    password: Yup.string.required('Required'),
+  });
 
-//   const onSubmit = (values) => {
-//     console.log('Form data', values);
-//   };
+  const onSubmit = (values) => {
+    console.log('Form data', values);
+  };
 
-//   return (
-//     // <>
-//     //   <h1>Login</h1>
-//     // </>
-//     <Formik
-//       initialValues={initialValues}
-//       validationSchma={validationSchma}
-//       onSubmit={onSubmit}
-//     >
-//       {(formik) => {
-//         return (
-//           <Form>
-//             <FormikControl
-//               control='input'
-//               type='email'
-//               label='Email'
-//               name='email'
-//             />
-//             <FormikControl
-//               control='input'
-//               type='password'
-//               label='Password'
-//               name='password'
-//             />
-//             <button
-//               type='submit'
-//               disabled={!formik.isValid}
-//               className='btn btn-primary'
-//             >
-//               Login
-//             </button>
-//           </Form>
-//         );
-//       }}
-//     </Formik>
-//   );
-// }
->>>>>>> 2c714f5d7d308180736a530abd35dc9f381749a2
-
-// export default Login;
+  return (
+    // <>
+    //   <h1>Login</h1>
+    // </>
+    <Formik
+      initialValues={initialValues}
+      validationSchma={validationSchma}
+      onSubmit={onSubmit}
+    >
+      {(formik) => {
+        return (
+          <Form>
+            <FormikControl
+              control='input'
+              type='email'
+              label='Email'
+              name='email'
+            />
+            <FormikControl
+              control='input'
+              type='password'
+              label='Password'
+              name='password'
+            />
+            <button
+              type='submit'
+              disabled={!formik.isValid}
+              className='btn btn-primary'
+            >
+              Login
+            </button>
+          </Form>
+        );
+      }}
+    </Formik>
+  );
+}
+*/
