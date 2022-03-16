@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Contact = () => {
   const [data, setData] = useState({
-    fullname: "",
-    phone: "",
-    email: "",
-    msg: "",
+    fullname: '',
+    phone: '',
+    email: '',
+    msg: '',
   });
 
   const InputEvent = (event) => {
@@ -25,6 +26,7 @@ const Contact = () => {
   };
   return (
     <>
+      <Navigationbar />
       <div className='my-5'>
         <h1 className='text-center'> Contact Us</h1>
       </div>
