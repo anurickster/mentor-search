@@ -1,60 +1,49 @@
-import React from 'react';
-// import { Formik, Form } from 'formik';
-// import * as Yup from 'yup';
-// import FormikControl from './FormikControl';
+import React, { useState } from "react";
+import "./Login.scss";
+import { Link } from "react-router-dom";
 
 function Login() {
-  // const initialValues = {
-  //   email: '',
-  //   password: '',
-  // };
+  const [emailval, setemailval] = useState("");
+  const [passval, setpassval] = useState("");
 
-  // const validationSchma = Yup.object({
-  //   email: Yup.string()
-  //     .email('Invalid email')
-  //     .required('Required'),
-  //   password: Yup.string.required('Required'),
-  // });
-
-  // const onSubmit = (values) => {
-  //   console.log('Form data', values);
-  // };
-
+  const handlesubmit = (event) => {
+    event.preventDefault();
+  };
   return (
-    <>
-      <h1>Login</h1>
-    </>
-    // <Formik
-    //   initialValues={initialValues}
-    //   validationSchma={validationSchma}
-    //   onSubmit={onSubmit}
-    // >
-    //   {(formik) => {
-    //     return (
-    //       <Form>
-    //         <FormikControl
-    //           control='input'
-    //           type='email'
-    //           label='Email'
-    //           name='email'
-    //         />
-    //         <FormikControl
-    //           control='input'
-    //           type='password'
-    //           label='Password'
-    //           name='password'
-    //         />
-    //         <button
-    //           type='submit'
-    //           disabled={!formik.isValid}
-    //           className='btn btn-primary'
-    //         >
-    //           Login
-    //         </button>
-    //       </Form>
-    //     );
-    //   }}
-    // </Formik>
+    <div className='main-login'>
+      Login Page
+      <br />
+      <Link to='/register'>Register</Link>
+      <div className='login-contain'>
+        <div className='left-side'>
+          <form onSubmit={handlesubmit}>
+            <lable for='emil1'>Email</lable>
+            <input
+              placeholder='Enter Your Email'
+              type='email'
+              value={setemailval}
+              onchange={(e) => {
+                setemailval(e.target.value);
+              }}
+              id='emil1'
+            />
+            <lable for='pwd1'>Password</lable>
+
+            <input
+              placeholder='Enter Your Password'
+              type='password'
+              value={passval}
+              onchange={(e) => {
+                setpassval(e.target.value);
+              }}
+              id='pwd1'
+            />
+            <button id='sub_butt'>Submit</button>
+          </form>
+        </div>
+        <div className='right-side'></div>
+      </div>
+    </div>
   );
 }
 
