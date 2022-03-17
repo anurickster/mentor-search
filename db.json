@@ -182,6 +182,17 @@
         "Node"
       ],
       "id": 15
+    },
+    {
+      "mentorName": "Deepak partap singh",
+      "yearExperience": 3,
+      "monthExperience": 2,
+      "imgUrl": "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
+      "mentorSkills": [
+        "React",
+        "Node"
+      ],
+      "id": 16
     }
   ],
   "user": [
