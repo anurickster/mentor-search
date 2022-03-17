@@ -1,17 +1,5 @@
-label {
-  font-size: x-large;
-  font-weight: 400;
-  padding-top: 40px;
-}
-
 .required {
   color: red;
-}
-
-.form-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .auth-form {

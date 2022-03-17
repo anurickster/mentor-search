@@ -18,54 +18,65 @@ const Addmentor = () => {
   return (
     <>
       <Navigationbar />
-      <form className='form-container' action='/homepage'>
-        <label htmlFor='mentorName' name='mentorName'>
-          Enter Name
-        </label>
-        <input
-          id='mName'
-          type='text'
-          onChange={(e) => setMentorName(e.target.value)}
-        />
-        <label htmlFor='mentorName' name='mentorName'>
-          Enter Experience in years
-        </label>
-        <input
-          id='mYrExp'
-          type='number'
-          onChange={(e) => setYearExperience(Number(e.target.value))}
-        />
-        <label htmlFor='mentorName' name='mentorName'>
-          Enter Experience in months
-        </label>
-        <input
-          id='mMnExp'
-          type='number'
-          onChange={(e) => setMonthExperience(Number(e.target.value))}
-        />
-        <label htmlFor='imageUrl'>Enter Image URL</label>
-        <input
-          id='mImgUrl'
-          type='text'
-          // onChange={(e) => setMImgUrl(e.target.value)}
-        />
-        <button
-          onClick={() =>
-            dispatch(
-              addPost({
-                mentorName,
-                yearExperience,
-                monthExperience,
-                imgUrl,
-                mentorSkills,
-              })
-            )
-          }
-          className='btn btn-primary'
-        >
-          Add Mentor
-        </button>
-      </form>
+      <div className='form-main'>
+        <form className='form-container'>
+          <label htmlFor='mentorName' name='mentorName'>
+            Enter Name
+          </label>
+          <input
+            id='mName'
+            type='text'
+            className='form-control form-control-lg'
+            onChange={(e) => setMentorName(e.target.value)}
+            required
+          />
+          <label htmlFor='mentorName' name='mentorName'>
+            Enter Experience in years
+          </label>
+          <input
+            id='mYrExp'
+            type='number'
+            className='form-control form-control-lg'
+            onChange={(e) => setYearExperience(Number(e.target.value))}
+            required
+          />
+          <label htmlFor='mentorName' name='mentorName'>
+            Enter Experience in months
+          </label>
+          <input
+            id='mMnExp'
+            className='form-control form-control-lg'
+            type='number'
+            onChange={(e) => setMonthExperience(Number(e.target.value))}
+            required
+          />
+          <label htmlFor='imageUrl'>Enter Image URL</label>
+          <input
+            id='mImgUrl'
+            type='text'
+            className='form-control form-control-lg'
+            // onChange={(e) => setMImgUrl(e.target.value)}
+          />
+          <center>
+            <button
+              onClick={() =>
+                dispatch(
+                  addPost({
+                    mentorName,
+                    yearExperience,
+                    monthExperience,
+                    imgUrl,
+                    mentorSkills,
+                  })
+                )
+              }
+              className='btn btn-primary'
+            >
+              Add Mentor
+            </button>
+          </center>
+        </form>
+      </div>
     </>
   );
 };

@@ -6,3 +6,15 @@
   box-sizing: border-box;
   font-family: 'Mulish', sans-serif;
 }
+
+label {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-top: 40px;
+}
+
+.form-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
