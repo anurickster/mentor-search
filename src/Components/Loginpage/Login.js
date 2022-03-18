@@ -1,3 +1,4 @@
+
 // import React, { useState } from "react";
 // import "./Login.scss";
 // import { Link } from "react-router-dom";
@@ -52,6 +53,12 @@ import { useState } from "react";
 import "./module.Login.css";
 import { useNavigate } from "react-router";
 
+import React from 'react';
+import { useState } from 'react';
+import { Container, Navbar } from 'react-bootstrap';
+import './module.Login.css';
+import { useNavigate } from 'react-router';
+
 export default function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -59,7 +66,7 @@ export default function Login() {
   const [emailerror, setEmailError] = useState("");
   const [error, setError] = useState("");
 
-  function handlesubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!email) {
       setEmailError("Email reqired");
@@ -77,41 +84,57 @@ export default function Login() {
   }
   console.log(email);
   return (
-    <center>
-      <header>
-        <h1>Mentor-Search APP</h1>
-      </header>
-      <form>
-        <label htmlFor='email'>Email</label>
-        <br />
-        <input
-          type='email'
-          id='email'
-          className='input'
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder='Enter your email'
-          required
-        />
-        <br />
-        <span>{emailerror}</span>
-        <br />
-        <label htmlFor='password'>Password</label>
-        <br />
-        <input
-          type='password'
-          id='password'
-          className='input'
-          onChange={(e) => setpPassword(e.target.value)}
-          placeholder='Enter your password'
-        />
-        <br />
-        <span>{error}</span>
-        <br />
-        <input type='submit' onClick={handlesubmit} className='button' />
-      </form>
-    </center>
+    <>
+      <Navbar bg='dark' variant='dark'>
+        <Container>
+          <Navbar.Brand href='/'>
+            <span className='nav-brand'>FindMentor.com</span>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      <div className='form-main'>
+        <form className='auth-form'>
+          <label htmlFor='email'>Email address</label>
+          <br />
+          <br />
+          <input
+            type='email'
+            id='email'
+            className='form-control'
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder='Enter your email'
+            required
+          />
+          <span className='required'>{emailerror}</span>
+          <br />
+          <label htmlFor='password'>Password</label>
+          <br />
+          <br />
+          <input
+            type='password'
+            id='password'
+            className='form-control'
+            onChange={(e) => setpPassword(e.target.value)}
+            placeholder='Enter your password'
+          />
+          <span className='required'>{error}</span>
+          <br />
+          <br />
+          <center>
+            <button
+              type='submit'
+              onClick={handleSubmit}
+              className='btn btn-primary'
+            >
+              Login
+            </button>
+          </center>
+        </form>
+      </div>
+    </>
   );
 }
+
 
 // import React from 'react';
 // import { Formik, Form } from 'formik';

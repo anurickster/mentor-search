@@ -45,7 +45,6 @@ export const fetchPosts = () => {
 
 export const deletePost = (id) => {
   // http communication
-  console.log(id);
   return (dispatch) => {
     fetch(baseUrl + id, {
       method: 'DELETE',
