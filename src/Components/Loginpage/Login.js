@@ -1,79 +1,78 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import "./Login.scss";
-import { Link } from "react-router-dom";
+// import React, { useState } from "react";
+// import "./Login.scss";
+// import { Link } from "react-router-dom";
 
-function Login() {
-  const [emailval, setemailval] = useState("");
-  const [passval, setpassval] = useState("");
+// function Login() {
+//   const [emailval, setemailval] = useState("");
+//   const [passval, setpassval] = useState("");
 
-  const handlesubmit = (event) => {
-    event.preventDefault();
-  };
-  return (
-    <div className='main-login'>
-      Login Page
-      <br />
-      <Link to='/register'>Register</Link>
-      <div className='login-contain'>
-        <div className='left-side'>
-          <form onSubmit={handlesubmit}>
-            <lable for='emil1'>Email</lable>
-            <input
-              placeholder='Enter Your Email'
-              type='email'
-              value={setemailval}
-              onchange={(e) => {
-                setemailval(e.target.value);
-              }}
-              id='emil1'
-            />
-            <lable for='pwd1'>Password</lable>
+//   const handlesubmit = (event) => {
+//     event.preventDefault();
+//   };
+//   return (
+//     <div className='main-login'>
+//       Login Page
+//       <br />
+//       <Link to='/register'>Register</Link>
+//       <div className='login-contain'>
+//         <div className='left-side'>
+//           <form onSubmit={handlesubmit}>
+//             <lable for='emil1'>Email</lable>
+//             <input
+//               placeholder='Enter Your Email'
+//               type='email'
+//               value={setemailval}
+//               onchange={(e) => {
+//                 setemailval(e.target.value);
+//               }}
+//               id='emil1'
+//             />
+//             <lable for='pwd1'>Password</lable>
 
-            <input
-              placeholder='Enter Your Password'
-              type='password'
-              value={passval}
-              onchange={(e) => {
-                setpassval(e.target.value);
-              }}
-              id='pwd1'
-            />
-            <button id='sub_butt'>Submit</button>
-          </form>
-        </div>
-        <div className='right-side'></div>
-      </div>
-    </div>
-  );
-}
-=======
-import React from 'react';
-import { useState } from 'react';
-import './module.Login.css';
-import { useNavigate } from 'react-router';
+//             <input
+//               placeholder='Enter Your Password'
+//               type='password'
+//               value={passval}
+//               onchange={(e) => {
+//                 setpassval(e.target.value);
+//               }}
+//               id='pwd1'
+//             />
+//             <button id='sub_butt'>Submit</button>
+//           </form>
+//         </div>
+//         <div className='right-side'></div>
+//       </div>
+//     </div>
+//   );
+// }
+// =======
+import React from "react";
+import { useState } from "react";
+import "./module.Login.css";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   let navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setpPassword] = useState('');
-  const [emailerror, setEmailError] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setpPassword] = useState("");
+  const [emailerror, setEmailError] = useState("");
+  const [error, setError] = useState("");
 
   function handlesubmit(e) {
     e.preventDefault();
     if (!email) {
-      setEmailError('Email reqired');
+      setEmailError("Email reqired");
     }
     if (!password) {
-      setError('Password reqiured');
+      setError("Password reqiured");
     }
-    if (!email.includes('@')) {
-      setEmailError('Email reqired');
+    if (!email.includes("@")) {
+      setEmailError("Email reqired");
     } else {
       setEmailError(null);
       setError(null);
-      navigate('/homepage');
+      navigate("/homepage");
     }
   }
   console.log(email);
@@ -173,6 +172,5 @@ export default function Login() {
 //     </Formik>
 //   );
 // }
->>>>>>> 2c714f5d7d308180736a530abd35dc9f381749a2
 
 // export default Login;
