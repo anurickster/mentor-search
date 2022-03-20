@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import MapImg from "./Imges/Pune.jpg";
-import PText from "./PText";
-import Footer from "../Footerpage/Footer";
+import React from 'react';
+import styled from 'styled-components';
+import MapImg from './Imges/Pune.jpg';
+import PText from './PText';
+// import Footer from '../Footerpage/Footer';
 
 const MapStyles = styled.div`
   background: url(${MapImg}) no-repeat;
@@ -50,7 +50,7 @@ export default function Map() {
     <MapStyles>
       <div className='container'>
         <div className='map__card'>
-          <h3 className='map__card__heading'>Here is me</h3>
+          <h3 className='map__card__heading'>Here we are</h3>
           <PText> Pune, Maharashtra </PText>
           <a
             className='map__card__link'

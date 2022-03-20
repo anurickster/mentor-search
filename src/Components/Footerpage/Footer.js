@@ -1,12 +1,12 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Footer.css";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Footer.css';
 import {
   faFacebook,
   faYoutube,
   faTwitter,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -47,13 +47,13 @@ const Footer = () => {
                   <h2>Contact</h2>
                   <ul>
                     <li>
-                      <a href='#'>+91 1234567890</a>
+                      <a href='http://#'>+91 1234567890</a>
                     </li>
                     <li>
-                      <a href='#'>+91 223344</a>
+                      <a href='http://#'>+91 223344</a>
                     </li>
                     <li>
-                      <a href='#'>findmentor@gmail.com</a>
+                      <a href='http://#'>findmentor@gmail.com</a>
                     </li>
                     <li>
                       <a href='https://www.google.com/maps/place/Pune+International+Airport+Area,+Lohegaon,+Pune,+Maharashtra/@18.5782028,73.9102148,14z/data=!3m1!4b1!4m12!1m6!3m5!1s0x3bc2c134e6c4ff8f:0xa810745cf9310798!2sPune+International+Airport!8m2!3d18.579343!4d73.9089168!3m4!1s0x3bc2c153b1524207:0x2d9bce408a8c8746!8m2!3d18.5775875!4d73.9418614'>

@@ -46,7 +46,7 @@ const Navigationbar = () => {
       <section className='navbar-bg'>
         <nav class='navbar navbar-expand-lg navbar-light '>
           <div class='container'>
-            <a class='navbar-brand text-white' href='#'>
+            <a class='navbar-brand text-white' href='http://#'>
               FindMentor.com
             </a>
             <button
