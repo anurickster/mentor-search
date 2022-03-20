@@ -9,7 +9,6 @@ import Login from "./Components/Loginpage/Login";
 import Register from "./Components/Register/Register";
 import Contactpage from "./Components/Contactpage/Contactpage";
 import Service from "./Components/Servicepage/Service";
-import Footer from "./Components/Footerpage/Footer";
 
 function App() {
   return (

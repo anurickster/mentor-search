@@ -92,10 +92,10 @@ const Navigationbar = () => {
               </ul>
               <form class='d-flex'>
                 <button class='btn  btn-style' type='submit'>
-                  Sign Up
+                  Log in
                 </button>
                 <button class='btn  btn-style btn-style-border' type='submit'>
-                  Log in
+                  Log Out
                 </button>
               </form>
             </div>
