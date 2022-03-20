@@ -17,7 +17,7 @@ const Homepage = () => {
   }, [dispatch]);
 
   const mentorPosts = mentorCard.map((mentorEl, index) => (
-    <Card key={'mentor' + mentorEl.id}>
+    <Card className='card-shadow' key={'mentor' + mentorEl.id}>
       <Card.Img variant='top' src={mentorEl.imgUrl} />
       <Card.Body>
         <Card.Title>{mentorEl.mentorName}</Card.Title>

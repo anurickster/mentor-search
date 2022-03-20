@@ -59,6 +59,7 @@ const Addmentor = () => {
           />
           <center>
             <button
+              type='submit'
               onClick={() =>
                 dispatch(
                   addPost({

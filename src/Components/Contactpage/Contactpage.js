@@ -27,10 +27,10 @@ const Contact = () => {
   return (
     <>
       <Navigationbar />
-      <h1 className='text-center'>Contact Us</h1>
+      <h2 className='text-center'>Contact Us</h2>
       <div className='col-md-6 col-10 mx-auto'>
         <form onSubmit={formSubmit}>
-          <div className='mb-3'>
+          <div>
             <label for='exampleFormControlInput1' className='form-label'>
               Full Name
             </label>
@@ -45,7 +45,7 @@ const Contact = () => {
             />
           </div>
 
-          <div className='mb-3'>
+          <div>
             <label for='exampleFormControlInput1' className='form-label'>
               Phone Number
             </label>

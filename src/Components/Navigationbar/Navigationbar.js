@@ -5,7 +5,7 @@ import './module.Navigationbar.css';
 
 const Navigationbar = () => {
   return (
-    <div style={{ marginBottom: '5rem' }}>
+    <div style={{ marginBottom: '6rem' }}>
       <Navbar bg='dark' fixed='top' variant='dark'>
         <Container>
           <Navbar.Brand href='/'>
