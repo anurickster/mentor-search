@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 // import { Container, Nav, Navbar } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
-import "./module.Navigationbar.css";
+import './module.Navigationbar.css';
 
 // const Navigationbar = () => {
 //   return (
@@ -42,18 +42,6 @@ const Navigationbar = () => {
   const [show, setShow] = useState(false);
 
   return (
-<<<<<<< HEAD
-    <div style={{ marginBottom: '6rem' }}>
-      <Navbar bg='dark' fixed='top' variant='dark'>
-        <Container>
-          <Navbar.Brand href='/'>
-            <span className='nav-brand'>FindMentor.com</span>
-          </Navbar.Brand>
-          <Nav className='me-auto'>
-            <Nav.Link as={Link} to='/homepage' className='navlink'>
-              Home
-            </Nav.Link>
-=======
     <>
       <section className='navbar-bg'>
         <nav class='navbar navbar-expand-lg navbar-light '>
@@ -73,7 +61,7 @@ const Navigationbar = () => {
             >
               <span class='navbar-toggler-icon'></span>
             </button>
-            <div class={`collapse navbar-collapse ${show ? "show" : ""}`}>
+            <div class={`collapse navbar-collapse ${show ? 'show' : ''}`}>
               <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
                 <li class='nav-item'>
                   <NavLink class='nav-link active' aria-current='page' to='/'>
@@ -90,7 +78,6 @@ const Navigationbar = () => {
                     Add Mentor
                   </NavLink>
                 </li>
->>>>>>> 498d88101f681a058777edad4b44f44c3287cc0f
 
                 <li class='nav-item'>
                   <NavLink class='nav-link' to='/service'>

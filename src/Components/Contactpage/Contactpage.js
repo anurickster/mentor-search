@@ -1,15 +1,15 @@
 //
 
-import React from "react";
-import styled from "styled-components";
-import { MdEmail, MdLocalPhone } from "react-icons/md";
-import ContactForm from "./ContactForm";
-import ContactInfoItem from "./ContactInfoItem";
-import SectionTitle from "./SectionTitle";
-import Navigationbar from "../Navigationbar/Navigationbar";
-import Footer from "../Footerpage/Footer";
+import React from 'react';
+import styled from 'styled-components';
+import { MdEmail, MdLocalPhone } from 'react-icons/md';
+import ContactForm from './ContactForm';
+import ContactInfoItem from './ContactInfoItem';
+import SectionTitle from './SectionTitle';
+import Navigationbar from '../Navigationbar/Navigationbar';
+import Footer from '../Footerpage/Footer';
 
-import Map from "./Map";
+import Map from './Map';
 
 const ContactSectionStyle = styled.div`
   padding: 10rem 0;
@@ -22,7 +22,7 @@ const ContactSectionStyle = styled.div`
   }
   .contactSection__wrapper::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 2px;
     height: 50%;
     background-color: gray;
@@ -61,58 +61,31 @@ export default function ContactSection() {
   return (
     <>
       <Navigationbar />
-<<<<<<< HEAD
-      <h2 className='text-center'>Contact Us</h2>
-      <div className='col-md-6 col-10 mx-auto'>
-        <form onSubmit={formSubmit}>
-          <div>
-            <label for='exampleFormControlInput1' className='form-label'>
-              Full Name
-            </label>
-            <input
-              type='text'
-              className='form-control'
-              id='exampleFormControlInput1'
-              name='fullname'
-              value={data.fullname}
-              onChange={InputEvent}
-              placeholder='Enter Your Name'
-            />
-          </div>
-
-          <div>
-            <label for='exampleFormControlInput1' className='form-label'>
-              Phone Number
-            </label>
-            <input
-              type='number'
-              className='form-control'
-              id='exampleFormControlInput1'
-              name='phone'
-              value={data.phone}
-              onChange={InputEvent}
-              placeholder='Enter Your Mobile Number'
-            />
-=======
-
-      <ContactSectionStyle>
-        <div className='container'>
-          <SectionTitle heading='contact' subheading='Get in Touch' />
-          <div className='contactSection__wrapper'>
-            <div className='left'>
-              <ContactInfoItem icon={<MdLocalPhone />} text='+91 1234567891' />
-              <ContactInfoItem icon={<MdEmail />} text='findmentor@gmail.com' />
-              <ContactInfoItem text='Pune Maharashtra' />
+      <Map>
+        <ContactSectionStyle>
+          <div className='container'>
+            <SectionTitle heading='contact' subheading='Get in Touch' />
+            <div className='contactSection__wrapper'>
+              <div className='left'>
+                <ContactInfoItem
+                  icon={<MdLocalPhone />}
+                  text='+91 1234567891'
+                />
+                <ContactInfoItem
+                  icon={<MdEmail />}
+                  text='findmentor@gmail.com'
+                />
+                <ContactInfoItem text='Pune Maharashtra' />
+              </div>
+              <div className='right'>
+                <ContactForm />
+              </div>
             </div>
-            <div className='right'>
-              <ContactForm />
-            </div>
->>>>>>> 498d88101f681a058777edad4b44f44c3287cc0f
           </div>
-        </div>
-      </ContactSectionStyle>
-      <Map />
-      <Footer />
+        </ContactSectionStyle>
+        <Map />
+        <Footer />
+      </Map>
     </>
   );
 }
