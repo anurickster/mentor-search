@@ -1,7 +1,8 @@
-import React from 'react';
-import './Aboutpage.css';
-import web from '../Aboutpage/images/img1.png';
-import Navigationbar from '../Navigationbar/Navigationbar';
+import React from "react";
+import "./Aboutpage.css";
+import web from "../Aboutpage/images/img1.png";
+import Navigationbar from "../Navigationbar/Navigationbar";
+import Footer from "../Footerpage/Footer";
 
 const Aboutpage = () => {
   return (
@@ -17,7 +18,7 @@ const Aboutpage = () => {
                     Grow Your Knowledge with
                     <strong className='brand-name ps-2'>FindMentor.com </strong>
                   </h1>
-                  <h2 className='my-3'>
+                  <h2 className='my-3 '>
                     FindMentor Hiring will help you connect with the skills of
                     developers in our community who are actively looking for
                     work.
@@ -28,7 +29,7 @@ const Aboutpage = () => {
                     </a>
                   </div>
                 </div>
-                <div className='col-lg-6 order-1 order-lg-2  ps-5 header-img'>
+                <div className='col-lg-6 order-1 order-lg-2  ps-5 header-img pb-5'>
                   <img
                     src={web}
                     className='img-fluid animated'
@@ -40,6 +41,7 @@ const Aboutpage = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

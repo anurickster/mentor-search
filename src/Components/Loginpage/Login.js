@@ -6,25 +6,25 @@ import { useNavigate } from 'react-router';
 
 export default function Login() {
   let navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setpPassword] = useState('');
-  const [emailerror, setEmailError] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setpPassword] = useState("");
+  const [emailerror, setEmailError] = useState("");
+  const [error, setError] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!email) {
-      setEmailError('Email reqired');
+      setEmailError("Email reqired");
     }
     if (!password) {
-      setError('Password reqiured');
+      setError("Password reqiured");
     }
-    if (!email.includes('@')) {
-      setEmailError('Email reqired');
+    if (!email.includes("@")) {
+      setEmailError("Email reqired");
     } else {
       setEmailError(null);
       setError(null);
-      navigate('/homepage');
+      navigate("/homepage");
     }
   }
   console.log(email);
