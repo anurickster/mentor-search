@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import './module.Addmentor.css';
-import { useDispatch } from 'react-redux';
-import { addPost } from '../../store/post-reducer';
+import React, { useState } from "react";
+import Navigationbar from "../Navigationbar/Navigationbar";
+import "./module.Addmentor.css";
+import { useDispatch } from "react-redux";
+import { addPost } from "../../store/post-reducer";
+import Footer from "../Footerpage/Footer";
 
 const Addmentor = () => {
-  const [mentorName, setMentorName] = useState('');
+  const [mentorName, setMentorName] = useState("");
   const [yearExperience, setYearExperience] = useState(0);
   const [monthExperience, setMonthExperience] = useState(0);
   const [imgUrl] = useState(
-    'https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png'
+    "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png"
   );
-  const [mentorSkills] = useState(['React', 'Node']);
+  const [mentorSkills] = useState(["React", "Node"]);
 
   const dispatch = useDispatch();
 
@@ -77,6 +78,7 @@ const Addmentor = () => {
           </center>
         </form>
       </div>
+      <Footer />
     </>
   );
 };
