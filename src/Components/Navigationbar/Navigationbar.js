@@ -46,7 +46,7 @@ const Navigationbar = () => {
       <section className='navbar-bg'>
         <nav class='navbar navbar-expand-lg navbar-light '>
           <div class='container'>
-            <a class='navbar-brand text-white' href='http://#'>
+            <a class='navbar-brand text-white' href='/homepage'>
               FindMentor.com
             </a>
             <button
@@ -64,7 +64,11 @@ const Navigationbar = () => {
             <div class={`collapse navbar-collapse ${show ? 'show' : ''}`}>
               <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
                 <li class='nav-item'>
-                  <NavLink class='nav-link active' aria-current='page' to='/'>
+                  <NavLink
+                    class='nav-link active'
+                    aria-current='page'
+                    to='/homepage'
+                  >
                     Home
                   </NavLink>
                 </li>

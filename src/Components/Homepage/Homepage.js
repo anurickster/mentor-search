@@ -5,7 +5,6 @@ import Navigationbar from '../Navigationbar/Navigationbar';
 import { fetchPosts } from '../../store/post-reducer';
 import { useSelector, useDispatch } from 'react-redux';
 
-
 const Homepage = () => {
   const mentorCard = useSelector((state) => {
     console.log(state);
@@ -38,7 +37,6 @@ const Homepage = () => {
     <>
       <Navigationbar />
       <div className='Post-container'>{mentorPosts}</div>
-      
     </>
   );
 };
