@@ -1,4 +1,3 @@
-
 // import React, { useState } from "react";
 // import "./Login.scss";
 // import { Link } from "react-router-dom";
@@ -48,10 +47,10 @@
 //   );
 // }
 // =======
-import React from "react";
-import { useState } from "react";
-import "./module.Login.css";
-import { useNavigate } from "react-router";
+// import React from "react";
+// import { useState } from "react";
+// import "./module.Login.css";
+// import { useNavigate } from "react-router";
 
 import React from 'react';
 import { useState } from 'react';
@@ -61,25 +60,25 @@ import { useNavigate } from 'react-router';
 
 export default function Login() {
   let navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setpPassword] = useState("");
-  const [emailerror, setEmailError] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setpPassword] = useState('');
+  const [emailerror, setEmailError] = useState('');
+  const [error, setError] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!email) {
-      setEmailError("Email reqired");
+      setEmailError('Email reqired');
     }
     if (!password) {
-      setError("Password reqiured");
+      setError('Password reqiured');
     }
-    if (!email.includes("@")) {
-      setEmailError("Email reqired");
+    if (!email.includes('@')) {
+      setEmailError('Email reqired');
     } else {
       setEmailError(null);
       setError(null);
-      navigate("/homepage");
+      navigate('/homepage');
     }
   }
   console.log(email);
@@ -134,7 +133,6 @@ export default function Login() {
     </>
   );
 }
-
 
 // import React from 'react';
 // import { Formik, Form } from 'formik';
