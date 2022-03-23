@@ -36,32 +36,30 @@ const Homepage = () => {
   //   </Card>
   // ));
 
-  const mentors = filterdmentors.map((item) => (
-    <div key={'mentor' + item.id}>
-      <img
-        src={`https://randomuser.me/api/portraits/men/${item.id}.jpg`}
-        alt='image'
+  const mentors = filterdmentors.map((mentorEl) => (
+    <Card className='card-element' key={'mentor' + mentorEl.id}>
+      <Card.Img
+        variant='top'
+        src={`https://randomuser.me/api/portraits/men/${mentorEl.id}.jpg`}
+        alt='mentor-profile'
       />
       <Card.Body>
-        <Card.Title>{item.mentorName}</Card.Title>
+        <Card.Title>{mentorEl.mentorName}</Card.Title>
         <Card.Text>
           <span>Experience</span>
-          {item.yearExperience === 0 && item.monthExperience === 0
+          {mentorEl.yearExperience === 0 && mentorEl.monthExperience === 0
             ? 'Fresher Volunteer'
-            : `${item.yearExperience} Years ${item.monthExperience}months`}
+            : `${mentorEl.yearExperience} Years ${mentorEl.monthExperience}months`}
           <br />
-          <span>Skills:</span> {item.mentorSkills.join(', ')}
+          <span>Skills:</span> {mentorEl.mentorSkills.join(', ')}
         </Card.Text>
       </Card.Body>
-    </div>
+    </Card>
   ));
 
   return (
     <>
       <Navigationbar />
-<<<<<<< HEAD
-      <div className='Post-container'>{mentorPosts}</div>
-=======
       <div className='search'>
         <input
           className='input'
@@ -70,10 +68,9 @@ const Homepage = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <hr />
       </div>
+      <hr />
       <div className='Post-container'>{mentors}</div>
->>>>>>> fe0fb3d1b9942232a25ada9b16df29895db90365
     </>
   );
 };
