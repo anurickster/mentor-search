@@ -20,22 +20,6 @@ const Homepage = () => {
     mentorEl.mentorName.toLowerCase().includes(search.toLowerCase())
   );
 
-  // const mentorPosts = filterdmentors.map((mentorEl, index) => (
-  //   <Card key={'mentor' + mentorEl.id}>
-  //     <Card.Img variant='top' src={mentorEl.imgUrl} />
-  //     <Card.Body>
-  //       <Card.Title>{mentorEl.mentorName}</Card.Title>
-  //       <Card.Text>
-  //         {mentorEl.yearExperience === 0 && mentorEl.monthExperience === 0
-  //           ? `Experience: Fresh Volunteer`
-  //           : `Experience: ${mentorEl.yearExperience} Years ${mentorEl.monthExperience} months`}
-  //         <br />
-  //         <span>Skillset:</span> {mentorEl.mentorSkills.join(', ')}
-  //       </Card.Text>
-  //     </Card.Body>
-  //   </Card>
-  // ));
-
   const mentors = filterdmentors.map((mentorEl) => (
     <Card className='card-element' key={'mentor' + mentorEl.id}>
       <Card.Img
