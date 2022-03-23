@@ -30,7 +30,7 @@ const Homepage = () => {
       <Card.Body>
         <Card.Title>{mentorEl.mentorName}</Card.Title>
         <Card.Text>
-          <span>Experience</span>
+          <span>Experience: </span>
           {mentorEl.yearExperience === 0 && mentorEl.monthExperience === 0
             ? 'Fresher Volunteer'
             : `${mentorEl.yearExperience} Years ${mentorEl.monthExperience}months`}
