@@ -46,9 +46,9 @@ const Homepage = () => {
       <Navigationbar />
       <div className='search'>
         <input
-          className='input'
+          className='search-panel'
           type='text'
-          placeholder='serach mentor'
+          placeholder='Serach Mentor'
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
