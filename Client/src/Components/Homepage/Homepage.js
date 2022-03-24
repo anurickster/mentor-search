@@ -20,11 +20,11 @@ const Homepage = () => {
     mentorEl.mentorName.toLowerCase().includes(search.toLowerCase())
   );
 
-  const mentors = filterdmentors.map((mentorEl) => (
+  const mentors = filterdmentors.map((mentorEl, index) => (
     <Card className='card-element' key={'mentor' + mentorEl.id}>
       <Card.Img
         variant='top'
-        src={`https://randomuser.me/api/portraits/men/${mentorEl.id}.jpg`}
+        src={`https://randomuser.me/api/portraits/men/${index + 1}.jpg`}
         alt='mentor-profile'
       />
       <Card.Body>

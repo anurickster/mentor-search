@@ -4,20 +4,17 @@ const router = express.Router();
 const Mentor = require('../models/mentor');
 
 // protect route: by isAuthenticatedUser middleware
-router.get('/', isAuthenticatedUser, async (req, res) => {
+router.get('/', async (req, res) => {
   let mentors = await Mentor.find();
   res.json(mentors);
 });
 
-router.post(
-  '/',
-  [isAuthenticatedUser, authorizeRoles('admin')],
-  async (req, res) => {
-    // db and insert one mentor
-    let mentor = await Mentor.create(req.body);
-    res.status(201).json(mentor);
-  }
-);
+// protect route: by [isAuthenticatedUser, authorizeRoles('admin')]
+router.post('/', async (req, res) => {
+  // db and insert one mentor
+  let mentor = await Mentor.create(req.body);
+  res.status(201).json(mentor);
+});
 
 router.delete('/:id', async (req, res) => {
   // db and insert one mentor

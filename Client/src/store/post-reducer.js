@@ -18,7 +18,7 @@ const postReducer = createSlice({
   },
 });
 
-const baseUrl = 'http://localhost:9000/';
+const baseUrl = 'http://localhost:9000/mentors';
 
 export const addPost = (post) => {
   return async (dispatch) => {
