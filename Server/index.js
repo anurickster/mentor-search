@@ -1,33 +1,33 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
-const mongoose = require('mongoose');
-const Employee = require('./models/employee');
+const dotenv = require('dotenv');
+dotenv.config();
 const port = process.env.PORT;
+const url = process.env.DB_URL;
+const cors = require('cors');
+const Mentor = require('./models/mentor');
 const colors = require('colors');
+const mongoose = require('mongoose');
 
-const courseRoute = require('./routes/course');
-const employeeRoute = require('./routes/employee');
+const mentorRoute = require('./routes/mentor');
 const userRoute = require('./routes/user');
 
 // connect to db;
-const url = 'mongodb://localhost:27017/eclerxdb';
 const connnectToDB = async () => {
   await mongoose.connect(url);
-  console.log('connected to db'.green);
+  console.log('Connected to DB'.green);
 };
 connnectToDB();
 
 app.use(cors());
 app.use(express.json());
-app.use('/courses', courseRoute);
-app.use('/employees', employeeRoute);
+app.use('/mentors', mentorRoute);
 app.use('/auth', userRoute);
 
-app.get('/employee', async (req, res) => {
+app.get('/mentor', async (req, res) => {
   // db and fetch all courses
-  let employees = await Employee.find();
-  res.json(employees);
+  let mentors = await Mentor.find();
+  res.json(mentors);
 });
 
 app.listen(port, () => console.log(`Server is running on Port ${port}...`));

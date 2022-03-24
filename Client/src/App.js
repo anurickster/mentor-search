@@ -16,7 +16,6 @@ function App() {
       <>
         <Routes>
           <Route exact path='/' element={<Login />} />
-
           <Route path='/homepage' element={<Homepage />} />
           <Route path='/about' element={<Aboutpage />} />
           <Route path='/addmentor' element={<Addmentor />} />
