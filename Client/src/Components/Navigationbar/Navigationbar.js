@@ -40,6 +40,7 @@ import './module.Navigationbar.css';
 
 const Navigationbar = () => {
   const [show, setShow] = useState(false);
+  // const [auth, setAuth] = useSelector(false); // get state in this component auth: true // using use selector //
 
   return (
     <>

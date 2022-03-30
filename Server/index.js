@@ -6,8 +6,8 @@ const port = process.env.PORT;
 const url = process.env.DB_URL;
 const cors = require('cors');
 const Mentor = require('./models/mentor');
-const colors = require('colors');
 const mongoose = require('mongoose');
+const colors = require('colors');
 
 const mentorRoute = require('./routes/mentor');
 const userRoute = require('./routes/user');

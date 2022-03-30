@@ -59,6 +59,8 @@ export const deletePost = (id) => {
   // return {type: DELETE_POST, payload: {id}}
 };
 
+// create a auth reducer // got auth true
+
 // export actions and reducer
 export const { FETCH_POSTS, ADD_POST, DELETE_POST } = postReducer.actions;
 export default postReducer.reducer;
