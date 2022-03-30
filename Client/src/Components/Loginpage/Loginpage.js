@@ -58,7 +58,7 @@ import { Container, Navbar } from 'react-bootstrap';
 import './module.Login.css';
 import { useNavigate } from 'react-router';
 
-export default function Login() {
+export default function Loginpage() {
   let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setpPassword] = useState('');
