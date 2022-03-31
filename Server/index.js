@@ -19,13 +19,14 @@ const connnectToDB = async () => {
 };
 connnectToDB();
 
+// pre middlewares
 app.use(cors());
 app.use(express.json());
 app.use('/mentors', mentorRoute);
 app.use('/auth', userRoute);
 
+// db and fetch all mentors
 app.get('/mentor', async (req, res) => {
-  // db and fetch all courses
   let mentors = await Mentor.find();
   res.json(mentors);
 });

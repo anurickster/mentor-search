@@ -1,7 +1,7 @@
 const express = require('express');
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
 const router = express.Router();
-const Mentor = require('../models/mentor');
+const Mentor = require('./../models/mentor');
 
 // protect route: by isAuthenticatedUser middleware
 router.get('/', async (req, res) => {
@@ -25,7 +25,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 router.patch('/:id', async (req, res) => {
-  // db and insert one course
+  // db and insert one mentor
   console.log(req.params.id);
   let updatedMentor = await Mentor.findByIdAndUpdate(req.params.id, req.body);
   res.json(updatedMentor);

@@ -80,7 +80,7 @@ const Navigationbar = () => {
                 </li>
                 <li class='nav-item'>
                   <NavLink class='nav-link' to='/addmentor'>
-                    Add Mentor
+                    Mentor
                   </NavLink>
                 </li>
 
