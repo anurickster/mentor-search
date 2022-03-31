@@ -24,9 +24,9 @@ Member Name: Member Action
 
 - Mohit: Mentor, Homepage
 - Ashwini: Login, Register
-- Upendhar:
+- Upendhar: inform me what to assign
 - Anurag: errorHandler
-- 
+- Jayesh: inform me what to assign
 
 ### Fixed
 
