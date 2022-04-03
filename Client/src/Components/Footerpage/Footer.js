@@ -11,6 +11,7 @@ import {
 const Footer = () => {
   return (
     <>
+      <div style={{ marginTop: '3.5rem' }}></div>
       <footer>
         <div className='container'>
           <div className='row'>

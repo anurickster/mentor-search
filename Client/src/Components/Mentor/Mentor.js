@@ -1,103 +1,166 @@
-import React, { useEffect, useState } from "react";
-import Navigationbar from "../Navigationbar/Navigationbar";
-import "./module.Mentor.css";
-import { useDispatch } from "react-redux";
-import { addPost } from "../../store/post-reducer";
-import Footer from "../Footerpage/Footer";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import Navigationbar from '../Navigationbar/Navigationbar';
+import './module.Mentor.css';
+import { useDispatch } from 'react-redux';
+import { addPost, updatePost } from '../../store/post-reducer';
+import Footer from '../Footerpage/Footer';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure();
 
 const Mentor = () => {
-  const [mentorName, setMentorName] = useState("");
-  const [yearExperience, setYearExperience] = useState(null);
-  const [monthExperience, setMonthExperience] = useState(null);
-  const [imgUrl] = useState(
-    "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png"
-  );
-  const [mentorSkills] = useState(["React", "Node"]);
-
-  const dispatch = useDispatch();
-
   const { id } = useParams();
-  console.log(id);
 
-  useEffect(async () => {
+  const [mentorId, setMentorId] = useState('');
+  const [mentorName, setMentorName] = useState('');
+  const [yearExperience, setYearExperience] = useState('');
+  const [monthExperience, setMonthExperience] = useState('');
+  const [imgUrl, setImgUrl] = useState(
+    'https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png'
+  );
+  const [mentorSkills, setMentorSkills] = useState('');
+  const [isUpdated, setIsUpdated] = useState(false);
+
+  useEffect(() => {
+    const getMentorEdit = async () => {
+      const result = await axios.get(`http://localhost:9000/mentors/${id}`);
+      setMentorId(result.data._id);
+      setMentorName(result.data.mentorName);
+      setYearExperience(result.data.yearExperience);
+      setMonthExperience(result.data.monthExperience);
+      setImgUrl(result.data.imgUrl);
+      setMentorSkills(result.data.mentorSkills);
+    };
+
     if (id) {
       getMentorEdit();
     }
-  }, []);
+  }, [id]);
 
-  const getMentorEdit = async () => {
-    const result = await axios.get(`http://localhost:9000/mentors/${id}`);
-    console.log(result.data);
-    setMentorName(result.data.mentorName);
-    setYearExperience(result.data.yearExperience);
-    setMonthExperience(result.data.monthExperience);
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const addMentor = (e) => {
+    e.preventDefault();
+    dispatch(
+      addPost({
+        mentorName,
+        yearExperience,
+        monthExperience,
+        imgUrl,
+        mentorSkills,
+      })
+    );
+    setMentorName('');
+    setYearExperience('');
+    setMonthExperience('');
+    setMentorSkills('');
+    setImgUrl('');
+    toast('Menotr Added Successfully', { type: 'success' });
+  };
+
+  const updateMentor = (e) => {
+    e.preventDefault();
+    if (isUpdated) {
+      toast(<h4>{mentorName} Updated Successfully</h4>, { type: 'success' });
+      dispatch(
+        updatePost(mentorId, {
+          mentorName,
+          yearExperience,
+          monthExperience,
+          imgUrl,
+          mentorSkills,
+        })
+      );
+    }
+    navigate('/homepage');
   };
 
   return (
     <>
       <Navigationbar />
-      <div className="form-main">
-        <form className="form-container">
-          <label htmlFor="mentorName" name="mentorName">
+      <div className='form-main'>
+        <form
+          className='form-container'
+          onSubmit={(e) => {
+            id ? updateMentor(e) : addMentor(e);
+          }}
+        >
+          <label htmlFor='mentorName' name='mentorName'>
             Enter Name
           </label>
           <input
-            id="mName"
-            type="text"
-            className="form-control form-control-lg"
+            id='mName'
+            placeholder='Your Name'
+            type='text'
+            className='form-control form-control-lg'
             value={mentorName}
-            onChange={(e) => setMentorName(e.target.value)}
+            onChange={(e) => {
+              setMentorName(e.target.value);
+              setIsUpdated(true);
+            }}
             required
           />
-          <label htmlFor="mentorName" name="mentorName">
+          <label htmlFor='mentorName' name='mentorName'>
             Enter Experience in years
           </label>
           <input
-            id="mYrExp"
-            type="number"
-            className="form-control form-control-lg"
+            placeholder='How many years of experience'
+            id='mYrExp'
+            type='number'
+            className='form-control form-control-lg'
             value={yearExperience}
-            onChange={(e) => setYearExperience(Number(e.target.value))}
+            onChange={(e) => {
+              setYearExperience(Number(e.target.value));
+              setIsUpdated(true);
+            }}
             required
           />
-          <label htmlFor="mentorName" name="mentorName">
+          <label htmlFor='mMnExp' name='mMnExp'>
             Enter Experience in months
           </label>
           <input
-            id="mMnExp"
-            className="form-control form-control-lg"
-            type="number"
+            id='mMnExp'
+            placeholder='How many months of experience'
+            className='form-control form-control-lg'
+            type='number'
             value={monthExperience}
-            onChange={(e) => setMonthExperience(Number(e.target.value))}
+            onChange={(e) => {
+              setMonthExperience(Number(e.target.value));
+              setIsUpdated(true);
+            }}
             required
           />
-          <label htmlFor="imageUrl">Enter Image URL</label>
+          <label htmlFor='imageUrl'>Enter Image URL</label>
           <input
-            id="mImgUrl"
-            type="text"
-            className="form-control form-control-lg"
-            // onChange={(e) => setMImgUrl(e.target.value)}
+            id='mImgUrl'
+            placeholder='Paste image URL if you have'
+            value={imgUrl}
+            type='text'
+            className='form-control form-control-lg'
+            onChange={(e) => {
+              setImgUrl(e.target.value);
+              setIsUpdated(true);
+            }}
+          />
+          <label htmlFor='mSkills'>Skills to be shown</label>
+          <input
+            id='mSkills'
+            type='text'
+            value={mentorSkills}
+            placeholder='use "," to separate skills'
+            className='form-control form-control-lg'
+            onChange={(e) => {
+              setMentorSkills(e.target.value.split(','));
+              setIsUpdated(true);
+            }}
           />
           <center>
-            <button
-              type="submit"
-              onClick={() =>
-                dispatch(
-                  addPost({
-                    mentorName,
-                    yearExperience,
-                    monthExperience,
-                    imgUrl,
-                    mentorSkills,
-                  })
-                )
-              }
-              // onClick={id ? (e) => updateMentor(id, men) : (e) => addmentor(men)}@anurickster
-              className="btn btn-primary"
-            >
-              {id ? "Update Mentor" : "Add Mentor"}
+            <button type='submit' className='btn btn-primary'>
+              {id ? 'Update Mentor' : 'Add Mentor'}
             </button>
           </center>
         </form>

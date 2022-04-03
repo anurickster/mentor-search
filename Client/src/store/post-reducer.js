@@ -11,6 +11,10 @@ const postReducer = createSlice({
       let newPosts = [...state.posts, action.payload];
       return { posts: newPosts };
     },
+    PATCH_POST(state, action) {
+      let newPost = [...state.posts, action.payload];
+      return { posts: newPost };
+    },
     DELETE_POST(state, action) {
       let filteredPosts = state.posts.filter((p) => p.id !== action.payload.id);
       return { posts: filteredPosts };
@@ -18,7 +22,7 @@ const postReducer = createSlice({
   },
 });
 
-const baseUrl = 'http://localhost:9000/mentors';
+const baseUrl = 'http://localhost:9000/mentors/';
 
 export const addPost = (post) => {
   return async (dispatch) => {
@@ -30,8 +34,23 @@ export const addPost = (post) => {
       body: JSON.stringify(post),
     });
     let data = await response.json();
-    console.log(data);
+    console.log('Response from server', data);
     dispatch(ADD_POST(post));
+  };
+};
+
+export const updatePost = (id, post) => {
+  return async (dispatch) => {
+    let response = await fetch(baseUrl + id, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(post),
+    });
+    let data = await response.json();
+    console.log('Response from server', data);
+    dispatch(PATCH_POST(post));
   };
 };
 
@@ -45,6 +64,7 @@ export const fetchPosts = () => {
 
 export const deletePost = (id) => {
   // http communication
+  console.log(`delete id`, id);
   return (dispatch) => {
     fetch(baseUrl + id, {
       method: 'DELETE',
@@ -62,5 +82,6 @@ export const deletePost = (id) => {
 // create a auth reducer // got auth true
 
 // export actions and reducer
-export const { FETCH_POSTS, ADD_POST, DELETE_POST } = postReducer.actions;
+export const { FETCH_POSTS, ADD_POST, DELETE_POST, PATCH_POST } =
+  postReducer.actions;
 export default postReducer.reducer;
