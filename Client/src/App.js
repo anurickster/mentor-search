@@ -15,7 +15,7 @@ function App() {
     <Router>
       <>
         <Routes>
-          <Route exact path='/' element={<Loginpage />} />
+          <Route path='/' element={<Loginpage />} />
           <Route path='/homepage' element={<Homepage />} />
           <Route path='/about' element={<Aboutpage />} />
           <Route path='/addmentor' element={<Mentor />} />

@@ -74,7 +74,7 @@ const Signuppage = () => {
                     type='text'
                     name='name'
                     id='name'
-                    autocomplete='off'
+                    autoComplete='off'
                     value={user.name}
                     onChange={handleInputs}
                     placeholder='Your Name'
@@ -173,8 +173,8 @@ const Signuppage = () => {
               <figure>
                 <img src={signinpic} alt='registration pic' />
               </figure>
-              <NavLink to='/login' className='signup-image-link'>
-                Already Register !
+              <NavLink to='/' className='signup-image-link'>
+                Already Register ?
               </NavLink>
             </div>
           </div>

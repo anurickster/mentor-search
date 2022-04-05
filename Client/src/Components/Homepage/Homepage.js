@@ -50,12 +50,7 @@ const Homepage = () => {
           <br />
           <span>Skills:</span> {mentorEl.mentorSkills.join(', ')}
           <br />
-          <Link
-            as
-            button
-            className='btn btn-primary'
-            to={`/addmentor/${mentorEl._id}`}
-          >
+          <Link className='btn btn-primary' to={`/addmentor/${mentorEl._id}`}>
             Edit
           </Link>
           &nbsp;&nbsp;&nbsp;

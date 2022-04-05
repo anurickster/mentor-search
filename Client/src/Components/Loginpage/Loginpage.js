@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import { Container, Navbar } from 'react-bootstrap';
 import './module.Login.css';
 import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 export default function Loginpage() {
   let navigate = useNavigate();
@@ -30,13 +30,25 @@ export default function Loginpage() {
   console.log(email);
   return (
     <>
-      <Navbar bg='dark' variant='dark'>
-        <Container>
-          <Navbar.Brand href='/'>
-            <span className='nav-brand'>FindMentor.com</span>
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+      <nav className='navbar navbar-expand-lg navbar-light bg-light '>
+        <a className='navbar-brand mx-5' href='/'>
+          FindMentor
+        </a>
+        <NavLink
+          style={{ marginLeft: '70vmax' }}
+          className='nav-link'
+          to='/register'
+        >
+          Not Registered ?
+        </NavLink>
+
+        <div
+          className='collapse navbar-collapse justify-content-end mx-5'
+          id='navbarSupportedContent'
+        >
+          <ul className='navbar-nav ml-auto '></ul>
+        </div>
+      </nav>
       <div className='form-main'>
         <form className='auth-form'>
           <label htmlFor='email'>Email address</label>
