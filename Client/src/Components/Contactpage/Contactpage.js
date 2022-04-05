@@ -61,6 +61,7 @@ export default function ContactSection() {
   return (
     <>
       <Navigationbar />
+      <br />
       <Map>
         <ContactSectionStyle>
           <div className='container'>
@@ -83,7 +84,6 @@ export default function ContactSection() {
             </div>
           </div>
         </ContactSectionStyle>
-        <Map />
         <Footer />
       </Map>
     </>
