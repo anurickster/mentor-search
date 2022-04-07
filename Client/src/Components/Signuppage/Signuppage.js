@@ -17,19 +17,49 @@ const Signuppage = () => {
   let name, value;
 
   const handleInputs = (e) => {
-    console.log(e);
+    //console.log(e);
     name = e.target.name;
     value = e.target.value;
-
     setUser({ ...user, [name]: value });
   };
 
   const PostData = async (e) => {
     e.preventDefault();
 
+    if (user.password !== user.cpassword) {
+      alert('Password and Confirm Password does not match');
+      return;
+    }
+
+    if (
+      !user.name ||
+      !user.email ||
+      !user.phone ||
+      !user.work ||
+      !user.password
+    ) {
+      alert('Please fill all the fields');
+      return;
+    }
+
+    if (user.password.length < 6) {
+      alert('Password must be atleast 6 characters long');
+      return;
+    }
+
+    if (user.email.indexOf('@') === -1) {
+      alert('Please enter a valid email');
+      return;
+    }
+
+    if (user.phone.length !== 10) {
+      alert('Please enter a valid phone number');
+      return;
+    }
+
     const { name, email, phone, work, password, cpassword } = user;
 
-    const res = await fetch('/register', {
+    const res = await fetch('http://localhost:9000/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -46,16 +76,24 @@ const Signuppage = () => {
 
     const data = await res.json();
 
-    // I need to change the data to res
-    if (data.status === 422 || !data) {
-      window.alert(' Invalid Registration !');
-      console.log(' Invalid Registration !');
-    } else {
-      window.alert(' Registration Successfull !');
-      console.log(' Successfull Registration !');
+    console.log(data, 'data');
 
-      navigate('/login');
+    if (data.error) {
+      alert(data.message);
+    } else {
+      alert('Registered Successfully');
+      navigate('/');
     }
+
+    // I need to change the data to res
+    // if (data.status === 422 || !data) {
+    //   window.alert(' Invalid Registration !');
+    //   console.log(' Invalid Registration !');
+    // } else {
+    //   window.alert(' Registration Successfull !');
+    //   console.log(' Successfull Registration !');
+    //   navigate('/');
+    // }
   };
 
   return (
@@ -125,6 +163,17 @@ const Signuppage = () => {
                     placeholder='Your Profession'
                   />
                 </div>
+
+                {/* <div className='form-group'>
+                  <i className='zmdi zmdi-slideshow material-icons-name'></i>
+                  <select onChange={handleInputs} id='work' name='work'>
+                    <option value=''>Select your Profession</option>
+                    <option value='Student'>Student</option>
+                    <option value='Mentor'>Mentor</option>
+                    <option value='Developer'>Developer</option>
+                    <option value='Others'>Others</option>
+                  </select>
+                </div> */}
 
                 <div className='form-group'>
                   <label htmlFor='password'>

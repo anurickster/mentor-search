@@ -36,10 +36,10 @@ const authenticateUser = async function (req, res, next) {
     if (isMatch) {
       next();
     } else {
-      res.status(401).send('Invalid Password');
+      res.status(401).send({ auth: false, error: 'Invalid password' });
     }
   } else {
-    res.status(404).send('Invalid credentials');
+    res.status(404).send({ auth: false, error: 'Invalid credentials' });
   }
 };
 
@@ -53,4 +53,17 @@ const authorizeRoles = (...roles) => {
   };
 };
 
-module.exports = { authenticateUser, isAuthenticatedUser, authorizeRoles };
+// const userexists = async function (req, res, next) {
+//   const user = await User.findOne({ email: req.body.email });
+//   if (user) {
+//     res.status(401).send({ auth: false, error: 'User already exists' });
+//   } else {
+//     next();
+//   }
+// };
+
+module.exports = {
+  authenticateUser,
+  isAuthenticatedUser,
+  authorizeRoles,
+};
