@@ -149,6 +149,8 @@ textarea:focus {
   .contact_info_item:last-child {
     margin-bottom: 0px;
   }
+
+}
   .signup-container label {
     position: absolute;
     left: 15px;
@@ -160,7 +162,6 @@ textarea:focus {
     -ms-transform: translateY(-50%);
     color: #222;
   }
-}
 
 .register-form {
   width: 100%;

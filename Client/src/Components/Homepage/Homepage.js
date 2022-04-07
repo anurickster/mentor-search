@@ -25,8 +25,8 @@ const Homepage = () => {
     if (isDelete) {
       console.log(isDelete);
       dispatch(deletePost(id));
-      setDeleteHandle(!deleteHandle);
     }
+    setDeleteHandle(!deleteHandle);
   };
 
   const filterdmentors = mentorCard.filter((mentorEl) =>
