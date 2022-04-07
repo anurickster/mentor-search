@@ -53,4 +53,17 @@ const authorizeRoles = (...roles) => {
   };
 };
 
-module.exports = { authenticateUser, isAuthenticatedUser, authorizeRoles };
+// const userexists = async function (req, res, next) {
+//   const user = await User.findOne({ email: req.body.email });
+//   if (user) {
+//     res.status(401).send({ auth: false, error: 'User already exists' });
+//   } else {
+//     next();
+//   }
+// };
+
+module.exports = {
+  authenticateUser,
+  isAuthenticatedUser,
+  authorizeRoles,
+};
