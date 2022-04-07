@@ -1,3 +1,114 @@
+import React from 'react';
+import './module.Login.css';
+import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+export default function Loginpage() {
+  let navigate = useNavigate();
+
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email('Invalid email address')
+        .required('Email is required'),
+      password: Yup.string()
+        .required('Password is required')
+        .min(6, 'Password must be at least 6 characters')
+        .max(10, 'Password must be at most 10 characters'),
+    }),
+    onSubmit: async (values) => {
+      console.log(values);
+      const res = await fetch('http://localhost:9000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+      const data = await res.json();
+      console.log(data);
+      if (data.auth) {
+        navigate('/homepage');
+      } else if (data.error === 'Invalid password') {
+        alert('Invalid password');
+      } else {
+        alert('Invalid Credentials');
+      }
+    },
+  });
+
+  function handleSign() {
+    navigate('/register');
+  }
+
+  return (
+    <div>
+      <nav className='navbar navbar-expand-lg navbar-light bg-light '>
+        <a className='navbar-brand mx-5' href='/'>
+          FindMentor
+        </a>
+        {/* <NavLink
+          style={{ marginLeft: '70vmax' }}
+          className='nav-link'
+          to='/register'
+        >
+          Not Registered ?
+        </NavLink> */}
+        <div
+          className='collapse navbar-collapse justify-content-end mx-5'
+          id='navbarSupportedContent'
+        >
+          <ul className='navbar-nav ml-auto '></ul>
+        </div>
+      </nav>
+      <center className='form-main'>
+        <form onSubmit={formik.handleSubmit} className='auth-form'>
+          <label htmlFor='email'>Email address</label>
+          <br />
+          <input
+            type='email'
+            placeholder='Enter your email'
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            name='email'
+            id='email'
+            className='form-control'
+          />
+          <span className='required'>{formik.errors.email}</span>
+          <br />
+          <label htmlFor='password'>Password</label>
+          <br />
+          <input
+            type='password'
+            placeholder='Enter your password'
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            name='password'
+            id='password'
+            className='form-control'
+          />
+          <span className='required'>{formik.errors.password}</span>
+          <br />
+          <br />
+          <br />
+          <button type='submit' className='btn btn-primary'>
+            Login
+          </button>
+        </form>
+        <button type='submit' className='sign' onClick={handleSign}>
+          Register
+        </button>
+      </center>
+    </div>
+  );
+}
+
 // import React from 'react';
 // import { useState } from 'react';
 // import './module.Login.css';
@@ -90,92 +201,3 @@
 //     </>
 //   );
 // }
-
-import React from 'react';
-import './module.Login.css';
-import { useNavigate } from 'react-router';
-import { NavLink } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-
-export default function Loginpage() {
-  let navigate = useNavigate();
-
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email('Invalid email address')
-        .required('Email is required'),
-      password: Yup.string()
-        .required('Password is required')
-        .min(5, 'Password must be at least 5 characters')
-        .max(10, 'Password must be at most 10 characters'),
-    }),
-    onSubmit: (values) => {
-      console.log(values);
-      navigate('/homepage');
-    },
-  });
-
-  return (
-    <div>
-      <nav className='navbar navbar-expand-lg navbar-light bg-light '>
-        <a className='navbar-brand mx-5' href='/'>
-          FindMentor
-        </a>
-        <NavLink
-          style={{ marginLeft: '70vmax' }}
-          className='nav-link'
-          to='/register'
-        >
-          Not Registered ?
-        </NavLink>
-        <div
-          className='collapse navbar-collapse justify-content-end mx-5'
-          id='navbarSupportedContent'
-        >
-          <ul className='navbar-nav ml-auto '></ul>
-        </div>
-      </nav>
-      <center className='form-main'>
-        <form onSubmit={formik.handleSubmit} className='auth-form'>
-          <label htmlFor='email'>Email address</label>
-          <br />
-          <input
-            type='email'
-            placeholder='Enter your email'
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            name='email'
-            id='email'
-            className='form-control'
-          />
-          <span className='required'>{formik.errors.email}</span>
-          <br />
-          <label htmlFor='password'>Password</label>
-          <br />
-          <input
-            type='password'
-            placeholder='Enter your password'
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            name='password'
-            id='password'
-            className='form-control'
-          />
-          <span className='required'>{formik.errors.password}</span>
-          <br />
-          <br />
-          <br />
-          <button type='submit' className='btn btn-primary'>
-            Login
-          </button>
-        </form>
-      </center>
-    </div>
-  );
-}

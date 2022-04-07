@@ -55,7 +55,6 @@ UserSchema.methods.getSignedJwtToken = function () {
   const token = jwt.sign({ id: this._id, role: this.role }, 'p@ssw0rd', {
     expiresIn: '10d',
   });
-
   return token;
 };
 

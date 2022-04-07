@@ -82,6 +82,7 @@ const Signuppage = () => {
       alert(data.message);
     } else {
       alert('Registered Successfully');
+      navigate('/');
     }
 
     // I need to change the data to res
