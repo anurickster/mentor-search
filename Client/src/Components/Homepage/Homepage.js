@@ -25,8 +25,8 @@ const Homepage = () => {
     if (isDelete) {
       console.log(isDelete);
       dispatch(deletePost(id));
-      setDeleteHandle(!deleteHandle);
     }
+    setDeleteHandle(!deleteHandle);
   };
 
   const filterdmentors = mentorCard.filter((mentorEl) =>
@@ -50,9 +50,9 @@ const Homepage = () => {
           <br />
           <span>Skills:</span> {mentorEl.mentorSkills.join(', ')}
           <br />
-          <button className='btn btn-primary'>
-            <Link to={`/addmentor/${mentorEl._id}`}>Edit</Link>
-          </button>
+          <Link className='btn btn-primary' to={`/addmentor/${mentorEl._id}`}>
+            Edit
+          </Link>
           &nbsp;&nbsp;&nbsp;
           <button
             className='btn btn-danger'

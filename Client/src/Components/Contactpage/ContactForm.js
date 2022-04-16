@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const FormStyle = styled.form`
   width: 100%;
@@ -26,7 +26,7 @@ const FormStyle = styled.form`
     min-height: 250px;
     resize: vertical;
   }
-  button[type="submit"] {
+  button[type='submit'] {
     background-color: #c0c0c0;
     color: black;
     font-size: 2rem;
@@ -37,15 +37,15 @@ const FormStyle = styled.form`
     border-radius: 8px;
     cursor: pointer;
   }
-  button[type="submit"]:hover {
+  button[type='submit']:hover {
     background-color: #808080;
   }
 `;
 
 export default function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   return (
     <>
       <FormStyle>
@@ -87,7 +87,6 @@ export default function ContactForm() {
         </div>
         <button type='submit'>Send</button>
       </FormStyle>
-      
     </>
   );
 }

@@ -4,15 +4,44 @@
 
 .auth-form {
   width: 40vw;
+  margin-top: 70px;
 }
 
 .auth-form input {
   padding: 0.6rem;
   font-size: 1.2rem;
-  border-radius: 15px;
+  border-radius: 50px;
+  border-width: 5px;
 }
+
+.auth-form input:hover {
+  border: 1px solid #ccc;
+}
+
 .auth-form button {
   padding: 0.7rem 4rem;
   border-radius: 50px;
   font-size: 1.4rem;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1.5rem 0;
+}
+
+.sign {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.sign:hover {
+  background: #fff;
+  color: #000;
 }

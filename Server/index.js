@@ -8,9 +8,9 @@ const cors = require('cors');
 const Mentor = require('./models/mentor');
 const mongoose = require('mongoose');
 const colors = require('colors');
-
 const mentorRoute = require('./routes/mentor');
 const userRoute = require('./routes/user');
+const errorHandler = require('./middlewares/errorHandler');
 
 // connect to db;
 const connnectToDB = async () => {
@@ -30,5 +30,8 @@ app.get('/mentor', async (req, res) => {
   let mentors = await Mentor.find();
   res.json(mentors);
 });
+
+//post middlewares
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server is running on Port ${port}...`));

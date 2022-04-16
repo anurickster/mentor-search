@@ -59,7 +59,7 @@ const Mentor = () => {
     setMonthExperience('');
     setMentorSkills('');
     setImgUrl('');
-    toast('Menotr Added Successfully', { type: 'success' });
+    toast('Mentor Added Successfully', { type: 'success' });
   };
 
   const updateMentor = (e) => {
