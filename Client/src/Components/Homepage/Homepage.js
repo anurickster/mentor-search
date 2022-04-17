@@ -35,11 +35,7 @@ const Homepage = () => {
 
   const mentors = filterdmentors.map((mentorEl, index) => (
     <Card className='card-element' key={'mentor222' + mentorEl._id}>
-      <Card.Img
-        variant='top'
-        src={`https://randomuser.me/api/portraits/men/${index + 1}.jpg`}
-        alt='mentor-profile'
-      />
+      <Card.Img variant='top' src={mentorEl.imgUrl} alt='mentor-profile' />
       <Card.Body>
         <Card.Title>{mentorEl.mentorName}</Card.Title>
         <Card.Text>

@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div style={{ marginTop: '3.5rem' }}></div>
+      <div style={{ marginTop: '6rem' }}></div>
       <footer>
         <div className=''>
           <div className='row'>
@@ -20,9 +20,9 @@ const Footer = () => {
                 <div className='col-6 col-lg-3'>
                   <h3>FindMentor.com</h3>
                   <h6>
-                    The vision for ‘find a mentor’ is <br /> to create a professional
-                    platform <br /> for online learning connecting <br /> mentors and
-                    professionals.
+                    The vision for ‘find a mentor’ is <br /> to create a
+                    professional platform <br /> for online learning connecting{' '}
+                    <br /> mentors and professionals.
                   </h6>
                 </div>
 
@@ -72,6 +72,7 @@ const Footer = () => {
                         <FontAwesomeIcon icon={faYoutube} size='2x' />
                       </a>
                     </div>
+
                     <div className='col-3 mx-auto'>
                       <a href='https://www.instagram.com/' target='_inta'>
                         <FontAwesomeIcon icon={faInstagram} size='2x' />
@@ -91,7 +92,7 @@ const Footer = () => {
                 </div>
               </div>
               <hr />
-              <div className='mt-5'>
+              <div className='mt-4'>
                 <p className='main-hero-para text-center w-100'>
                   Copyright @ 2022 FindMentor. All rights reserved.
                 </p>
