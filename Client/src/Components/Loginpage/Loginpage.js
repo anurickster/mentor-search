@@ -34,6 +34,9 @@ export default function Loginpage() {
       });
       const data = await res.json();
       console.log(data);
+
+      localStorage.setItem('token', data.token);
+
       if (data.auth) {
         navigate('/homepage');
       } else if (data.error === 'Invalid password') {
@@ -44,9 +47,9 @@ export default function Loginpage() {
     },
   });
 
-  function handleSign() {
-    navigate('/homepage');
-  }
+  // function handleSign() {
+  //   navigate('/homepage');
+  // }
 
   return (
     <div>
@@ -78,6 +81,7 @@ export default function Loginpage() {
                     value={formik.values.email}
                     className='form-control'
                   />
+                  <span className='required'>{formik.errors.email}</span>
                 </div>
                 <div className='form-group'>
                   {/* <label htmlFor='password'>
@@ -100,7 +104,7 @@ export default function Loginpage() {
                       id='signin'
                       className='form-submit'
                       value='Log In'
-                      onClick={handleSign}
+                      // onClick={handleSign}
                     />
                   </div>
                 </div>

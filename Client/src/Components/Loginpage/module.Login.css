@@ -60,7 +60,7 @@ textarea:focus {
   -ms-box-shadow: none !important;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   appearance: checkbox !important;
   -moz-appearance: checkbox !important;
   -webkit-appearance: checkbox !important;
@@ -68,7 +68,7 @@ input[type="checkbox"] {
   -ms-appearance: checkbox !important;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   appearance: radio !important;
   -moz-appearance: radio !important;
   -webkit-appearance: radio !important;
@@ -96,13 +96,18 @@ p {
   color: #777;
 }
 
+.required {
+  color: red;
+  font-size: 12px;
+}
+
 h2 {
   line-height: 1.66;
   margin: 0;
   padding: 0;
   font-weight: bold;
   color: #222;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 36px;
 }
 
@@ -126,7 +131,7 @@ body {
   color: #222;
   background: #f8f8f8;
   font-weight: 400;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -211,8 +216,6 @@ body {
   margin: 0 55px;
 }
 
-
-
 .form-title {
   margin-bottom: 33px;
   font-weight: bold;
@@ -225,7 +228,6 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
 
 figure {
   margin-bottom: 50px;
@@ -294,7 +296,7 @@ input {
   border: none;
   border-bottom: 1px solid #999;
   padding: 6px 30px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
@@ -334,7 +336,7 @@ input:focus:-moz-placeholder {
   color: #222;
 }
 
-input[type="checkbox"]:not(old) {
+input[type='checkbox']:not(old) {
   width: 2em;
   margin: 0;
   padding: 0;
@@ -351,8 +353,6 @@ input[type="checkbox"]:not(old) {
   padding-bottom: 87px;
 }
 
-
-
 .social-login {
   align-items: center;
   -moz-align-items: center;
@@ -361,7 +361,6 @@ input[type="checkbox"]:not(old) {
   -ms-align-items: center;
   margin-top: 80px;
 }
-
 
 .socials li {
   padding: 5px;

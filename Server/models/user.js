@@ -22,7 +22,7 @@ const UserSchema = new Schema({
   work: {
     type: String,
     required: true,
-    options: ['Student', 'Mentor', 'Developer', 'Others'],
+    options: ['User', 'Mentor', 'Admin'],
   },
   password: {
     type: String,

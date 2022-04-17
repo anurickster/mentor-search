@@ -4,6 +4,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.dropdown {
+  width: 250px;
+  border-radius: 50px;
+  border: 1px solid #716f6f;
+  padding: 2px;
+  margin: 15px;
+  text-align: center;
+}
+
 .signup {
   height: 85vh;
   display: grid;
@@ -81,6 +90,10 @@ textarea:focus {
     width: auto;
   }
 
+  .dropdown {
+    width: 100px;
+  }
+
   .social-login {
     justify-content: center;
     -moz-justify-content: center;
@@ -150,18 +163,21 @@ textarea:focus {
     margin-bottom: 0px;
   }
 
-}
-  .signup-container label {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    color: #222;
+  .dropdown {
+    width: 200px;
   }
+}
+.signup-container label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  color: #222;
+}
 
 .register-form {
   width: 100%;

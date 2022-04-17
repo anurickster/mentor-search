@@ -149,11 +149,11 @@ const Signuppage = () => {
                   />
                 </div>
 
-                <div className='form-group'>
-                  {/* <label htmlFor='work'>
+                {/* <div className='form-group'> */}
+                {/* <label htmlFor='work'>
                     <i className='zmdi zmdi-slideshow material-icons-name'></i>
                   </label> */}
-                  <input
+                {/* <input
                     type='text'
                     name='work'
                     id='work'
@@ -162,18 +162,21 @@ const Signuppage = () => {
                     onChange={handleInputs}
                     placeholder='Your Profession'
                   />
-                </div>
-
-                {/* <div className='form-group'>
-                  <i className='zmdi zmdi-slideshow material-icons-name'></i>
-                  <select onChange={handleInputs} id='work' name='work'>
-                    <option value=''>Select your Profession</option>
-                    <option value='Student'>Student</option>
-                    <option value='Mentor'>Mentor</option>
-                    <option value='Developer'>Developer</option>
-                    <option value='Others'>Others</option>
-                  </select>
                 </div> */}
+
+                <div>
+                  <select
+                    onChange={handleInputs}
+                    id='work'
+                    name='work'
+                    className='dropdown'
+                  >
+                    <option value=''>Select your Role...</option>
+                    <option value='Student'>User</option>
+                    <option value='Mentor'>Mentor</option>
+                    <option value='Developer'>Admin</option>
+                  </select>
+                </div>
 
                 <div className='form-group'>
                   {/* <label htmlFor='password'>
