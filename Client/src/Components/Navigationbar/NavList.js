@@ -97,7 +97,7 @@ const NavList = () => {
             // className='nav-link'
             to='/homepage'
           >
-            Home{' '}
+            Home
           </NavLink>
         </li>
         <li className='nav-item'>

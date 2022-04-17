@@ -85,7 +85,7 @@ const Signuppage = () => {
       navigate('/');
     }
 
-    // I need to change the data to res
+    //  to change the data to res
     // if (data.status === 422 || !data) {
     //   window.alert(' Invalid Registration !');
     //   console.log(' Invalid Registration !');
@@ -105,9 +105,9 @@ const Signuppage = () => {
               <h2 className='form-title'>Sign up</h2>
               <form method='POST' className='register-form' id='register-form'>
                 <div className='form-group'>
-                  <label htmlFor='name'>
+                  {/* <label htmlFor='name'>
                     <i className='zmdi zmdi-account material-icons-name'></i>
-                  </label>
+                  </label> */}
                   <input
                     type='text'
                     name='name'
@@ -120,9 +120,9 @@ const Signuppage = () => {
                 </div>
 
                 <div className='form-group'>
-                  <label htmlFor='email'>
+                  {/* <label htmlFor='email'>
                     <i className='zmdi zmdi-email material-icons-name'></i>
-                  </label>
+                  </label> */}
                   <input
                     type='email'
                     name='email'
@@ -135,9 +135,9 @@ const Signuppage = () => {
                 </div>
 
                 <div className='form-group'>
-                  <label htmlFor='phone'>
+                  {/* <label htmlFor='phone'>
                     <i className='zmdi zmdi-phone-in-talk material-icons-name'></i>
-                  </label>
+                  </label> */}
                   <input
                     type='number'
                     name='phone'
@@ -150,9 +150,9 @@ const Signuppage = () => {
                 </div>
 
                 <div className='form-group'>
-                  <label htmlFor='work'>
+                  {/* <label htmlFor='work'>
                     <i className='zmdi zmdi-slideshow material-icons-name'></i>
-                  </label>
+                  </label> */}
                   <input
                     type='text'
                     name='work'
@@ -176,9 +176,9 @@ const Signuppage = () => {
                 </div> */}
 
                 <div className='form-group'>
-                  <label htmlFor='password'>
+                  {/* <label htmlFor='password'>
                     <i className='zmdi zmdi-lock material-icons-name'></i>
-                  </label>
+                  </label> */}
                   <input
                     type='password'
                     name='password'
@@ -191,9 +191,9 @@ const Signuppage = () => {
                 </div>
 
                 <div className='form-group'>
-                  <label htmlFor='cpassword'>
+                  {/* <label htmlFor='cpassword'>
                     <i className='zmdi zmdi-lock material-icons-name'></i>
-                  </label>
+                  </label> */}
                   <input
                     type='password'
                     name='cpassword'

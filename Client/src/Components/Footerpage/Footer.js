@@ -13,21 +13,21 @@ const Footer = () => {
     <>
       <div style={{ marginTop: '3.5rem' }}></div>
       <footer>
-        <div className='container'>
+        <div className=''>
           <div className='row'>
             <div className='col-12 col-lg-10 mx-auto'>
               <div className='row'>
                 <div className='col-6 col-lg-3'>
-                  <h1>FindMentor.com</h1>
-                  <h3>
-                    The vision for ‘find a mentor’ is to create a professional
-                    platform for online learning connecting mentors and
+                  <h3>FindMentor.com</h3>
+                  <h6>
+                    The vision for ‘find a mentor’ is <br /> to create a professional
+                    platform <br /> for online learning connecting <br /> mentors and
                     professionals.
-                  </h3>
+                  </h6>
                 </div>
 
                 <div className='col-6 col-lg-3'>
-                  <h2>Quick Links</h2>
+                  <h3>Quick Links</h3>
                   <ul>
                     <li>
                       <a href='/homepage'>Home</a>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
 
                 <div className='col-6 col-lg-3'>
-                  <h2>Contact</h2>
+                  <h3>Contact</h3>
                   <ul>
                     <li>
                       <a href='http://#'>+91 1234567890</a>
@@ -65,26 +65,26 @@ const Footer = () => {
                 </div>
 
                 <div className='col-6 col-lg-3'>
-                  <h2>Follow Us</h2>
+                  <h3>Follow Us</h3>
                   <div className='row'>
                     <div className='col-3 mx-auto'>
                       <a href='https://www.youtube.com/' target='_youtube'>
-                        <FontAwesomeIcon icon={faYoutube} size='4x' />
+                        <FontAwesomeIcon icon={faYoutube} size='2x' />
                       </a>
                     </div>
                     <div className='col-3 mx-auto'>
                       <a href='https://www.instagram.com/' target='_inta'>
-                        <FontAwesomeIcon icon={faInstagram} size='4x' />
+                        <FontAwesomeIcon icon={faInstagram} size='2x' />
                       </a>
                     </div>
                     <div className='col-3 mx-auto'>
                       <a href='https://www.twitter.com/' target='_twitter'>
-                        <FontAwesomeIcon icon={faTwitter} size='4x' />
+                        <FontAwesomeIcon icon={faTwitter} size='2x' />
                       </a>
                     </div>
                     <div className='col-3 mx-auto'>
                       <a href='https://www.facebook.com/' target='_facebook'>
-                        <FontAwesomeIcon icon={faFacebook} size='4x' />
+                        <FontAwesomeIcon icon={faFacebook} size='2x' />
                       </a>
                     </div>
                   </div>
