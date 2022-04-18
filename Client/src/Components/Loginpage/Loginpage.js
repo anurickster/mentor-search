@@ -1,13 +1,19 @@
 import React from 'react';
 import './module.Login.css';
 import { useNavigate } from 'react-router';
+import { login } from '../../store/auth-reducer';
+import { useDispatch, useSelector } from 'react-redux';
 import loginpic from '../Signuppage/Images/login2.webp';
 import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 export default function Loginpage() {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.authReducer);
 
   const formik = useFormik({
     initialValues: {
@@ -24,22 +30,13 @@ export default function Loginpage() {
         .max(10, 'Password must be at most 10 characters'),
     }),
     onSubmit: async (values) => {
-      console.log(values);
-      const res = await fetch('http://localhost:9000/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-      const data = await res.json();
-      console.log(data);
+      await dispatch(login(values));
 
-      localStorage.setItem('token', data.token);
+      let authstatus = localStorage.getItem('auth');
 
-      if (data.auth) {
+      if (authstatus) {
         navigate('/homepage');
-      } else if (data.error === 'Invalid password') {
+      } else if (user.error === 'Invalid password') {
         alert('Invalid password');
       } else {
         alert('Invalid Credentials');
@@ -47,12 +44,9 @@ export default function Loginpage() {
     },
   });
 
-  // function handleSign() {
-  //   navigate('/homepage');
-  // }
-
   return (
     <div>
+      <Navigationbar />
       <section className='sign-in'>
         <div className='container mt-5'>
           <div className='signin-content'>
@@ -68,9 +62,6 @@ export default function Loginpage() {
               <h2 className='form-title'>Log-In</h2>
               <form onSubmit={formik.handleSubmit} className='auth-form'>
                 <div className='form-group'>
-                  {/* <label htmlFor='email'>
-                    <i class='zmdi zmdi-email material-icons-name'></i>
-                  </label> */}
                   <input
                     type='email'
                     name='email'
@@ -84,9 +75,6 @@ export default function Loginpage() {
                   <span className='required'>{formik.errors.email}</span>
                 </div>
                 <div className='form-group'>
-                  {/* <label htmlFor='password'>
-                    <i class='zmdi zmdi-lock material-icons-name'></i>
-                  </label> */}
                   <input
                     type='password'
                     placeholder='Enter your password'
@@ -104,7 +92,6 @@ export default function Loginpage() {
                       id='signin'
                       className='form-submit'
                       value='Log In'
-                      // onClick={handleSign}
                     />
                   </div>
                 </div>

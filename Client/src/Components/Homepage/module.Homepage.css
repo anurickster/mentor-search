@@ -29,3 +29,7 @@ span {
   font-weight: 600;
   color: rgb(10, 0, 19);
 }
+
+.btn-bottom {
+  bottom: 0;
+}

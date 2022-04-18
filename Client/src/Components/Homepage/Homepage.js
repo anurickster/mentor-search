@@ -13,7 +13,7 @@ const Homepage = () => {
   const [deleteHandle, setDeleteHandle] = useState(false);
 
   const mentorCard = useSelector((state) => {
-    return state.posts;
+    return state.postReducer.posts;
   });
 
   useEffect(() => {
@@ -44,18 +44,20 @@ const Homepage = () => {
             ? 'Fresher Volunteer'
             : `${mentorEl.yearExperience} Years ${mentorEl.monthExperience}months`}
           <br />
-          <span>Skills:</span> {mentorEl.mentorSkills.join(', ')}
+          <span>Skills: </span>{mentorEl.mentorSkills.join(', ')}
           <br />
-          <Link className='btn btn-primary' to={`/addmentor/${mentorEl._id}`}>
-            Edit
-          </Link>
-          &nbsp;&nbsp;&nbsp;
-          <button
-            className='btn btn-danger'
-            onClick={() => handleDelete(mentorEl._id)}
-          >
-            Delete
-          </button>
+          <div className='btn-bottom'>
+            <Link className='btn btn-primary' to={`/addmentor/${mentorEl._id}`}>
+              Edit
+            </Link>
+            &nbsp;&nbsp;&nbsp;
+            <button
+              className='btn btn-danger'
+              onClick={() => handleDelete(mentorEl._id)}
+            >
+              Delete
+            </button>
+          </div>
         </Card.Text>
       </Card.Body>
     </Card>

@@ -3,8 +3,6 @@ import './module.Navigationbar.css';
 import RenderList from './NavList';
 
 const Navigationbar = () => {
-  // const [auth, setAuth] = useSelector(false); // get state in this component auth: true // using use selector //
-
   return (
     <>
       <nav className='navbar navbar-expand-lg navbar-light bg-light '>

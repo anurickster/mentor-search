@@ -26,6 +26,7 @@ const baseUrl = 'http://localhost:9000/auth/';
 export const logout = () => {
   return async (dispatch) => {
     localStorage.removeItem('token');
+    localStorage.removeItem('auth');
     dispatch(LOGOUT());
   };
 };
@@ -44,9 +45,8 @@ export const login = (user) => {
 
     if (data.token) {
       localStorage.setItem('token', data.token);
+      localStorage.setItem('auth', data.auth);
     }
-    // set token to local storage
-
     dispatch(LOGIN(data));
   };
 };

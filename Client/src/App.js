@@ -1,7 +1,13 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage';
 import Mentor from './Components/Mentor/Mentor';
 import Aboutpage from './Components/Aboutpage/Aboutpage';
@@ -16,13 +22,15 @@ function App() {
       <>
         <Routes>
           <Route path='/' element={<Loginpage />} />
-          <Route path='/homepage' element={<Homepage />} />
+          <Route path='/register' element={<Signuppage />} />
           <Route path='/about' element={<Aboutpage />} />
-          <Route path='/addmentor' element={<Mentor />} />
-          <Route path='/addmentor/:id' element={<Mentor />} />
           <Route path='/service' element={<Service />} />
           <Route path='/Contact' element={<Contactpage />} />
-          <Route path='/register' element={<Signuppage />} />
+          <Route element={<PrivateRoute />}>
+            <Route path='/homepage' element={<Homepage />} />
+            <Route path='/addmentor' element={<Mentor />} />
+            <Route path='/addmentor/:id' element={<Mentor />} />
+          </Route>
         </Routes>
       </>
     </Router>
@@ -30,3 +38,8 @@ function App() {
 }
 
 export default App;
+
+function PrivateRoute() {
+  const authStatus = localStorage.getItem('auth');
+  return <div>{authStatus === 'true' ? <Outlet /> : <Navigate to='/' />}</div>;
+}

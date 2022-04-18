@@ -8,17 +8,9 @@ in category frontend and backend
 
 - Member Name: Member Action
 
-- add delete and update button in every component | Mohit
-- add login signup page in / route | Ashwini
--
-
 ### Backend
 
 Member Name: Member Action
-
-- error handling
-
-- login and signup is completed in backend
 
 ### Component Assined
 
@@ -30,21 +22,15 @@ Member Name: Member Action
 
 ### Fixed
 
-- console.log errors
-- terminal warnings
 - minor UI issues
 
 ### Added
 
-- Update and Delete function working using redux-toolkit
-- new input added to form: mentor skills : Mentor route
-- named Toast popup on Update & Add Mentor
-- form can be submit on press enter
-- image input is working as URL input (Choose Image file will be added soon;)
+- 18-4-2022: authentication, private routes, minor fixes
 
 ### Removed
 
-- commented codes
+- redudant codes
 
 ### Changed
 
@@ -53,5 +39,4 @@ Member Name: Member Action
 ### need to be implemented
 
 - errorhandling
-- authentication
 - Image file input
