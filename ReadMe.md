@@ -26,7 +26,7 @@ Member Name: Member Action
 
 ### Added
 
-- 18-4-2022: authentication, private routes, minor fixes
+- 18-4-2022: authentication, private routes, minor fixes | Anurag
 
 ### Removed
 
