@@ -27,6 +27,9 @@ Member Name: Member Action
 ### Added
 
 - 18-4-2022: authentication, private routes, minor fixes | Anurag
+- 19-4-2022:
+  > initialized mentor profile and apply to mentor pages
+  > session manager if user not intracting
 
 ### Removed
 
