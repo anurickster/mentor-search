@@ -4,22 +4,29 @@ import './module.Homepage.css';
 import Navigationbar from '../Navigationbar/Navigationbar';
 import { fetchPosts, deletePost } from '../../store/post-reducer';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Footerpage/Footer';
 
 const Homepage = () => {
+  // All Primary Hooks
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // All States hooks
   const [search, setSearch] = useState('');
   const [deleteHandle, setDeleteHandle] = useState(false);
 
+  // Selectors for Redux use
   const mentorCard = useSelector((state) => {
     return state.postReducer.posts;
   });
 
   useEffect(() => {
     dispatch(fetchPosts());
+    // setDeleteHandle(!deleteHandle);
   }, [dispatch, deleteHandle]);
 
+  // All Functions
   const handleDelete = (id) => {
     const isDelete = window.confirm('Are you sure you want to delete?');
     if (isDelete) {
@@ -27,6 +34,11 @@ const Homepage = () => {
       dispatch(deletePost(id));
     }
     setDeleteHandle(!deleteHandle);
+  };
+
+  const navigateTOProfile = (id) => {
+    // navigate(`/mentor-profile/${id}`); // for your reference @mohit
+    navigate(`/mentorprofile`);
   };
 
   const filterdmentors = mentorCard.filter((mentorEl) =>
@@ -44,7 +56,8 @@ const Homepage = () => {
             ? 'Fresher Volunteer'
             : `${mentorEl.yearExperience} Years ${mentorEl.monthExperience}months`}
           <br />
-          <span>Skills: </span>{mentorEl.mentorSkills.join(', ')}
+          <span>Skills: </span>
+          {mentorEl.mentorSkills.join(', ')}
           <br />
           <div className='btn-bottom'>
             <Link className='btn btn-primary' to={`/addmentor/${mentorEl._id}`}>
@@ -56,6 +69,10 @@ const Homepage = () => {
               onClick={() => handleDelete(mentorEl._id)}
             >
               Delete
+            </button>
+            &nbsp;&nbsp;&nbsp;
+            <button className='btn btn-secondary' onClick={navigateTOProfile}>
+              View
             </button>
           </div>
         </Card.Text>

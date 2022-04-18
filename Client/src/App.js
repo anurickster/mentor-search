@@ -15,11 +15,15 @@ import Loginpage from './Components/Loginpage/Loginpage';
 import Contactpage from './Components/Contactpage/Contactpage';
 import Service from './Components/Servicepage/Service';
 import Signuppage from './Components/Signuppage/Signuppage';
+import SessionManager from './SessionManager';
+import MentorProfilepage from './Components/MentorProfilepage/MentorProfilepage';
+import ApplyToMentorpage from './Components/ApplyToMentorpage/ApplyToMentorpage';
 
 function App() {
   return (
-    <Router>
-      <>
+    <>
+      <SessionManager></SessionManager>
+      <Router>
         <Routes>
           <Route path='/' element={<Loginpage />} />
           <Route path='/register' element={<Signuppage />} />
@@ -28,12 +32,14 @@ function App() {
           <Route path='/Contact' element={<Contactpage />} />
           <Route element={<PrivateRoute />}>
             <Route path='/homepage' element={<Homepage />} />
+            <Route path='/mentorprofile' element={<MentorProfilepage />} />
+            <Route path='/applytomentor' element={<ApplyToMentorpage />} />
             <Route path='/addmentor' element={<Mentor />} />
             <Route path='/addmentor/:id' element={<Mentor />} />
           </Route>
         </Routes>
-      </>
-    </Router>
+      </Router>
+    </>
   );
 }
 
