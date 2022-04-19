@@ -26,8 +26,6 @@ export default function Loginpage() {
         .required('Email is required'),
       password: Yup.string()
         .required('Password is required')
-        .min(6, 'Password must be at least 6 characters')
-        .max(10, 'Password must be at most 10 characters'),
     }),
     onSubmit: async (values) => {
       await dispatch(login(values));
