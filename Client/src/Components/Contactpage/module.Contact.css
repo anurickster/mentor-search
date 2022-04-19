@@ -70,6 +70,7 @@
   -ms-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
+  margin: 0 1rem 0 0;
 }
 
 .input_field:focus,
