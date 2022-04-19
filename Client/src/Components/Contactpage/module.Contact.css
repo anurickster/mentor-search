@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -60,7 +60,6 @@
 }
 
 .input_field {
-  width: calc((100% - 60px) / 3);
   height: 50px;
   padding-left: 25px;
   border: solid 1px #e5e5e5;
@@ -194,7 +193,6 @@
   -ms-border-radius: 20px;
 }
 
-
 @media only screen and (max-width: 991px) {
   .contact_info_item {
     width: 100%;
@@ -234,5 +232,4 @@
       padding-right: 25px;
     }
   }
-} 
-
+}

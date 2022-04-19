@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
-
-.signup {
-  font-family: 'Poppins', sans-serif;
-}
-
 .dropdown {
   width: 250px;
   border-radius: 50px;
@@ -41,7 +35,6 @@ textarea:focus {
 }
 
 .signup-image {
-  /*margin-top: 45px;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,8 +188,8 @@ textarea:focus {
 
 .signup-container input[type='text'],
 input[type='password'],
-input[type='email'],
-input[type='number'] {
+input[type='email1'],
+input[type='number1'] {
   width: 100%;
   display: block;
   border: none;

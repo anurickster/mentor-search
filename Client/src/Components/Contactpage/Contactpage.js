@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './module.Contact.css';
-import Navigationbar from "../Navigationbar/Navigationbar";
-import Footer from "../Footerpage/Footer";
-
-
+import Navigationbar from '../Navigationbar/Navigationbar';
+import Footer from '../Footerpage/Footer';
 
 const Contact = () => {
   const [userData, setUserData] = useState({
@@ -149,7 +147,7 @@ const Contact = () => {
                     <input
                       type='text'
                       id='contact_form_name'
-                      className='contact_form_name input_field'
+                      className='input_field'
                       name='name'
                       value={userData.name}
                       onChange={handleInputs}
@@ -160,7 +158,7 @@ const Contact = () => {
                     <input
                       type='email'
                       id='contact_form_email'
-                      className='contact_form_email input_field'
+                      className='input_field'
                       name='email'
                       value={userData.email}
                       onChange={handleInputs}
@@ -171,7 +169,7 @@ const Contact = () => {
                     <input
                       type='number'
                       id='contact_form_phone'
-                      className='contact_form_phone input_field'
+                      className='input_field'
                       name='phone'
                       value={userData.phone}
                       onChange={handleInputs}
@@ -208,7 +206,6 @@ const Contact = () => {
         </div>
       </div>
       <Footer />
-
     </>
   );
 };

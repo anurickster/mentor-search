@@ -131,7 +131,7 @@ const Signuppage = () => {
                     <i className='zmdi zmdi-email material-icons-name'></i>
                   </label> */}
                     <input
-                      type='email'
+                      type='email1'
                       name='email'
                       id='email'
                       autoComplete='off'
@@ -146,7 +146,7 @@ const Signuppage = () => {
                     <i className='zmdi zmdi-phone-in-talk material-icons-name'></i>
                   </label> */}
                     <input
-                      type='number'
+                      type='number1'
                       name='phone'
                       id='phone'
                       autoComplete='off'
