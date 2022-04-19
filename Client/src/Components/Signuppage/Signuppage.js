@@ -171,8 +171,8 @@ const Signuppage = () => {
                   />
                 </div> */}
 
-                  <div>
-                    <select
+                  <div className='role-container'>
+                    {/* <select
                       onChange={handleInputs}
                       id='work'
                       name='work'
@@ -182,7 +182,13 @@ const Signuppage = () => {
                       <option value='Student'>User</option>
                       <option value='Mentor'>Mentor</option>
                       <option value='Developer'>Admin</option>
-                    </select>
+                    </select> */}
+                    <input type='radio' value='Mentor' name='role' />
+                    <label htmlFor='student'>Student</label>
+                    <input type='radio' value='Student' name='role' />
+                    <label htmlFor='mentor'>Mentor</label>
+                    <input type='radio' value='Admin' name='role' />
+                    <label htmlFor='admin'>Admin</label>
                   </div>
 
                   <div className='form-group'>
