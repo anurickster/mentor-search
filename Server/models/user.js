@@ -19,7 +19,7 @@ const UserSchema = new Schema({
     type: Number,
     required: true,
   },
-  work: {
+  role: {
     type: String,
     required: true,
     options: ['User', 'Mentor', 'Admin'],

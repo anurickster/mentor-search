@@ -18,7 +18,6 @@ const Signuppage = () => {
   let name, value;
 
   const handleInputs = (e) => {
-    //console.log(e);
     name = e.target.name;
     value = e.target.value;
     setUser({ ...user, [name]: value });
@@ -36,7 +35,7 @@ const Signuppage = () => {
       !user.name ||
       !user.email ||
       !user.phone ||
-      !user.work ||
+      !user.role ||
       !user.password
     ) {
       alert('Please fill all the fields');
@@ -47,6 +46,7 @@ const Signuppage = () => {
       alert('Password must be atleast 6 characters long');
       return;
     }
+  
 
     if (user.email.indexOf('@') === -1) {
       alert('Please enter a valid email');
@@ -58,7 +58,7 @@ const Signuppage = () => {
       return;
     }
 
-    const { name, email, phone, work, password, cpassword } = user;
+    const { name, email, phone, role, password, cpassword } = user;
 
     const res = await fetch('http://localhost:9000/auth/signup', {
       method: 'POST',
@@ -69,14 +69,14 @@ const Signuppage = () => {
         name,
         email,
         phone,
-        work,
+        role,
         password,
         cpassword,
       }),
     });
 
     const data = await res.json();
-
+    
     console.log(data, 'data');
 
     if (data.error) {
@@ -85,7 +85,6 @@ const Signuppage = () => {
       alert('Registered Successfully');
       navigate('/');
     }
-
     //  to change the data to res
     // if (data.status === 422 || !data) {
     //   window.alert(' Invalid Registration !');
@@ -131,7 +130,7 @@ const Signuppage = () => {
                     <i className='zmdi zmdi-email material-icons-name'></i>
                   </label> */}
                     <input
-                      type='email1'
+                      type='email'
                       name='email'
                       id='email'
                       autoComplete='off'
@@ -142,11 +141,8 @@ const Signuppage = () => {
                   </div>
 
                   <div className='form-group'>
-                    {/* <label htmlFor='phone'>
-                    <i className='zmdi zmdi-phone-in-talk material-icons-name'></i>
-                  </label> */}
                     <input
-                      type='number1'
+                      type='number'
                       name='phone'
                       id='phone'
                       autoComplete='off'
@@ -155,40 +151,33 @@ const Signuppage = () => {
                       placeholder='Your Phone'
                     />
                   </div>
-
-                  {/* <div className='form-group'> */}
-                  {/* <label htmlFor='work'>
-                    <i className='zmdi zmdi-slideshow material-icons-name'></i>
-                  </label> */}
-                  {/* <input
-                    type='text'
-                    name='work'
-                    id='work'
-                    autoComplete='off'
-                    value={user.work}
-                    onChange={handleInputs}
-                    placeholder='Your Profession'
-                  />
-                </div> */}
-
                   <div className='role-container'>
-                    {/* <select
+                    <input
+                      type='radio'
+                      id='student'
+                      value='Mentor'
+                      name='role'
                       onChange={handleInputs}
-                      id='work'
-                      name='work'
-                      className='dropdown'
-                    >
-                      <option value=''>Select your Role...</option>
-                      <option value='Student'>User</option>
-                      <option value='Mentor'>Mentor</option>
-                      <option value='Developer'>Admin</option>
-                    </select> */}
-                    <input type='radio' value='Mentor' name='role' />
+                    />
                     <label htmlFor='student'>Student</label>
-                    <input type='radio' value='Student' name='role' />
+                    <input
+                      type='radio'
+                      id='mentor'
+                      value='Student'
+                      name='role'
+                      onChange={handleInputs}
+                      di
+                    />
                     <label htmlFor='mentor'>Mentor</label>
-                    <input type='radio' value='Admin' name='role' />
-                    <label htmlFor='admin'>Admin</label>
+                    <input
+                      type='radio'
+                      id='admin'
+                      value='Admin'
+                      name='role'
+                      onChange={handleInputs}
+                      // disabled
+                    />
+                    <label htmlFor='admin' className='admin'>Admin</label>
                   </div>
 
                   <div className='form-group'>
@@ -205,6 +194,7 @@ const Signuppage = () => {
                       placeholder='Your Password'
                     />
                   </div>
+                  <span id='hint'>Password should be minimum of 6 digits</span>
 
                   <div className='form-group'>
                     {/* <label htmlFor='cpassword'>
