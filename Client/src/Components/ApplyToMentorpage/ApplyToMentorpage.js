@@ -30,7 +30,7 @@ const ApplyToMentorpage = () => {
         <br />
         <h4>Please See Reffrence below</h4>
         <br />
-        <img src={sampleImage} title='Sample Image' />
+        <img src={sampleImage} alt='sample' title='Sample Image' />
       </div>
       <Footer />
     </>

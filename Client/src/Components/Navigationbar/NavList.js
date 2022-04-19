@@ -106,6 +106,26 @@ const NavList = () => {
             Contact
           </NavLink>
         </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/welcomepage'
+          >
+            Mentor Welcome
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/mentorselfprofile'
+          >
+            Mentor Self Profile
+          </NavLink>
+        </li>
       </>
     );
   }

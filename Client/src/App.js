@@ -18,6 +18,8 @@ import Signuppage from './Components/Signuppage/Signuppage';
 import SessionManager from './SessionManager';
 import MentorProfilepage from './Components/MentorProfilepage/MentorProfilepage';
 import ApplyToMentorpage from './Components/ApplyToMentorpage/ApplyToMentorpage';
+import MentorWelcomepage from './Components/MentorWelcomePage/MentorWelcomepage';
+import MentorSelfProfilepage from './Components/MentorSelfProfilepage/MentorSelfProfilepage';
 
 function App() {
   return (
@@ -29,7 +31,12 @@ function App() {
           <Route path='/register' element={<Signuppage />} />
           <Route path='/about' element={<Aboutpage />} />
           <Route path='/service' element={<Service />} />
-          <Route path='/Contact' element={<Contactpage />} />
+          <Route path='/contact' element={<Contactpage />} />
+          <Route path='/welcomepage' element={<MentorWelcomepage />} />
+          <Route
+            path='/mentorselfprofile'
+            element={<MentorSelfProfilepage />}
+          />
           <Route element={<PrivateRoute />}>
             <Route path='/homepage' element={<Homepage />} />
             <Route path='/mentorprofile' element={<MentorProfilepage />} />
