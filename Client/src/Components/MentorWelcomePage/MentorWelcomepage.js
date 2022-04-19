@@ -1,31 +1,47 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react'
 import './module.MentorWelcomepage.css';
 import Navigationbar from '../Navigationbar/Navigationbar';
 import Footer from '../Footerpage/Footer';
 
+
 const MentorWelcomepage = () => {
+  const [userName, setUserName] = useState('');
+  const [show, setShow] = useState(false);
+
+  const userHomePage = async () => {
+      try {
+          const res = await fetch('/getdata', {
+              method: "GET",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+          });
+
+          const data = await res.json();
+          // console.log(data);
+          setUserName(data.name);
+          setShow(true);
+
+      } catch (err) {
+          console.log(err);
+      }
+  }
+
+  useEffect(() => {
+      userHomePage();
+  }, []);
+
   return (
     <>
       <Navigationbar />
-      <div className='main-profile'>
-        <h1>Hi Ashwini</h1>
-        <h3># Things to keep in Mind</h3>
-        <ul>
-          <li>Pull The code</li>
-          <li>you have to make a page for Welcome Mentor in this file</li>
-          <li>
-            for styling use{' '}
-            <b>./Components/MentorWelcomepage/moudule.MentorWelcomepage.css</b>
-          </li>
-          <li>
-            this page is for Mentor role when he/she come to the website should
-            see the welcome greetings
-          </li>
-        </ul>
-        <p className='example-of-usage'>
-          if you are facing any issues please let me assist you.
-        </p>
-      </div>
+      <div className="home-page">
+                <div className="home-div">
+                    <p className="pt-5">WELCOME</p>
+                    <h1>{userName}</h1>
+                    <h2> { show ? 'Happy, to see you back' :  'We are team of FindMentor.com' }</h2>
+                </div>
+            </div>
+
       <Footer />
     </>
   );
