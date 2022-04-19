@@ -126,6 +126,26 @@ const NavList = () => {
             Mentor Self Profile
           </NavLink>
         </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/addcourse'
+          >
+            Add Course
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/viewcourses'
+          >
+            View Courses
+          </NavLink>
+        </li>
       </>
     );
   }

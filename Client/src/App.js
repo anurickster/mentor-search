@@ -20,6 +20,8 @@ import MentorProfilepage from './Components/MentorProfilepage/MentorProfilepage'
 import ApplyToMentorpage from './Components/ApplyToMentorpage/ApplyToMentorpage';
 import MentorWelcomepage from './Components/MentorWelcomePage/MentorWelcomepage';
 import MentorSelfProfilepage from './Components/MentorSelfProfilepage/MentorSelfProfilepage';
+import AddCoursepage from './Components/AddCoursepage/AddCoursepage';
+import ViewCoursespage from './Components/ViewCoursespage/ViewCoursespage';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route path='/service' element={<Service />} />
           <Route path='/contact' element={<Contactpage />} />
           <Route path='/welcomepage' element={<MentorWelcomepage />} />
+          <Route path='/addcourse' element={<AddCoursepage />} />
+          <Route path='/viewcourses' element={<ViewCoursespage />} />
           <Route
             path='/mentorselfprofile'
             element={<MentorSelfProfilepage />}
