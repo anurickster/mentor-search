@@ -8,7 +8,34 @@ import aboutpic from './Images/profile1.png';
 
 const MentorSelfProfilepage = () => {
   // const history = useHistory();
-  const [userData, setUserData] = useState({});
+  const courseArray = [
+    'Java',
+    'Python',
+    'C++',
+    'C#',
+    'JavaScript',
+    'React',
+    'Angular',
+    'NodeJS',
+  ];
+
+  const dummyData = [
+    {
+      _id: '5f5d8f9b9b8f9b8f9b8f9b8f',
+      name: 'Ashwini',
+      email: 'ashwini@gmail.com',
+      phone: 2736473920,
+      profession: 'FS Dev',
+      experience: 1,
+      hourlyRate: '10$',
+      courseLength: courseArray.length,
+      LanguagesKnown: 'French,English',
+      image: aboutpic,
+      availabilty: 'Full Time',
+    },
+  ];
+
+  const [userData, setUserData] = useState(dummyData);
 
   const callAboutPage = async () => {
     try {
@@ -48,7 +75,11 @@ const MentorSelfProfilepage = () => {
             <div className='col-md-4'>
               <div className='profile-img'>
                 <img
-                  src={userData.name === 'Emma Watson' ? profilepic : aboutpic}
+                  src={
+                    userData.name === 'Emma Watson'
+                      ? profilepic
+                      : userData[0].image
+                  }
                   alt='thapa'
                 />
               </div>
