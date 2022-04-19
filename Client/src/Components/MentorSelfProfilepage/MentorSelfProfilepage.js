@@ -253,10 +253,10 @@ const MentorSelfProfilepage = () => {
                   </div>
                   <div className='row mt-3'>
                     <div className='col-md-6'>
-                      <div>English Level</div>
+                      <div>Languages Known</div>
                     </div>
                     <div className='col-md-6'>
-                      <p>Expert</p>
+                      <p>English</p>
                     </div>
                   </div>
                   <div className='row mt-3'>

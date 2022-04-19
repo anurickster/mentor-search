@@ -4,8 +4,12 @@ import Navigationbar from '../Navigationbar/Navigationbar';
 import Footer from '../Footerpage/Footer';
 
 const MentorWelcomepage = () => {
-  const [userName, setUserName] = useState('');
-  const [show, setShow] = useState(false);
+   
+  const nameArray=['Ashwini Rathod', 'Anurag Rajput', 'Mohit'];
+
+
+  const [userName, setUserName] = useState(nameArray[1]);
+  // const [show, setShow] = useState(false);
 
   const userHomePage = async () => {
     try {
@@ -18,8 +22,8 @@ const MentorWelcomepage = () => {
 
       const data = await res.json();
       // console.log(data);
-      setUserName(data.name);
-      setShow(true);
+      setUserName(nameArray.name);
+      // setShow(true);
     } catch (err) {
       console.log(err);
     }
@@ -39,8 +43,8 @@ const MentorWelcomepage = () => {
           <p className='pt-5'>WELCOME</p>
           <h1>{userName}</h1>
           <h2>
-            {' '}
-            {show ? 'Happy, to see you back' : 'We are team of FindMentor.com'}
+            
+            {setUserName ? 'Happy, to see you back' : 'We are team of FindMentor.com'}
           </h2>
         </div>
       </div>
