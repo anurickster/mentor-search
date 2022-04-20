@@ -39,7 +39,7 @@ function App() {
           <Route path="/welcomepage" element={<MentorWelcomepage />} />
           <Route path="/addcourse" element={<AddCoursepage />} />
           <Route path="/viewcourses" element={<ViewCoursespage />} />
-          <Route path="/coursedetails" element={<CourseDetailspage />} />
+          {/* <Route path="/coursedetails" element={<CourseDetailspage />} /> */}
           <Route path="/coursedetails/:id" element={<CourseDetailspage />} />
           <Route
             path="/mentorselfprofile"
@@ -55,7 +55,6 @@ function App() {
           </Route>
         </Routes>
       </Router>
-      
     </>
   );
 }

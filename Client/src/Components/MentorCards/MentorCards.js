@@ -125,9 +125,6 @@ const MentorCards = () => {
                           <li onClick={(e) => DeleteMentor(e, mentor.id)}>
                             Delete
                           </li>
-                          <Link to={`/mentorprofile`} exact="true">
-                            <li>view Profile</li>
-                          </Link>
                         </ul>
                       </>
                       {/* ) : null} */}
@@ -177,7 +174,13 @@ const MentorCards = () => {
                     alt="mentorCourse"
                   />
                   <p>inventore laudantium exercitationem, magni ab!</p>
-                  <button className="BTN ViewDetails ">View Details</button>
+                  <Link
+                    className="BTN ViewDetails "
+                    to={`/mentorprofile`}
+                    exact="true"
+                  >
+                    View Profile
+                  </Link>
                 </div>
               </div>
             );

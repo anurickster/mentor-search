@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,7 +14,6 @@
 .example-of-usage {
   color: red;
 }
-/* css mentor page  */
 .Cards_Container {
   display: flex;
   flex-wrap: wrap;
@@ -54,6 +53,8 @@
     rgb(63, 63, 63)
   );
   color: #fff;
+  text-align: center;
+  text-decoration: none;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.3);
   border: 1px solid rgb(139, 139, 139, 0.1);
   padding: 0.2rem 0.5rem;
@@ -71,7 +72,6 @@
 .Mentor__NameSec {
   display: flex;
   justify-content: space-between;
-  /* margin-right: 1rem; */
 }
 .Mentor__NameSec span {
   position: relative;
@@ -172,7 +172,6 @@
 .MentorsCard .mentorCourses {
   width: 300px;
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   font-size: 1rem;
   list-style: none;
@@ -194,6 +193,7 @@
 .MentorsCard .mentorCourses .Course:nth-child(2n + 1) {
   background-color: rgb(65, 60, 60);
 }
+*/
 /* cdd coure card */
 .Courses_Container {
   display: flex;

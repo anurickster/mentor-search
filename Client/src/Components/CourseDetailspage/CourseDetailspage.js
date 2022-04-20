@@ -12,11 +12,14 @@ const CourseDetailspage = () => {
   const { id } = useParams();
   // console.log(id);
   useEffect(() => {
-    axios.get(`http://localhost:9000/courses/${id}`).then((res) => {
-      console.log(res.data);
-      setCourse(res.data);
-    });
+    if (id) {
+      axios.get(`http://localhost:9000/courses/${id}`).then((res) => {
+        console.log(res.data);
+        setCourse(res.data);
+      });
+    }
   }, []);
+
   // console.log(course);
   // console.log(course.level);
 
@@ -41,7 +44,7 @@ const CourseDetailspage = () => {
           <div>{course.course_duration}</div>
           {/* <div>{course.students} students enrolled already</div> */}
           <div className="no_of_students">
-            {Math.ceil(Math.random() * 2000)} students enrolled already
+            {Math.ceil(Math.random() * 2000 + 2000)} students enrolled already
           </div>
           <div>{course.discription}</div>
           <ul>
