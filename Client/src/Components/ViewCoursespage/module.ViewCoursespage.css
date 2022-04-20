@@ -9,6 +9,8 @@
 .example-of-usage {
   color: red;
 }
+
+
 /* css */
 .Cards_Container {
   display: flex;
@@ -16,20 +18,35 @@
   justify-content: space-evenly;
   margin-top: 20px;
 }
+
+
+
 .MentorsCard {
   display: flex;
-  border-radius: 1rem;
   padding: 1.5rem;
   margin: 1rem 2rem;
-  background-color: rgb(238, 238, 238);
+  background: #fff;
   width: fit-content;
   height: fit-content;
+  box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
 }
+
+
 .MentorsCard .rightSection {
-  border: 1px solid rgb(189, 189, 189, 0.4);
-  background-color: rgb(169, 199, 204, 0.1);
+   /* border: 1px solid rgb(189, 189, 189, 0.4);  */
+  /* background-color: rgb(169, 199, 204, 0.1); */
+  background: #fff;
   box-shadow: 2px 3px 8px rgb(0, 0, 0, 0.3);
-  border-radius: 0.5rem;
+  border-radius: 0.5rem; 
   display: flex;
   padding: 0.5rem 0.8rem;
   flex-direction: column;
@@ -37,12 +54,39 @@
   width: 250px;
   height: fit-content;
   margin-left: 1rem;
+
 }
+
+
 .MentorsCard .rightSection img {
   height: 150px;
   width: 225px;
 }
+
+
 .BTN.ViewDetails {
+  display: inline-block;
+  background: #6dabe4;
+  color: #fff;
+  border-bottom: none;
+  width: auto;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  margin: 0.3rem 0;
+
+}
+
+.BTN.ViewDetails:hover {
+  background: #4292dc;
+}
+
+
+/* .BTN.ViewDetails {
   background-image: linear-gradient(
     135deg,
     rgb(116, 115, 115),
@@ -55,6 +99,7 @@
   border-radius: 0.2rem;
   margin: 0.2rem 0;
 }
+
 .BTN.ViewDetails:hover {
   background-image: linear-gradient(
     135deg,
@@ -62,15 +107,21 @@
     rgb(63, 63, 63, 0.9)
   );
   cursor: pointer;
-}
+} */
+
+
 .Mentor__NameSec {
   display: flex;
   justify-content: space-between;
   /* margin-right: 1rem; */
 }
+
+
 .Mentor__NameSec span {
   position: relative;
 }
+
+
 .Linkedin__Icon {
   color: rgb(25, 134, 223);
   position: relative;
@@ -79,6 +130,7 @@
   height: 1.5rem;
   margin-right: 0.5rem;
 }
+
 .Github__Icon {
   color: rgb(54, 54, 54);
   position: relative;
@@ -87,14 +139,20 @@
   height: 1.5rem;
   margin-right: 0.5rem;
 }
+
+
 .More__Icon {
   color: rgb(0, 0, 0);
   position: relative;
   top: 0.2rem;
 }
+
+
 .More__Icon:hover {
   cursor: pointer;
 }
+
+
 .MoreOptions {
   position: absolute;
   padding: 0.2rem 0.1rem;
@@ -107,9 +165,13 @@
   position: absolute;
   list-style: none;
 }
+
+
 .MoreOptions.Show {
   display: Block;
 }
+
+
 .MoreOptions.Show::after {
   content: "";
   position: absolute;
@@ -119,6 +181,8 @@
   border-right: 0.5rem solid transparent;
   border-bottom: 0.5rem solid #fff;
 }
+
+
 .MoreOptions li {
   font-size: 0.8rem;
   border-radius: 0.5rem;

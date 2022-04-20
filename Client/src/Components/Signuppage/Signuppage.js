@@ -38,23 +38,23 @@ const Signuppage = () => {
       !user.role ||
       !user.password
     ) {
-      alert('Please fill all the fields');
+      alert('Please fill all the fields!');
       return;
     }
 
     if (user.password.length < 6) {
-      alert('Password must be atleast 6 characters long');
+      alert('Password must be atleast 6 characters long!');
       return;
     }
   
 
     if (user.email.indexOf('@') === -1) {
-      alert('Please enter a valid email');
+      alert('Please enter a valid email!');
       return;
     }
 
     if (user.phone.length !== 10) {
-      alert('Please enter a valid phone number');
+      alert('Please enter a valid phone number!');
       return;
     }
 
@@ -111,9 +111,6 @@ const Signuppage = () => {
                   id='register-form'
                 >
                   <div className='form-group'>
-                    {/* <label htmlFor='name'>
-                    <i className='zmdi zmdi-account material-icons-name'></i>
-                  </label> */}
                     <input
                       type='text'
                       name='name'
@@ -126,11 +123,8 @@ const Signuppage = () => {
                   </div>
 
                   <div className='form-group'>
-                    {/* <label htmlFor='email'>
-                    <i className='zmdi zmdi-email material-icons-name'></i>
-                  </label> */}
                     <input
-                      type='email'
+                      type='email1'
                       name='email'
                       id='email'
                       autoComplete='off'
@@ -142,7 +136,7 @@ const Signuppage = () => {
 
                   <div className='form-group'>
                     <input
-                      type='number'
+                      type='number1'
                       name='phone'
                       id='phone'
                       autoComplete='off'
@@ -151,6 +145,7 @@ const Signuppage = () => {
                       placeholder='Your Phone'
                     />
                   </div>
+
                   <div className='role-container'>
                     <input
                       type='radio'
@@ -159,7 +154,7 @@ const Signuppage = () => {
                       name='role'
                       onChange={handleInputs}
                     />
-                    <label htmlFor='student'>Student</label>
+                    <div htmlFor='student'>Student</div>
                     <input
                       type='radio'
                       id='mentor'
@@ -168,7 +163,7 @@ const Signuppage = () => {
                       onChange={handleInputs}
                       di
                     />
-                    <label htmlFor='mentor'>Mentor</label>
+                    <div htmlFor='mentor'>Mentor</div>
                     <input
                       type='radio'
                       id='admin'
@@ -177,13 +172,10 @@ const Signuppage = () => {
                       onChange={handleInputs}
                       // disabled
                     />
-                    <label htmlFor='admin' className='admin'>Admin</label>
+                    <div htmlFor='admin' className='admin'>Admin</div>
                   </div>
 
                   <div className='form-group'>
-                    {/* <label htmlFor='password'>
-                    <i className='zmdi zmdi-lock material-icons-name'></i>
-                  </label> */}
                     <input
                       type='password'
                       name='password'
@@ -194,12 +186,9 @@ const Signuppage = () => {
                       placeholder='Your Password'
                     />
                   </div>
-                  <span id='hint'>Password should be minimum of 6 digits</span>
+                  {/* <span id='hint'>Password should be minimum of 6 digits</span> */}
 
                   <div className='form-group'>
-                    {/* <label htmlFor='cpassword'>
-                    <i className='zmdi zmdi-lock material-icons-name'></i>
-                  </label> */}
                     <input
                       type='password'
                       name='cpassword'
