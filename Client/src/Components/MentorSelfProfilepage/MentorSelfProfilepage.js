@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './module.MentorSelfProfilepage.css';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import Footer from '../Footerpage/Footer';
 import profilepic from './Images/profile.png';
 import aboutpic from './Images/profile1.png';
 // import { useHistory } from 'react-router-dom';
@@ -68,7 +66,6 @@ const MentorSelfProfilepage = () => {
 
   return (
     <>
-      <Navigationbar />
       <div className='container emp-profile'>
         <form method='GET'>
           <div className='row'>
@@ -273,8 +270,6 @@ const MentorSelfProfilepage = () => {
           </div>
         </form>
       </div>
-
-      <Footer />
     </>
   );
 };

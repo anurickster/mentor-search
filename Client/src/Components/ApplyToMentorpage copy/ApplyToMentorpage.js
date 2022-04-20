@@ -1,13 +1,10 @@
 import React from 'react';
 import './module.ApplyToMentorpage.css';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import Footer from '../Footerpage/Footer';
 import sampleImage from './ApplytoMentorpage.jpg';
 
 const ApplyToMentorpage = () => {
   return (
     <>
-      <Navigationbar />
       <div className='main-profile'>
         <h1>Hi Jayesh</h1>
         <h3># Things to keep in Mind</h3>
@@ -32,7 +29,6 @@ const ApplyToMentorpage = () => {
         <br />
         <img src={sampleImage} alt='sample' title='Sample Image' />
       </div>
-      <Footer />
     </>
   );
 };

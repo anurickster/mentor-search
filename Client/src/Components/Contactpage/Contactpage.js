@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './module.Contact.css';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import Footer from '../Footerpage/Footer';
 
 const Contact = () => {
   const [userData, setUserData] = useState({
@@ -84,8 +82,6 @@ const Contact = () => {
 
   return (
     <>
-      <Navigationbar />
-
       <div className='contact_info'>
         <div className='container-fluid'>
           <div className='row'>
@@ -206,7 +202,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

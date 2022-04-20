@@ -1,7 +1,5 @@
 import React from 'react';
 import './moudule.MentorProfilepage.css';
-import Navigationbar from './../../Components/Navigationbar/Navigationbar';
-import Footer from './../../Components/Footerpage/Footer';
 import { useNavigate } from 'react-router-dom';
 import MentorImg from './mentorImg.jpg';
 import course from './courses.png';
@@ -34,7 +32,6 @@ const MentorProfilepage = () => {
 
   return (
     <>
-      <Navigationbar />
       <div className='Mentor__Profile__Page__Container'>
         <div className='Top__Section'>
           <div className='Img__div'>
@@ -102,8 +99,6 @@ const MentorProfilepage = () => {
         </div>
         <div className='Bottom__Section'></div>
       </div>
-
-      <Footer />
     </>
   );
 };

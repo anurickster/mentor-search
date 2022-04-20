@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Navigationbar from '../Navigationbar/Navigationbar';
 import './module.Mentor.css';
 import { useDispatch } from 'react-redux';
 import { addPost, updatePost } from '../../store/post-reducer';
-import Footer from '../Footerpage/Footer';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -81,7 +79,6 @@ const Mentor = () => {
 
   return (
     <>
-      <Navigationbar />
       <div className='form-main'>
         <form
           className='form-container'
@@ -165,7 +162,6 @@ const Mentor = () => {
           </center>
         </form>
       </div>
-      <Footer />
     </>
   );
 };

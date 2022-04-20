@@ -1,29 +1,29 @@
-import React from "react";
-import { useEffect } from "react";
-import "./module.MentorCard.css";
-import axios from "axios";
-import Img1 from "../Images/1.jpg";
-import Img2 from "../Images/2.jpg";
-import Img3 from "../Images/3.jpg";
-import Img4 from "../Images/4.jpg";
-import Img5 from "../Images/5.jpg";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Rating from "@mui/material/Rating";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useEffect } from 'react';
+import './module.MentorCard.css';
+import axios from 'axios';
+import Img1 from '../Images/1.jpg';
+import Img2 from '../Images/2.jpg';
+import Img3 from '../Images/3.jpg';
+import Img4 from '../Images/4.jpg';
+import Img5 from '../Images/5.jpg';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Rating from '@mui/material/Rating';
+import { Link } from 'react-router-dom';
 
 const MentorCards = () => {
-  const [mentors, setMentors] = React.useState([""]);
-  const [coursesList, setCoursesList] = React.useState([""]);
+  const [mentors, setMentors] = React.useState(['']);
+  const [coursesList, setCoursesList] = React.useState(['']);
   const ImgArray = [Img1, Img2, Img3, Img4, Img5];
   const [moreOptions, setMoreOptions] = React.useState(0); //for more options
-  const [usertype, setUsertype] = React.useState("");
-  const [userId, setUserId] = React.useState("");
+  const [usertype, setUsertype] = React.useState('');
+  const [userId, setUserId] = React.useState('');
 
   useEffect(() => {
     axios
-      .get("http://localhost:7000/mentors")
+      .get('http://localhost:7000/mentors')
       .then((res) => {
         console.log(res.data);
         setMentors(res.data);
@@ -33,7 +33,7 @@ const MentorCards = () => {
         console.log(err);
       });
     axios
-      .get("http://localhost:9000/courses")
+      .get('http://localhost:9000/courses')
       .then((res) => {
         console.log(res.data);
         setCoursesList(res.data);
@@ -77,49 +77,49 @@ const MentorCards = () => {
   };
 
   return (
-    <div className="Home">
-      <div className="Cards_Container">
+    <div className='Home'>
+      <div className='Cards_Container'>
         {mentors ? (
           mentors.map((mentor, i) => {
             // console.log(mentor.id);
             return (
-              <div key={i} className="MentorsCard">
-                <div className="leftSection">
-                  <h3 className="Mentor__NameSec">
+              <div key={i} className='MentorsCard'>
+                <div className='leftSection'>
+                  <h3 className='Mentor__NameSec'>
                     <p> {mentor.mname}</p>
                     <span onBlur={() => setMoreOptions(null)}>
                       {mentor.linkedin ? (
                         <a
                           href={mentor.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
+                          target='_blank'
+                          rel='noreferrer'
                         >
-                          <LinkedInIcon className="Linkedin__Icon" />
+                          <LinkedInIcon className='Linkedin__Icon' />
                         </a>
                       ) : null}
                       {mentor.github ? (
                         <a
                           href={mentor.github}
-                          target="_blank"
-                          rel="noreferrer"
+                          target='_blank'
+                          rel='noreferrer'
                         >
-                          <GitHubIcon className="Github__Icon" />
+                          <GitHubIcon className='Github__Icon' />
                         </a>
                       ) : null}
                       {/* {usertype === "mentor" && userId == mentor.id ? ( */}
                       <>
                         <MoreVertIcon
-                          className="More__Icon"
+                          className='More__Icon'
                           onClick={(e) => ShowMoreOptions(e, mentor.id)}
                         />
                         <ul
                           className={
                             moreOptions === mentor.id
-                              ? "Show MoreOptions"
-                              : "MoreOptions"
+                              ? 'Show MoreOptions'
+                              : 'MoreOptions'
                           }
                         >
-                          <Link to={`/mentor/${mentor.id}`} exact="true">
+                          <Link to={`/mentor/${mentor.id}`} exact='true'>
                             <li>Edit</li>
                           </Link>
                           <li onClick={(e) => DeleteMentor(e, mentor.id)}>
@@ -130,25 +130,25 @@ const MentorCards = () => {
                       {/* ) : null} */}
                     </span>
                   </h3>
-                  <div className="Mentors__Rating">
+                  <div className='Mentors__Rating'>
                     Rating:
                     <Rating
-                      className="Rating"
-                      name="half-rating"
+                      className='Rating'
+                      name='half-rating'
                       defaultValue={Math.ceil(Math.random() * 5)}
                       precision={0.2}
-                      size="small"
+                      size='small'
                     />
                     <p>{} </p>
                   </div>
                   <p> Experience : {mentor.yearExperience} Years</p>
 
                   <p>Skills:</p>
-                  <ul className="mentorskills">
+                  <ul className='mentorskills'>
                     {mentor.skills
                       ? mentor.skills.map((skill, id) => {
                           return (
-                            <li key={id} className="skills">
+                            <li key={id} className='skills'>
                               {skill}
                             </li>
                           );
@@ -156,11 +156,11 @@ const MentorCards = () => {
                       : null}
                   </ul>
                   <p>Courses:</p>
-                  <ul className="mentorCourses">
+                  <ul className='mentorCourses'>
                     {mentor.courses
                       ? mentor.courses.map((course, id) => {
                           return (
-                            <li className="Course" key={id}>
+                            <li className='Course' key={id}>
                               {course}
                             </li>
                           );
@@ -168,16 +168,16 @@ const MentorCards = () => {
                       : null}
                   </ul>
                 </div>
-                <div className="rightSection">
+                <div className='rightSection'>
                   <img
                     src={ImgArray[Math.floor(Math.random() * 5)]}
-                    alt="mentorCourse"
+                    alt='mentorCourse'
                   />
                   <p>inventore laudantium exercitationem, magni ab!</p>
                   <Link
-                    className="BTN ViewDetails "
+                    className='BTN ViewDetails '
                     to={`/mentorprofile`}
-                    exact="true"
+                    exact='true'
                   >
                     View Profile
                   </Link>

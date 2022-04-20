@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './module.MentorWelcomepage.css';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import Footer from '../Footerpage/Footer';
 
 const MentorWelcomepage = () => {
-   
-  const nameArray=['Ashwini Rathod', 'Anurag Singh', 'Mohit'];
-
+  const nameArray = ['Ashwini Rathod', 'Anurag Singh', 'Mohit'];
 
   const [userName, setUserName] = useState(nameArray[1]);
   // const [show, setShow] = useState(false);
@@ -33,23 +29,19 @@ const MentorWelcomepage = () => {
     userHomePage();
   }, []);
 
-  
-
   return (
     <>
-      <Navigationbar />
       <div className='home-page'>
         <div className='home-div'>
           <p className='pt-5'>WELCOME</p>
           <h1>{userName}</h1>
           <h2>
-            
-            {setUserName ? 'Happy, to see you back' : 'We are team of FindMentor.com'}
+            {setUserName
+              ? 'Happy, to see you back'
+              : 'We are team of FindMentor.com'}
           </h2>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

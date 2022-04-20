@@ -7,7 +7,6 @@ import loginpic from '../Signuppage/Images/login2.webp';
 import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Navigationbar from '../Navigationbar/Navigationbar';
 import dToken from './../../addons/tokenDecoder';
 
 export default function Loginpage() {
@@ -49,7 +48,6 @@ export default function Loginpage() {
 
   return (
     <div>
-      <Navigationbar />
       <section className='sign-in'>
         <div className='container mt-5'>
           <div className='signin-content'>

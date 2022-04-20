@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import Navigationbar from '../Navigationbar/Navigationbar';
 import signinpic from './Images/signup2.jpg';
 import './module.Signup.css';
 
@@ -46,7 +45,6 @@ const Signuppage = () => {
       alert('Password must be atleast 6 characters long!');
       return;
     }
-  
 
     if (user.email.indexOf('@') === -1) {
       alert('Please enter a valid email!');
@@ -76,7 +74,7 @@ const Signuppage = () => {
     });
 
     const data = await res.json();
-    
+
     console.log(data, 'data');
 
     if (data.error) {
@@ -98,7 +96,6 @@ const Signuppage = () => {
 
   return (
     <>
-      <Navigationbar />
       <div className='signup-container'>
         <section className='signup'>
           <div className='container mt-5'>
@@ -172,7 +169,9 @@ const Signuppage = () => {
                       onChange={handleInputs}
                       // disabled
                     />
-                    <div htmlFor='admin' className='admin'>Admin</div>
+                    <div htmlFor='admin' className='admin'>
+                      Admin
+                    </div>
                   </div>
 
                   <div className='form-group'>
