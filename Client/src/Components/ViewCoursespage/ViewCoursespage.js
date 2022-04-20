@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 
 const ViewCoursespage = () => {
   const [mentors, setMentors] = React.useState([""]);
+  const [coursesList, setCoursesList] = React.useState([""]);
   const ImgArray = [Img1, Img2, Img3, Img4, Img5];
   const [moreOptions, setMoreOptions] = React.useState(0); //for more options
   const [usertype, setUsertype] = React.useState("");
@@ -28,11 +29,21 @@ const ViewCoursespage = () => {
     // setUsertype(localStorage.getItem("usertype"));
     // setUserId(localStorage.getItem("userid"));
     axios
-      .get("http://localhost:9000/mentors")
+      .get("http://localhost:7000/mentors")
       .then((res) => {
         console.log(res.data);
         setMentors(res.data);
         console.log(mentors);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get("http://localhost:7000/courses")
+      .then((res) => {
+        console.log(res.data);
+        setCoursesList(res.data);
+        console.log(coursesList);
       })
       .catch((err) => {
         console.log(err);
@@ -53,18 +64,24 @@ const ViewCoursespage = () => {
 
   const DeleteMentor = async (event, id) => {
     event.preventDefault();
-    await axios.delete(`http://localhost:9000/mentors/${id}`);
+    await axios.delete(`http://localhost:7000/mentors/${id}`);
 
     setMentors(mentors.filter((mentor) => mentor.id !== id));
   };
   // console.log(userId);
+
+  const viewMentorDetails = (event, id) => {
+    event.preventDefault();
+    window.location.href = `/mentorprofile/`;
+    // window.location.href = `/mentorprofile/${id}`;
+  };
 
   return (
     <>
       <Navigationbar />
       <div className="Home">
         <div className="Cards_Container">
-          {mentors ? (
+          {/* {mentors ? (
             mentors.map((mentor, i) => {
               // console.log(mentor.id);
               return (
@@ -160,6 +177,121 @@ const ViewCoursespage = () => {
                     />
                     <p>inventore laudantium exercitationem, magni ab!</p>
                     <button className="BTN ViewDetails ">View Details</button>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <h3>No Mentors Present add some </h3>
+          )} */}
+        </div>
+        <div className="Courses_Container">
+          {coursesList ? (
+            coursesList.map((course, i) => {
+              // console.log(mentor.id);
+              return (
+                <div key={i} className="CourseCard">
+                  <div className="TopSection">
+                    <img
+                      src={ImgArray[Math.floor(Math.random() * 5)]}
+                      alt="mentorCourse"
+                    />
+                    <p className="Course_Title"> {course.course_title}</p>
+                    {/* <p> {course.lectures} sessions</p> */}
+                    <span onBlur={() => setMoreOptions(null)}>
+                      {course.linkedin ? (
+                        <a
+                          href={course.linkedin}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <LinkedInIcon className="Linkedin__Icon" />
+                        </a>
+                      ) : null}
+                      {course.github ? (
+                        <a
+                          href={course.github}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <GitHubIcon className="Github__Icon" />
+                        </a>
+                      ) : null}
+                      {usertype === "mentor" && userId == course.id ? (
+                        <>
+                          <MoreVertIcon
+                            className="More__Icon"
+                            onClick={(e) => ShowMoreOptions(e, course.id)}
+                          />
+                          <ul
+                            className={
+                              moreOptions === course.id
+                                ? "Show MoreOptions"
+                                : "MoreOptions"
+                            }
+                          >
+                            <Link to={`/mentor/${course.id}`} exact="true">
+                              <li>Edit</li>
+                            </Link>
+                            <li onClick={(e) => DeleteMentor(e, course.id)}>
+                              Delete
+                            </li>
+                          </ul>
+                        </>
+                      ) : null}
+                    </span>
+                    <div className="Course__Rating">
+                      <Rating
+                        className="Rating"
+                        name="half-rating"
+                        defaultValue={Math.ceil(Math.random() * 5)}
+                        precision={0.2}
+                        size="small"
+                        color="secondary"
+                      />
+                      <p>{} </p>
+                    </div>
+
+                    {/* <p> Discription : {course.discription} Years</p> */}
+                    <p className="By_Mentor">
+                      {" "}
+                      By :{" "}
+                      <button
+                        className="viewMentorDetails"
+                        onClick={(e) => viewMentorDetails(e, course.mentor)}
+                      >
+                        {course.mentor_name}
+                      </button>
+                    </p>
+
+                    {/* <p>Contents</p>
+                    <ul className="mentorskills">
+                      {course.course_content
+                        ? course.course_content.map((content, id) => {
+                            return (
+                              <li key={id} className="skills">
+                                {content}
+                              </li>
+                            );
+                          })
+                        : null}
+                    </ul> */}
+                  </div>
+                  <div className="rightSection">
+                    {/* <img
+                      src={ImgArray[Math.floor(Math.random() * 5)]}
+                      alt="mentorCourse"
+                    /> */}
+                    <p className="Course_Duration">
+                      Duration : {course.course_duration} hours
+                    </p>
+                    <p>price :&#8377;{course.price}</p>
+                    <button
+                      className="BTN ViewDetails"
+                      // onClick={(e) => viewCourseDetails(e, course.id)}
+                    >
+                      View Details
+                    </button>
                   </div>
                 </div>
               );

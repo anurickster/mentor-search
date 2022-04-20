@@ -15,13 +15,14 @@ import Loginpage from './Components/Loginpage/Loginpage';
 import Contactpage from './Components/Contactpage/Contactpage';
 import Service from './Components/Servicepage/Service';
 import Signuppage from './Components/Signuppage/Signuppage';
-import SessionManager from './SessionManager';
+import SessionManager from './addons/SessionManager';
 import MentorProfilepage from './Components/MentorProfilepage/MentorProfilepage';
 import ApplyToMentorpage from './Components/ApplyToMentorpage/ApplyToMentorpage';
 import MentorWelcomepage from './Components/MentorWelcomePage/MentorWelcomepage';
 import MentorSelfProfilepage from './Components/MentorSelfProfilepage/MentorSelfProfilepage';
 import AddCoursepage from './Components/AddCoursepage/AddCoursepage';
 import ViewCoursespage from './Components/ViewCoursespage/ViewCoursespage';
+import CourseDetailspage from './Components/CourseDetailspage/CourseDetailspage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/welcomepage' element={<MentorWelcomepage />} />
           <Route path='/addcourse' element={<AddCoursepage />} />
           <Route path='/viewcourses' element={<ViewCoursespage />} />
+          <Route path='/coursedetails' element={<CourseDetailspage />} />
           <Route
             path='/mentorselfprofile'
             element={<MentorSelfProfilepage />}

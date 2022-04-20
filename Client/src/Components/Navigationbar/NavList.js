@@ -146,6 +146,16 @@ const NavList = () => {
             View Courses
           </NavLink>
         </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/coursedetails'
+          >
+            CourseDetails
+          </NavLink>
+        </li>
       </>
     );
   }

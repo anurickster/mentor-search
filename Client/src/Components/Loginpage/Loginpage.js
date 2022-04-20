@@ -61,7 +61,7 @@ export default function Loginpage() {
               <form onSubmit={formik.handleSubmit} className='auth-form'>
                 <div className='form-group'>
                   <input
-                    type='email'
+                    type='email1'
                     name='email'
                     id='email'
                     autoComplete='off'

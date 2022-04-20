@@ -38,16 +38,17 @@
   color: rgb(73, 73, 73);
 }
 .Mentor_Form .BTN.Submit {
-  height: 2rem;
+  height: 3rem;
   border: 1px solid rgb(139, 139, 139);
   background-color: rgb(31, 98, 221, 0.8);
   border-radius: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.2rem 0.4rem;
-  margin: 0.3rem 0;
+  margin: 0.4rem 0;
   width: 100%;
   color: white;
 }
 .Mentor_Form .BTN.Submit:hover {
   background-color: rgb(31, 98, 221);
 }
+

@@ -5,10 +5,10 @@ dotenv.config();
 const port = process.env.PORT;
 const url = process.env.DB_URL;
 const cors = require('cors');
-const Mentor = require('./models/mentor');
 const mongoose = require('mongoose');
 const colors = require('colors');
 const mentorRoute = require('./routes/mentor');
+const courseRoute = require('./routes/course');
 const userRoute = require('./routes/user');
 const errorHandler = require('./middlewares/errorHandler');
 
@@ -22,14 +22,9 @@ connnectToDB();
 // pre middlewares
 app.use(cors());
 app.use(express.json());
-app.use('/mentors', mentorRoute);
 app.use('/auth', userRoute);
-
-// db and fetch all mentors
-app.get('/mentor', async (req, res) => {
-  let mentors = await Mentor.find();
-  res.json(mentors);
-});
+app.use('/mentors', mentorRoute);
+app.use('/courses', courseRoute);
 
 //post middlewares
 app.use(errorHandler);
