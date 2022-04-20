@@ -43,7 +43,7 @@ const AddCoursepage = () => {
   };
 
   const loadMentor = async () => {
-    const result = await axios.get(`http://localhost:9000/mentors/${id}`);
+    const result = await axios.get(`http://localhost:7000/mentors/${id}`);
     console.log(result.data);
     setMentorsDetails(result.data);
   };
@@ -54,7 +54,7 @@ const AddCoursepage = () => {
       mentorsDetails.skills.push(...addedskills),
       mentorsDetails.courses.push(...addedCourses),
       await axios
-        .post("http://localhost:9000/mentors", mentorsDetails)
+        .post("http://localhost:7000/mentors", mentorsDetails)
 
         .then((res) => {
           console.log(res.data);
@@ -72,7 +72,7 @@ const AddCoursepage = () => {
       mentorsDetails.skills.push(...addedskills),
       mentorsDetails.courses.push(...addedCourses),
       await axios
-        .put(`http://localhost:9000/mentors/${index}`, mentorsDetails)
+        .put(`http://localhost:7000/mentors/${index}`, mentorsDetails)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) navigate("/home");
