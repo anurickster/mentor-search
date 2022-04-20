@@ -58,7 +58,7 @@ const Contact = () => {
 
     const { name, email, phone, message } = userData;
 
-    const res = await fetch('/contact', {
+    const res = await fetch('http://localhost:9000/contact/contactedduser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -72,6 +72,7 @@ const Contact = () => {
     });
 
     const data = await res.json();
+    console.log(data);
 
     if (!data) {
       console.log('Message not send ');

@@ -6,7 +6,7 @@ const Navigationbar = () => {
   return (
     <>
       <nav className='navbar navbar-expand-lg navbar-light bg-light '>
-        <a className='navbar-brand mx-5' href='/'>
+        <a className='navbar-brand mx-5' href='/homepage'>
           FindMentor
         </a>
         <button

@@ -11,6 +11,7 @@ const mentorRoute = require('./routes/mentor');
 const courseRoute = require('./routes/course');
 const userRoute = require('./routes/user');
 const errorHandler = require('./middlewares/errorHandler');
+const contactRoute=require('./routes/contact')
 
 // connect to db;
 const connnectToDB = async () => {
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use('/auth', userRoute);
 app.use('/mentors', mentorRoute);
 app.use('/courses', courseRoute);
+app.use('/contact',contactRoute)
 
 //post middlewares
 app.use(errorHandler);
