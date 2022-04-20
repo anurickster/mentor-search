@@ -1,72 +1,165 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import decode from './../../addons/tokenDecoder';
 
 const NavList = () => {
-  //   const { state, dispatch } = useContext(false);
-  let state = localStorage.getItem("auth");
+  const { role } = decode() || '';
 
-  if (state === "true") {
+  if (role === 'Student') {
     return (
       <>
-        <li className="nav-item active">
+        <li className='nav-item active'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/homepage"
+            to='/homepage'
           >
             Home
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className='nav-item'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/about"
+            to='/about'
           >
             About us
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className='nav-item'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/addmentor"
-          >
-            Mentor
-          </NavLink>
-        </li>
-
-        <li className="nav-item">
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
-            }
-            to="/service"
+            to='/service'
           >
             Service
           </NavLink>
         </li>
 
-        <li className="nav-item">
+        <li className='nav-item'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/contact"
+            to='/contact'
           >
             Contact
           </NavLink>
         </li>
 
-        <li className="nav-item" onClick={() => localStorage.clear()}>
+        <li className='nav-item' onClick={() => localStorage.clear()}>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/"
+            to='/'
+          >
+            Log out
+          </NavLink>
+        </li>
+      </>
+    );
+  } else if (role === 'Mentor') {
+    return (
+      <>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/welcomepage'
+          >
+            Mentor Welcome
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/mentorselfprofile'
+          >
+            Mentor Self Profile
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/addcourse'
+          >
+            Add Course
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/viewcourses'
+          >
+            View Your Courses
+          </NavLink>
+        </li>
+
+        <li className='nav-item' onClick={() => localStorage.clear()}>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/'
+          >
+            Log out
+          </NavLink>
+        </li>
+      </>
+    );
+  } else if (role === 'Admin') {
+    return (
+      <>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/adminhome'
+          >
+            Home
+          </NavLink>
+        </li>
+
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/addmentor'
+          >
+            Add Mentor
+          </NavLink>
+        </li>
+
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/viewcourses'
+          >
+            View Courses
+          </NavLink>
+        </li>
+
+        <li className='nav-item' onClick={() => localStorage.clear()}>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/'
           >
             Log out
           </NavLink>
@@ -76,74 +169,34 @@ const NavList = () => {
   } else {
     return (
       <>
-        <li className="nav-item active">
+        <li className='nav-item active'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/homepage"
+            to='/homepage'
           >
             Home
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className='nav-item'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/about"
+            to='/about'
           >
             About us
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className='nav-item'>
           <NavLink
             className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            to="/contact"
+            to='/contact'
           >
             Contact
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
-            }
-            to="/welcomepage"
-          >
-            Mentor Welcome
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
-            }
-            to="/mentorselfprofile"
-          >
-            Mentor Self Profile
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
-            }
-            to="/addcourse"
-          >
-            Add Course
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? "active-page nav-link" : "nav-link"
-            }
-            to="/viewcourses"
-          >
-            View Courses
           </NavLink>
         </li>
       </>
