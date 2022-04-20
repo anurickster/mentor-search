@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Navigationbar from '../Navigationbar/Navigationbar';
+import dToken from './../../addons/tokenDecoder';
 
 export default function Loginpage() {
   let navigate = useNavigate();
@@ -24,16 +25,20 @@ export default function Loginpage() {
       email: Yup.string()
         .email('Invalid email address')
         .required('Email is required'),
-      password: Yup.string()
-        .required('Password is required')
+      password: Yup.string().required('Password is required'),
     }),
     onSubmit: async (values) => {
       await dispatch(login(values));
 
-      let authstatus = localStorage.getItem('auth');
+      // let authstatus = localStorage.getItem('auth');
+      const { role } = dToken();
 
-      if (authstatus) {
+      if (role === 'Student') {
         navigate('/homepage');
+      } else if (role === 'Mentor') {
+        navigate('/welcomepage');
+      } else if (role === 'Admin') {
+        navigate('/adminhome');
       } else if (user.error === 'Invalid password') {
         alert('Invalid password');
       } else {

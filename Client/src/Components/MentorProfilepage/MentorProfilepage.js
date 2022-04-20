@@ -1,58 +1,58 @@
-import React from "react";
-import "./moudule.MentorProfilepage.css";
-import Navigationbar from "./../../Components/Navigationbar/Navigationbar";
-import Footer from "./../../Components/Footerpage/Footer";
-import { useNavigate } from "react-router-dom";
-import MentorImg from "./mentorImg.jpg";
-import course from "./courses.png";
+import React from 'react';
+import './moudule.MentorProfilepage.css';
+import Navigationbar from './../../Components/Navigationbar/Navigationbar';
+import Footer from './../../Components/Footerpage/Footer';
+import { useNavigate } from 'react-router-dom';
+import MentorImg from './mentorImg.jpg';
+import course from './courses.png';
 // import FacebookIcon from "@mui/icons-material/Facebook";
 
 const MentorProfilepage = () => {
   const navigate = useNavigate();
   const applyToMentor = () => {
-    navigate("/applytomentor");
+    navigate('/applytomentor');
   };
 
   const Skills = [
-    "Java",
-    "Python",
-    "C++",
-    "C#",
-    "JavaScript",
-    "React",
-    "Node",
-    "MongoDB",
-    "Express",
-    "Angular",
-    "Bootstrap",
-    "HTML",
-    "CSS",
-    "SQL",
-    "php",
-    "jquery",
+    'Java',
+    'Python',
+    'C++',
+    'C#',
+    'JavaScript',
+    'React',
+    'Node',
+    'MongoDB',
+    'Express',
+    'Angular',
+    'Bootstrap',
+    'HTML',
+    'CSS',
+    'SQL',
+    'php',
+    'jquery',
   ];
 
   return (
     <>
       <Navigationbar />
-      <div className="Mentor__Profile__Page__Container">
-        <div className="Top__Section">
-          <div className="Img__div">
-            <img src={MentorImg} alt="mentor Img"></img>
+      <div className='Mentor__Profile__Page__Container'>
+        <div className='Top__Section'>
+          <div className='Img__div'>
+            <img src={MentorImg} alt='mentor Img'></img>
           </div>
-          <div className="Details__div">
+          <div className='Details__div'>
             <h1>Mohit Gandhewar</h1>
             <h4>Professional Programmer and Educator </h4>
             <h5>CodewithAbdulBari.com </h5>
             <h5> CodeWithAbdulBari</h5>
-            <a href="linkedin.com/in/abdul-bari-a-b8a9b8a9">linkedIn</a>
+            <a href='linkedin.com/in/abdul-bari-a-b8a9b8a9'>linkedIn</a>
 
             {/* <FacebookIcon /> */}
           </div>
         </div>
-        <div className="Middle__Section">
-          <div className="Discription__div">
-            <div className="Discription">
+        <div className='Middle__Section'>
+          <div className='Discription__div'>
+            <div className='Discription'>
               <h3>About Me</h3>
               <p>
                 Having over 20 years of experience in the computer science and
@@ -69,38 +69,38 @@ const MentorProfilepage = () => {
                 university students in their academics.
               </p>
             </div>
-            <div className="Skills">
+            <div className='Skills'>
               <h3>Skills</h3>
-              <div className="skills__list">
+              <div className='skills__list'>
                 {Skills.map((skill) => (
-                  <div className="Skill__div">
-                    <p className="Skills__badge">{skill}</p>
+                  <div className='Skill__div'>
+                    <p className='Skills__badge'>{skill}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="Reviews">
+            <div className='Reviews'>
               <h3>Reviews</h3>
-              <div className="Reviews__div">
+              <div className='Reviews__div'>
                 <p> Reviews :45730</p>
                 <p>Rating :4.5</p>
                 <p>students :540700</p>
               </div>
             </div>
           </div>
-          <div className="Card__div">
-            <div className="Card__div__inner">
+          <div className='Card__div'>
+            <div className='Card__div__inner'>
               <p>Price : 1499 INR/month</p>
               <p>All courses</p>
               <p>Duration : 1 Month</p>
-              <img src={course} alt="" />
-              <button className="btn Apply__Mentor" onClick={applyToMentor}>
+              <img src={course} alt='' />
+              <button className='btn Apply__Mentor' onClick={applyToMentor}>
                 Apply to Mentor
               </button>
             </div>
           </div>
         </div>
-        <div className="Bottom__Section"></div>
+        <div className='Bottom__Section'></div>
       </div>
 
       <Footer />
