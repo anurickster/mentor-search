@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .main-profile {
   display: flex;
   flex-direction: column;
@@ -10,38 +15,24 @@
   color: red;
 }
 /* css mentor page  */
-
-/* css */
 .Cards_Container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 20px;
 }
-
 .MentorsCard {
   display: flex;
+  border-radius: 1rem;
   padding: 1.5rem;
   margin: 1rem 2rem;
-  background: #fff;
+  background-color: rgb(238, 238, 238);
   width: fit-content;
   height: fit-content;
-  box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
-  -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
-  -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -o-border-radius: 20px;
-  -ms-border-radius: 20px;
 }
-
 .MentorsCard .rightSection {
-  /* border: 1px solid rgb(189, 189, 189, 0.4);  */
-  /* background-color: rgb(169, 199, 204, 0.1); */
-  background: #fff;
+  border: 1px solid rgb(189, 189, 189, 0.4);
+  background-color: rgb(169, 199, 204, 0.1);
   box-shadow: 2px 3px 8px rgb(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   display: flex;
@@ -52,33 +43,11 @@
   height: fit-content;
   margin-left: 1rem;
 }
-
 .MentorsCard .rightSection img {
   height: 150px;
   width: 225px;
 }
-
 .BTN.ViewDetails {
-  display: inline-block;
-  background: #6dabe4;
-  color: #fff;
-  border-bottom: none;
-  width: auto;
-  padding: 0.2rem 0.5rem;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  cursor: pointer;
-  margin: 0.3rem 0;
-}
-
-.BTN.ViewDetails:hover {
-  background: #4292dc;
-}
-
-/* .BTN.ViewDetails {
   background-image: linear-gradient(
     135deg,
     rgb(116, 115, 115),
@@ -91,7 +60,6 @@
   border-radius: 0.2rem;
   margin: 0.2rem 0;
 }
-
 .BTN.ViewDetails:hover {
   background-image: linear-gradient(
     135deg,
@@ -99,18 +67,15 @@
     rgb(63, 63, 63, 0.9)
   );
   cursor: pointer;
-} */
-
+}
 .Mentor__NameSec {
   display: flex;
   justify-content: space-between;
   /* margin-right: 1rem; */
 }
-
 .Mentor__NameSec span {
   position: relative;
 }
-
 .Linkedin__Icon {
   color: rgb(25, 134, 223);
   position: relative;
@@ -119,7 +84,6 @@
   height: 1.5rem;
   margin-right: 0.5rem;
 }
-
 .Github__Icon {
   color: rgb(54, 54, 54);
   position: relative;
@@ -128,17 +92,14 @@
   height: 1.5rem;
   margin-right: 0.5rem;
 }
-
 .More__Icon {
   color: rgb(0, 0, 0);
   position: relative;
   top: 0.2rem;
 }
-
 .More__Icon:hover {
   cursor: pointer;
 }
-
 .MoreOptions {
   position: absolute;
   padding: 0.2rem 0.1rem;
@@ -151,11 +112,9 @@
   position: absolute;
   list-style: none;
 }
-
 .MoreOptions.Show {
   display: Block;
 }
-
 .MoreOptions.Show::after {
   content: "";
   position: absolute;
@@ -165,7 +124,6 @@
   border-right: 0.5rem solid transparent;
   border-bottom: 0.5rem solid #fff;
 }
-
 .MoreOptions li {
   font-size: 0.8rem;
   border-radius: 0.5rem;
@@ -240,7 +198,8 @@
 .Courses_Container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: flex-start;
 }
 .Courses_Container .CourseCard {
   margin: 0.4rem;
@@ -265,15 +224,29 @@
   font-size: 1.2rem;
   line-height: 1.4rem;
 }
-.TopSection .Course_Duration {
-  font-size: 0.8rem;
-  position: relative;
-  top: -0.4rem;
-  margin-left: 0.4rem;
+.TopSection .Course__Image {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.css-dqr9h-MuiRating-label {
-  color: brown;
+.BottomSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  margin-left: 0.4rem 0;
 }
+.BottomSection .Course_Duration {
+  display: flex;
+  justify-content: space-between;
+}
+.Course_Duration span {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
 .Course__Rating {
   margin-left: 0.4rem;
 }
@@ -284,4 +257,19 @@
   margin-left: 0.4rem;
   font-size: 0.8rem;
   color: black;
+}
+.levels {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.levels li {
+  list-style: none;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0.1rem;
+  border-radius: 0.3rem;
+  background-color: rgb(225, 225, 225);
 }
