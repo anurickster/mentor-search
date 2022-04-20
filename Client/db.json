@@ -120,20 +120,11 @@
   "mentors": [
     {
       "id": "13",
-      "mname": "Mohit Ajay Gandhewar",
-      "experience": "3",
-      "skills": [
-        "Javascript",
-        "Html",
-        "Css",
-        "React",
-        "MongoDB",
-        "Node",
-        "Web Design",
-        "MERN Stack "
-      ],
-      "courses": ["Full Stack Web Development", "C++ with OOPs", "DS & Algo"],
-      "linkedin": "https://www.linkedin.com/in/mohit-gandhewar-2b6a42183/",
+      "mname": "Mohit Gandhewar",
+      "experience": "4",
+      "skills": ["Html", "css", "C", "React", "Angular", "Node", "Express"],
+      "courses": ["Full Stack Web Development", "Python", "C-programming"],
+      "linkedin": "https://www.linkedin.com/in/pratik-gupta-46a62b16b/",
       "github": "https://github.com/MohitGandhewar"
     },
     {
@@ -164,39 +155,12 @@
       "github": ""
     },
     {
-      "id": "17",
-      "mname": "Neel",
-      "experience": "4",
-      "skills": ["css", "html"],
-      "courses": ["Html basics", "Html basicscss basics"],
-      "linkedin": "https://www.linkedin.com/in/david-m-solomon/",
-      "github": "https://github.com/MohitGandhewar"
-    },
-    {
       "id": "20",
       "mname": "Nikhil unhale2",
       "experience": "2",
       "skills": ["css", "html"],
       "courses": ["python"],
       "linkedin": "https://www.linkedin.com/in/david-m-solomon/",
-      "github": "https://github.com/MohitGandhewar"
-    },
-    {
-      "id": "21",
-      "mname": "Rani",
-      "experience": "4",
-      "skills": ["Dancing", "softball", "skating"],
-      "courses": ["makup ", "yoga"],
-      "linkedin": "https://www.linkedin.com/in/jayesh-borse-37193720b/",
-      "github": "https://github.com/Jayeshb56"
-    },
-    {
-      "id": "wxSV450",
-      "mname": "www",
-      "experience": "33",
-      "skills": ["nothing"],
-      "courses": [".."],
-      "linkedin": "https://www.linkedin.com/in/jayesh-borse-37193720b/",
       "github": "https://github.com/MohitGandhewar"
     }
   ],

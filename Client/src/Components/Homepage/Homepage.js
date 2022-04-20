@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
-import './module.Homepage.css';
-import Navigationbar from '../Navigationbar/Navigationbar';
-import { fetchPosts, deletePost } from '../../store/post-reducer';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import Footer from '../Footerpage/Footer';
+import React, { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
+import "./module.Homepage.css";
+import Navigationbar from "../Navigationbar/Navigationbar";
+import { fetchPosts, deletePost } from "../../store/post-reducer";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import Footer from "../Footerpage/Footer";
 
 const Homepage = () => {
   // All Primary Hooks
@@ -13,7 +13,7 @@ const Homepage = () => {
   const navigate = useNavigate();
 
   // All States hooks
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [deleteHandle, setDeleteHandle] = useState(false);
 
   // Selectors for Redux use
@@ -28,7 +28,7 @@ const Homepage = () => {
 
   // All Functions
   const handleDelete = (id) => {
-    const isDelete = window.confirm('Are you sure you want to delete?');
+    const isDelete = window.confirm("Are you sure you want to delete?");
     if (isDelete) {
       console.log(isDelete);
       dispatch(deletePost(id));
@@ -46,32 +46,32 @@ const Homepage = () => {
   );
 
   const mentors = filterdmentors.map((mentorEl, index) => (
-    <Card className='card-element' key={'mentor222' + mentorEl._id}>
-      <Card.Img variant='top' src={mentorEl.imgUrl} alt='mentor-profile' />
+    <Card className="card-element" key={"mentor222" + mentorEl._id}>
+      <Card.Img variant="top" src={mentorEl.imgUrl} alt="mentor-profile" />
       <Card.Body>
         <Card.Title>{mentorEl.mentorName}</Card.Title>
         <Card.Text>
           <span>Experience: </span>
           {mentorEl.yearExperience === 0 && mentorEl.monthExperience === 0
-            ? 'Fresher Volunteer'
+            ? "Fresher Volunteer"
             : `${mentorEl.yearExperience} Years ${mentorEl.monthExperience}months`}
           <br />
           <span>Skills: </span>
-          {mentorEl.mentorSkills.join(', ')}
+          {mentorEl.mentorSkills.join(", ")}
           <br />
-          <div className='btn-bottom'>
-            <Link className='btn btn-primary' to={`/addmentor/${mentorEl._id}`}>
+          <div className="btn-bottom">
+            <Link className="btn btn-primary" to={`/addmentor/${mentorEl._id}`}>
               Edit
             </Link>
             &nbsp;&nbsp;&nbsp;
             <button
-              className='btn btn-danger'
+              className="btn btn-danger"
               onClick={() => handleDelete(mentorEl._id)}
             >
               Delete
             </button>
             &nbsp;&nbsp;&nbsp;
-            <button className='btn btn-secondary' onClick={navigateTOProfile}>
+            <button className="btn btn-secondary" onClick={navigateTOProfile}>
               View
             </button>
           </div>
@@ -83,17 +83,17 @@ const Homepage = () => {
   return (
     <>
       <Navigationbar />
-      <div className='search'>
+      <div className="search">
         <input
-          className='search-panel'
-          type='text'
-          placeholder='Serach Mentor'
+          className="search-panel"
+          type="text"
+          placeholder="Serach Mentor"
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
       </div>
       <hr />
-      <div className='Post-container'>{mentors}</div>
+      <div className="Post-container">{mentors}</div>
       <Footer />
     </>
   );

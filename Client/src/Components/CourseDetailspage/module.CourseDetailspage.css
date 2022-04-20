@@ -9,3 +9,19 @@
 .example-of-usage {
   color: red;
 }
+.Course_details_container {
+  display: grid;
+  margin: 2rem;
+  grid-template-columns: 2.5fr 1fr;
+}
+.course_Heading h1 {
+  background-color: rgb(235, 235, 235);
+  font-size: 2.2rem;
+  border-radius: 0.8rem;
+  padding: 1.5rem 2rem;
+}
+.Rating span {
+  color: rgb(255, 200, 0);
+}
+.no_of_students {
+}
