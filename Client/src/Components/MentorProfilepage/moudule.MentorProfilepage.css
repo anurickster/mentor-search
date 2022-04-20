@@ -82,7 +82,7 @@
   border-radius: 0.5rem;
   width: min-content;
   /* display: block; */
-  background-color: aquamarine;
+  background-color: rgb(127, 227, 255);
 }
 .Card__div__inner {
   position: relative;
