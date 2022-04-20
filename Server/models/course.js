@@ -38,6 +38,10 @@ const CourseSchema = new Schema({
     ref: 'Mentor',
     required: true,
   },
+  mentor_name: {
+    type: String,
+    default: 'Mohit G',
+  },
   price: {
     type: Number,
     required: true,
