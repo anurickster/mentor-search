@@ -94,10 +94,10 @@ const AddCoursepage = () => {
         </div>
         <div>
           <form className="Mentor_Form">
-            <h2>
-              Join Us for creating a better <br></br>Learning Experience{" "}
+            <h2 className="mt-5">
+              Join Us for creating a better   <br></br> Learning Experience.
             </h2>
-            <div>
+            <div >
               <label htmlFor="mname"></label>
               <input
                 type="text"
@@ -108,7 +108,7 @@ const AddCoursepage = () => {
               />
             </div>
             <label htmlFor="experience"></label>
-            <div>
+            <div className="mt-2 mb-2">
               <input
                 type="number"
                 name="experience"
@@ -121,6 +121,7 @@ const AddCoursepage = () => {
               Array={addedskills}
               SetArray={setAddedSkills}
               placeholder={"Add Skills"}
+              className="mt-2"
             />
             <MultipleInput
               Array={addedCourses}
@@ -138,7 +139,7 @@ const AddCoursepage = () => {
               />
             </div>
             <label htmlFor="github"></label>
-            <div>
+            <div className="mt-2 mb-1">
               <input
                 type="text"
                 name="github"
@@ -149,7 +150,7 @@ const AddCoursepage = () => {
             </div>
 
             <button
-              className="Submit BTN"
+              className="Submit BTN "
               onClick={id ? (e) => updateMentor(id, e) : (e) => handleSubmit(e)}
             >
               Submit

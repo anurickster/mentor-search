@@ -5,7 +5,7 @@ import Footer from '../Footerpage/Footer';
 
 const MentorWelcomepage = () => {
    
-  const nameArray=['Ashwini Rathod', 'Anurag Rajput', 'Mohit'];
+  const nameArray=['Ashwini Rathod', 'Anurag Singh', 'Mohit'];
 
 
   const [userName, setUserName] = useState(nameArray[1]);
