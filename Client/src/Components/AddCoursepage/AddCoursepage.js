@@ -1,7 +1,7 @@
 import React from "react";
 import Navigationbar from "../Navigationbar/Navigationbar";
 import Footer from "../Footerpage/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Learning from "./Learning.png";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,53 +12,57 @@ const AddCoursepage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const [mentorsDetails, setMentorsDetails] = React.useState({
-    id: localStorage.getItem("userid"),
-    mname: "",
-    experience: "",
-    skills: [],
-    courses: [],
-    linkedin: "",
-    github: "",
+  const [courseDetails, setCourseDetails] = useState({
+    course_title: null,
+    course_duration: null,
+    lectures: "",
+    level: [],
+    description: "",
+    course_content: [],
+    students: 0,
+    mentor_ref_id: "625c9dabcf39600b621e2c7c",
+    price: "",
+    course_image: "",
   });
-  console.log(mentorsDetails);
+  console.log(courseDetails);
 
-  const [addedskills, setAddedSkills] = React.useState([]);
-  console.log(addedskills);
-  const [addedCourses, setAddedCourses] = React.useState([]);
+  const [addedlevel, setAddedlevel] = useState([]);
+  // console.log(addedlevel);
+  const [addedcourse_content, setAddedcourse_content] = useState([]);
 
   useEffect(() => {
     if (id) {
       loadMentor();
-      addedskills.push(...mentorsDetails.skills);
-      setAddedSkills(mentorsDetails.skills);
-      setMentorsDetails({ mname: localStorage.getItem("userName") });
+      addedlevel.push(...courseDetails.level);
+      setAddedlevel(courseDetails.level);
+      setCourseDetails({ mname: localStorage.getItem("userName") });
     }
   }, []);
-  console.log(mentorsDetails.mname);
-  console.log(addedskills);
+  // console.log(courseDetails.course_title);
+  // console.log(addedlevel);
 
   const changeHandler = (e) => {
-    setMentorsDetails({ ...mentorsDetails, [e.target.name]: e.target.value });
+    setCourseDetails({ ...courseDetails, [e.target.name]: e.target.value });
   };
 
   const loadMentor = async () => {
     const result = await axios.get(`http://localhost:7000/mentors/${id}`);
     console.log(result.data);
-    setMentorsDetails(result.data);
+    setCourseDetails(result.data);
   };
 
   const handleSubmit = async (e) => {
+    console.log(courseDetails);
     e.preventDefault();
     return (
-      mentorsDetails.skills.push(...addedskills),
-      mentorsDetails.courses.push(...addedCourses),
+      courseDetails.level.push(...addedlevel),
+      courseDetails.course_content.push(...addedcourse_content),
       await axios
-        .post("http://localhost:7000/mentors", mentorsDetails)
+        .post("http://localhost:9000/courses", courseDetails)
 
         .then((res) => {
           console.log(res.data);
-          if (res.status === 200) navigate("/home");
+          // if (res.status === 200) navigate("/home");
         })
         .catch((err) => {
           console.log(err);
@@ -69,10 +73,10 @@ const AddCoursepage = () => {
   const updateMentor = async (index, e) => {
     e.preventDefault();
     return (
-      mentorsDetails.skills.push(...addedskills),
-      mentorsDetails.courses.push(...addedCourses),
+      courseDetails.level.push(...addedlevel),
+      courseDetails.course_content.push(...addedcourse_content),
       await axios
-        .put(`http://localhost:7000/mentors/${index}`, mentorsDetails)
+        .put(`http://localhost:7000/mentors/${index}`, courseDetails)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) navigate("/home");
@@ -94,60 +98,74 @@ const AddCoursepage = () => {
         </div>
         <div>
           <form className="Mentor_Form">
-            <h2 className="mt-5">
-              Join Us for creating a better   <br></br> Learning Experience.
+            <h2 className="Form_Heading">
+              Join Us for creating a better <br></br> Learning Experience.
             </h2>
-            <div >
-              <label htmlFor="mname"></label>
-              <input
-                type="text"
-                name="mname"
-                placeholder="Mentor Name"
-                value={mentorsDetails.mname || ""}
-                onChange={changeHandler}
-              />
-            </div>
-            <label htmlFor="experience"></label>
-            <div className="mt-2 mb-2">
-              <input
-                type="number"
-                name="experience"
-                placeholder="Experience"
-                value={mentorsDetails.experience || ""}
-                onChange={changeHandler}
-              />
-            </div>
-            <MultipleInput
-              Array={addedskills}
-              SetArray={setAddedSkills}
-              placeholder={"Add Skills"}
-              className="mt-2"
-            />
-            <MultipleInput
-              Array={addedCourses}
-              SetArray={setAddedCourses}
-              placeholder={"Add Courses"}
-            />
-            <label htmlFor="linkdin"></label>
             <div>
               <input
                 type="text"
-                name="linkedin"
-                placeholder="Linkedin profile link"
-                value={mentorsDetails.linkedin || ""}
+                name="course_title"
+                placeholder="Course Name"
+                value={courseDetails.course_title}
                 onChange={changeHandler}
               />
             </div>
-            <label htmlFor="github"></label>
-            <div className="mt-2 mb-1">
+            <div>
               <input
-                type="text"
-                name="github"
-                placeholder="Github profile Link"
-                value={mentorsDetails.github || ""}
+                type="number"
+                name="course_duration"
+                placeholder="Course Duration in Hours"
+                value={courseDetails.course_duration}
                 onChange={changeHandler}
               />
             </div>
+            <div>
+              <input
+                type="number"
+                name="lectures"
+                placeholder="Total number of lectures"
+                value={courseDetails.lectures || ""}
+                onChange={changeHandler}
+              />
+            </div>
+            <div>
+              <textarea
+                type="text"
+                name="description"
+                placeholder="Add description"
+                value={courseDetails.description || ""}
+                onChange={changeHandler}
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="price"
+                placeholder="Add Price"
+                value={courseDetails.price || ""}
+                onChange={changeHandler}
+              />
+            </div>
+            <MultipleInput
+              Array={addedlevel}
+              SetArray={setAddedlevel}
+              placeholder={"Add level"}
+              className="mt-2"
+            />
+            <MultipleInput
+              Array={addedcourse_content}
+              SetArray={setAddedcourse_content}
+              placeholder={"Add course_content"}
+            />
+            {/* <div>
+              <input
+                type="file"
+                name="course_image"
+                placeholder="Upload Course Image"
+                value={courseDetails.course_image || ""}
+                onChange={changeHandler}
+              />
+            </div> */}
 
             <button
               className="Submit BTN "
