@@ -77,7 +77,8 @@ const ViewCoursespage = () => {
   };
   const viewCourseDetails = (event, id) => {
     event.preventDefault();
-    window.location.href = `/coursedetails/`;
+    console.log(id);
+    window.location.href = `/coursedetails/${id}`;
     // window.location.href = `/courseprofile/${id}`;
   };
 
@@ -306,7 +307,7 @@ const ViewCoursespage = () => {
                     <p>Price : &#8377;{course.price}</p>
                     <button
                       className="BTN ViewDetails"
-                      onClick={(e) => viewCourseDetails(e, course.id)}
+                      onClick={(e) => viewCourseDetails(e, course._id)}
                     >
                       View Details
                     </button>
