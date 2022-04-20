@@ -39,7 +39,7 @@ const ViewCoursespage = () => {
         console.log(err);
       });
     axios
-      .get("http://localhost:7000/courses")
+      .get("http://localhost:9000/courses")
       .then((res) => {
         console.log(res.data);
         setCoursesList(res.data);
@@ -74,6 +74,11 @@ const ViewCoursespage = () => {
     event.preventDefault();
     window.location.href = `/mentorprofile/`;
     // window.location.href = `/mentorprofile/${id}`;
+  };
+  const viewCourseDetails = (event, id) => {
+    event.preventDefault();
+    window.location.href = `/coursedetails/`;
+    // window.location.href = `/courseprofile/${id}`;
   };
 
   return (
@@ -193,6 +198,7 @@ const ViewCoursespage = () => {
                 <div key={i} className="CourseCard">
                   <div className="TopSection">
                     <img
+                      className="Course__Image"
                       src={ImgArray[Math.floor(Math.random() * 5)]}
                       alt="mentorCourse"
                     />
@@ -254,14 +260,13 @@ const ViewCoursespage = () => {
 
                     {/* <p> Discription : {course.discription} Years</p> */}
                     <p className="By_Mentor">
-                      {" "}
-                      By :{" "}
-                      <button
+                      By :
+                      <a
                         className="viewMentorDetails"
                         onClick={(e) => viewMentorDetails(e, course.mentor)}
                       >
                         {course.mentor_name}
-                      </button>
+                      </a>
                     </p>
 
                     {/* <p>Contents</p>
@@ -277,18 +282,31 @@ const ViewCoursespage = () => {
                         : null}
                     </ul> */}
                   </div>
-                  <div className="rightSection">
+                  <div className="BottomSection">
                     {/* <img
                       src={ImgArray[Math.floor(Math.random() * 5)]}
                       alt="mentorCourse"
                     /> */}
                     <p className="Course_Duration">
-                      Duration : {course.course_duration} hours
+                      <span>Duration : {course.course_duration} hours</span>
+                      &nbsp;&nbsp;
+                      <span>{course.lectures} lectures</span>
                     </p>
-                    <p>price :&#8377;{course.price}</p>
+                    <ul className="levels">
+                      {course.level
+                        ? course.level.map((level, id) => {
+                            return (
+                              <li key={id} className="skills">
+                                {level}
+                              </li>
+                            );
+                          })
+                        : null}
+                    </ul>{" "}
+                    <p>Price : &#8377;{course.price}</p>
                     <button
                       className="BTN ViewDetails"
-                      // onClick={(e) => viewCourseDetails(e, course.id)}
+                      onClick={(e) => viewCourseDetails(e, course.id)}
                     >
                       View Details
                     </button>

@@ -23,6 +23,7 @@ import MentorSelfProfilepage from './Components/MentorSelfProfilepage/MentorSelf
 import AddCoursepage from './Components/AddCoursepage/AddCoursepage';
 import ViewCoursespage from './Components/ViewCoursespage/ViewCoursespage';
 import CourseDetailspage from './Components/CourseDetailspage/CourseDetailspage';
+import StudentLandpage from './Components/StudentLandpage/StudentLandpage';
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
             element={<MentorSelfProfilepage />}
           />
           <Route element={<PrivateRoute />}>
-            <Route path='/homepage' element={<Homepage />} />
+            <Route path='/homepage' element={<StudentLandpage />} />
+            <Route path='/adminhome' element={<Homepage />} />
             <Route path='/mentorprofile' element={<MentorProfilepage />} />
             <Route path='/applytomentor' element={<ApplyToMentorpage />} />
             <Route path='/addmentor' element={<Mentor />} />
