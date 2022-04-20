@@ -288,7 +288,7 @@ const ViewCoursespage = () => {
                     <p>price :&#8377;{course.price}</p>
                     <button
                       className="BTN ViewDetails"
-                      onClick={(e) => viewCourseDetails(e, course.id)}
+                      // onClick={(e) => viewCourseDetails(e, course.id)}
                     >
                       View Details
                     </button>
