@@ -146,16 +146,16 @@ const Signuppage = () => {
                   <div className='role-container'>
                     <input
                       type='radio'
-                      id='student'
-                      value='Mentor'
+                      id='Student'
+                      value='Student'
                       name='role'
                       onChange={handleInputs}
                     />
-                    <div htmlFor='student'>Student</div>
+                    <div htmlFor='Student'>Student</div>
                     <input
                       type='radio'
-                      id='mentor'
-                      value='Student'
+                      id='Mentor'
+                      value='Mentor'
                       name='role'
                       onChange={handleInputs}
                       di
@@ -163,7 +163,7 @@ const Signuppage = () => {
                     <div htmlFor='mentor'>Mentor</div>
                     <input
                       type='radio'
-                      id='admin'
+                      id='Admin'
                       value='Admin'
                       name='role'
                       onChange={handleInputs}
