@@ -139,12 +139,12 @@ const ViewCoursespage = () => {
                     {/* <p> Discription : {course.discription} Years</p> */}
                     <p className='By_Mentor'>
                       By :
-                      <a
+                      <button
                         className='viewMentorDetails'
                         onClick={(e) => viewMentorDetails(e, course.mentor)}
                       >
                         {course.mentor_name}
-                      </a>
+                      </button>
                     </p>
 
                     {/* <p>Contents</p>

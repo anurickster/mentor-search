@@ -21,7 +21,6 @@ const Homepage = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
-    // setDeleteHandle(!deleteHandle);
   }, [dispatch, deleteHandle]);
 
   // All Functions

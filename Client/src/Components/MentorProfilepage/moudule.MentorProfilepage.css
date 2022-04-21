@@ -97,3 +97,7 @@
   /* bottom: 0rem; */
   background-color: rgb(102, 161, 251);
 }
+
+.Bottom__Section{
+  margin: 0 0 0 4rem;
+}

@@ -3,6 +3,7 @@ import './moudule.MentorProfilepage.css';
 import { useNavigate } from 'react-router-dom';
 import MentorImg from './mentorImg.jpg';
 import course from './courses.png';
+import ViewCoursespage from '../ViewCoursespage/ViewCoursespage';
 // import FacebookIcon from "@mui/icons-material/Facebook";
 
 const MentorProfilepage = () => {
@@ -97,7 +98,11 @@ const MentorProfilepage = () => {
             </div>
           </div>
         </div>
-        <div className='Bottom__Section'></div>
+        <div className='Bottom__Section'>
+          <h3>Courses</h3>
+          <br />
+          <ViewCoursespage />
+        </div>
       </div>
     </>
   );
