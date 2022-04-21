@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navigationbar from '../Navigationbar/Navigationbar';
 toast.configure();
 
 const Mentor = () => {
@@ -79,6 +80,7 @@ const Mentor = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='form-main'>
         <form
           className='form-container'

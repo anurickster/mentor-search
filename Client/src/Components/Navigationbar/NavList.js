@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import decode from './../../addons/tokenDecoder';
 
@@ -93,16 +93,6 @@ const NavList = () => {
             to='/addcourse'
           >
             Add Course
-          </NavLink>
-        </li>
-        <li className='nav-item'>
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? 'active-page nav-link' : 'nav-link'
-            }
-            to='/viewcourses'
-          >
-            View Your Courses
           </NavLink>
         </li>
 
@@ -205,3 +195,16 @@ const NavList = () => {
 };
 
 export default NavList;
+
+{
+  /* <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/viewcourses'
+          >
+            View Your Courses
+          </NavLink>
+        </li> */
+}

@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import dToken from './../../addons/tokenDecoder';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 export default function Loginpage() {
   let navigate = useNavigate();
@@ -48,6 +49,7 @@ export default function Loginpage() {
 
   return (
     <div>
+      <Navigationbar />
       <section className='sign-in'>
         <div className='container mt-5'>
           <div className='signin-content'>

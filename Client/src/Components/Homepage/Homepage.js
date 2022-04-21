@@ -4,6 +4,7 @@ import './module.Homepage.css';
 import { fetchPosts, deletePost } from '../../store/post-reducer';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Homepage = () => {
   // All Primary Hooks
@@ -79,6 +80,7 @@ const Homepage = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='search'>
         <input
           className='search-panel'

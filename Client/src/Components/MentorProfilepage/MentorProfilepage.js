@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MentorImg from './mentorImg.jpg';
 import course from './courses.png';
 import ViewCoursespage from '../ViewCoursespage/ViewCoursespage';
+import Navigationbar from '../Navigationbar/Navigationbar';
 // import FacebookIcon from "@mui/icons-material/Facebook";
 
 const MentorProfilepage = () => {
@@ -33,6 +34,7 @@ const MentorProfilepage = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='Mentor__Profile__Page__Container'>
         <div className='Top__Section'>
           <div className='Img__div'>

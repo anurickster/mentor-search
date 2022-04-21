@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './module.MentorSelfProfilepage.css';
 import profilepic from './Images/profile.png';
 import aboutpic from './Images/profile1.png';
+import Navigationbar from '../Navigationbar/Navigationbar';
 // import { useHistory } from 'react-router-dom';
+import ViewCoursespage from '../ViewCoursespage/ViewCoursespage';
 
 const MentorSelfProfilepage = () => {
   // const history = useHistory();
@@ -66,6 +68,7 @@ const MentorSelfProfilepage = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='container emp-profile'>
         <form method='GET'>
           <div className='row'>
@@ -269,6 +272,10 @@ const MentorSelfProfilepage = () => {
             </div>
           </div>
         </form>
+      </div>
+      <div className='BottomSection'>
+        <h3>Your Courses</h3>
+        <ViewCoursespage />
       </div>
     </>
   );

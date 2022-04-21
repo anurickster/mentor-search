@@ -5,6 +5,7 @@ import Learning from './Learning.png';
 import { useNavigate, useParams } from 'react-router-dom';
 import MultipleInput from './MultipleInput';
 import './module.AddCoursepage.css';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const AddCoursepage = () => {
   const navigate = useNavigate();
@@ -88,6 +89,7 @@ const AddCoursepage = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='Services'>
         <div>
           <img src={Learning} alt='Learning' className='MentorFormImage' />

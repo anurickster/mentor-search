@@ -1,10 +1,12 @@
 import React from 'react';
 import './Aboutpage.css';
 import web from '../Aboutpage/images/img1.png';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Aboutpage = () => {
   return (
     <>
+      <Navigationbar />
       <section id='header' className='d-flex align-items-center'>
         <div className='container-fluid '>
           <div className='row'>

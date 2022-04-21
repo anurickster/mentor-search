@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Navigationbar from '../Navigationbar/Navigationbar';
 import signinpic from './Images/signup2.jpg';
 import './module.Signup.css';
 
@@ -96,6 +97,7 @@ const Signuppage = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='signup-container'>
         <section className='signup'>
           <div className='container mt-5'>

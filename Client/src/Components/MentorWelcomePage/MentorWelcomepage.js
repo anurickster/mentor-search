@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navigationbar from '../Navigationbar/Navigationbar';
 import './module.MentorWelcomepage.css';
 
 const MentorWelcomepage = () => {
@@ -31,6 +32,7 @@ const MentorWelcomepage = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='home-page'>
         <div className='home-div'>
           <p className='pt-5'>WELCOME</p>

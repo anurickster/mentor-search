@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Navigationbar from '../Navigationbar/Navigationbar';
 import './module.Contact.css';
 
 const Contact = () => {
@@ -82,6 +83,7 @@ const Contact = () => {
 
   return (
     <>
+      <Navigationbar />
       <div className='contact_info'>
         <div className='container-fluid'>
           <div className='row'>

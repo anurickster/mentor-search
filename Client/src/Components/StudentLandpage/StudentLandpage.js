@@ -7,6 +7,7 @@ import MentorCards from '../MentorCards/MentorCards';
 const StudentLandpage = () => {
   return (
     <>
+      <Navigationbar />
       <MentorCards />
     </>
   );

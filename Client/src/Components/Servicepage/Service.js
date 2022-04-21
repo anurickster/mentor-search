@@ -7,11 +7,12 @@ import active from './img/active.svg';
 import inactive from './img/inactive.svg';
 import check from './img/check.svg';
 import checkDisabled from './img/check-disabled.svg';
-import Footer from '../Footerpage/Footer';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Service = () => {
   return (
     <>
+      <Navigationbar />
       <PaymentStyled>
         <InnerLayout>
           <div className='text-center font-weight-bold'>
