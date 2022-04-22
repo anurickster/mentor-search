@@ -124,7 +124,7 @@ const NavList = () => {
           </NavLink>
         </li>
 
-        <li className='nav-item'>
+        {/* <li className='nav-item'>
           <NavLink
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
@@ -133,7 +133,7 @@ const NavList = () => {
           >
             Add Mentor
           </NavLink>
-        </li>
+        </li> */}
         <li className='nav-item' onClick={() => localStorage.clear()}>
           <NavLink
             className={(navData) =>
