@@ -2,9 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import decode from './../../addons/tokenDecoder';
 
+
+
+
 const NavList = () => {
   const { role } = decode() || '';
-
   if (role === 'Student') {
     return (
       <>
