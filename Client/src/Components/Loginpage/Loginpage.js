@@ -39,7 +39,7 @@ export default function Loginpage() {
         navigate('/welcomepage');
       } else if (role === 'Admin') {
         navigate('/adminhome');
-      } else if (user.error === 'Invalid password') {
+      } else if (user.auth.error === 'Invalid password') {
         alert('Invalid password');
       } else {
         alert('Invalid Credentials');
