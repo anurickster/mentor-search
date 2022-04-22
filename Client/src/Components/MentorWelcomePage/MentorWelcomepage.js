@@ -3,7 +3,7 @@ import Navigationbar from '../Navigationbar/Navigationbar';
 import './module.MentorWelcomepage.css';
 
 const MentorWelcomepage = () => {
-  const nameArray = ['Ashwini Rathod', 'Anurag Singh', 'Mohit'];
+  const nameArray = ['Ashwini Rathod', 'Mentor', 'Mohit'];
 
   const [userName, setUserName] = useState(nameArray[1]);
   // const [show, setShow] = useState(false);
