@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import decode from './../../addons/tokenDecoder';
 
@@ -132,18 +132,6 @@ const NavList = () => {
             Add Mentor
           </NavLink>
         </li>
-
-        <li className='nav-item'>
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? 'active-page nav-link' : 'nav-link'
-            }
-            to='/viewcourses'
-          >
-            View Courses
-          </NavLink>
-        </li>
-
         <li className='nav-item' onClick={() => localStorage.clear()}>
           <NavLink
             className={(navData) =>
@@ -195,16 +183,3 @@ const NavList = () => {
 };
 
 export default NavList;
-
-{
-  /* <li className='nav-item'>
-          <NavLink
-            className={(navData) =>
-              navData.isActive ? 'active-page nav-link' : 'nav-link'
-            }
-            to='/viewcourses'
-          >
-            View Your Courses
-          </NavLink>
-        </li> */
-}
