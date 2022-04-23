@@ -11,7 +11,7 @@ const MentorSchema = new Schema({
     type:String,
     required:true
   },
-  yearExperience: {
+  yearExperience:{
     type: Number,
     required: true,
   },
