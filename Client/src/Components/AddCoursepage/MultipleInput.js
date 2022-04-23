@@ -14,11 +14,6 @@ const MultipleInput = (props) => {
     props.SetArray(cart);
   }, []);
 
-  // setInterval(() => {
-  //   cart.push(...props.Array);
-  // }, 2000);
-  // clearInterval(setTimeout, 3000);
-
   const addNewItem = async (e) => {
     e.preventDefault();
     // console.log(props.Array);
