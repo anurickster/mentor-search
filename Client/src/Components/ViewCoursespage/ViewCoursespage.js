@@ -1,39 +1,52 @@
-import React from "react";
-import { useEffect } from "react";
-
-import "./module.ViewCoursespage.css";
-import axios from "axios";
-import Img1 from "../Images/1.jpg";
-import Img2 from "../Images/2.jpg";
-import Img3 from "../Images/3.jpg";
-import Img4 from "../Images/4.jpg";
-import Img5 from "../Images/5.jpg";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Rating from "@mui/material/Rating";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import './module.ViewCoursespage.css';
+import axios from 'axios';
+import Img1 from '../Images/1.jpg';
+import Img2 from '../Images/2.jpg';
+import Img3 from '../Images/3.jpg';
+import Img4 from '../Images/4.jpg';
+import Img5 from '../Images/5.jpg';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Rating from '@mui/material/Rating';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import tokenDecoder from '../../addons/tokenDecoder';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { fetchCourses } from '../../store/course-reducer';
 
 const ViewCoursespage = () => {
-  const [mentors, setMentors] = React.useState([""]);
-  const [coursesList, setCoursesList] = React.useState([""]);
+  const navigate = useNavigate();
+  const [mentors, setMentors] = useState(['']);
+  const [coursesList, setCoursesList] = useState(['']);
   const ImgArray = [Img1, Img2, Img3, Img4, Img5];
-  const [moreOptions, setMoreOptions] = React.useState(0); //for more options
-  const [usertype, setUsertype] = React.useState("");
-  const [userId, setUserId] = React.useState("");
+  const [moreOptions, setMoreOptions] = useState(0); //for more options
+  const [usertype] = useState('');
+  const [userId] = useState('');
+  const mentorId = useParams();
+  const tokenId = tokenDecoder().id;
+  console.log(mentorId, 'mentorId');
 
-  useEffect(() => {
+  const loadCourses = (id) => {
     axios
-      .get("http://localhost:9000/courses")
+      .get('http://localhost:9000/courses/mentorCourses/' + id)
       .then((res) => {
-        console.log(res.data);
-        setCoursesList(res.data);
-        console.log(coursesList);
+        setCoursesList(res.data); // this will set the course but cause infinite loop pls fix it
+        console.log('courses data', res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [mentors.length]);
+  };
+
+  useEffect(() => {
+    if (mentorId.id) {
+      loadCourses(mentorId.id);
+    } else {
+      loadCourses(tokenId);
+    }
+  }, [mentorId.id, tokenId]);
 
   const ShowMoreOptions = (event, id) => {
     event.preventDefault();
@@ -46,7 +59,7 @@ const ViewCoursespage = () => {
 
   const DeleteMentor = async (event, id) => {
     event.preventDefault();
-    await axios.delete(`http://localhost:7000/mentors/${id}`);
+    await axios.delete(`http://localhost:9000/mentors/${id}`);
 
     setMentors(mentors.filter((mentor) => mentor.id !== id));
   };
@@ -54,65 +67,64 @@ const ViewCoursespage = () => {
 
   const viewMentorDetails = (event, id) => {
     event.preventDefault();
-    window.location.href = `/mentorprofile/`;
-    // window.location.href = `/mentorprofile/${id}`;
+    navigate(`/mentorprofile`);
   };
   const viewCourseDetails = (event, id) => {
     event.preventDefault();
     console.log(id);
-    window.location.href = `/coursedetails/${id}`;
-    // window.location.href = `/courseprofile/${id}`;
+    navigate(`/coursedetails/${id}`);
   };
 
   return (
     <>
-      <div className="Home">
-        <div className="Courses_Container">
+      <div className='Home'>
+        <div className='Courses_Container'>
           {coursesList ? (
-            coursesList.map((course, index) => {
+            coursesList.map((course, i) => {
+              // console.log(mentor.id);
               return (
-                <div key={index} className="CourseCard">
-                  <div className="TopSection">
+                <div key={i} className='CourseCard'>
+                  <div className='TopSection'>
                     <img
-                      className="Course__Image"
+                      className='Course__Image'
                       src={ImgArray[Math.floor(Math.random() * 5)]}
-                      alt="mentorCourse"
+                      alt='mentorCourse'
                     />
-                    <p className="Course_Title"> {course.course_title}</p>
+                    <p className='Course_Title'> {course.course_title}</p>
                     {/* <p> {course.lectures} sessions</p> */}
                     <span onBlur={() => setMoreOptions(null)}>
                       {course.linkedin ? (
                         <a
                           href={course.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
+                          target='_blank'
+                          rel='noreferrer'
                         >
-                          <LinkedInIcon className="Linkedin__Icon" />
+                          <LinkedInIcon className='Linkedin__Icon' />
                         </a>
                       ) : null}
                       {course.github ? (
                         <a
                           href={course.github}
-                          target="_blank"
-                          rel="noreferrer"
+                          target='_blank'
+                          rel='noreferrer'
                         >
-                          <GitHubIcon className="Github__Icon" />
+                          <GitHubIcon className='Github__Icon' />
                         </a>
                       ) : null}
-                      {usertype === "mentor" && userId == course.id ? (
+                      {usertype === 'mentor' && userId === course.id ? (
                         <>
                           <MoreVertIcon
-                            className="More__Icon"
+                            className='More__Icon'
                             onClick={(e) => ShowMoreOptions(e, course.id)}
                           />
                           <ul
                             className={
                               moreOptions === course.id
-                                ? "Show MoreOptions"
-                                : "MoreOptions"
+                                ? 'Show MoreOptions'
+                                : 'MoreOptions'
                             }
                           >
-                            <Link to={`/mentor/${course.id}`} exact="true">
+                            <Link to={`/mentor/${course.id}`} exact='true'>
                               <li>Edit</li>
                             </Link>
                             <li onClick={(e) => DeleteMentor(e, course.id)}>
@@ -122,28 +134,28 @@ const ViewCoursespage = () => {
                         </>
                       ) : null}
                     </span>
-                    <div className="Course__Rating">
+                    <div className='Course__Rating'>
                       <Rating
-                        className="Rating"
-                        name="half-rating"
+                        className='Rating'
+                        name='half-rating'
                         value={Math.ceil(Math.random() * 5)}
                         precision={0.2}
-                        size="small"
-                        color="secondary"
-                        // controlled="false"
+                        size='small'
+                        color='secondary'
+                        controlled='false'
                       />
                       <p>{} </p>
                     </div>
 
                     {/* <p> Discription : {course.discription} Years</p> */}
-                    <p className="By_Mentor">
+                    <p className='By_Mentor'>
                       By :
-                      <button
-                        className="viewMentorDetails"
+                      <span
+                        className='viewMentorDetails'
                         onClick={(e) => viewMentorDetails(e, course.mentor)}
                       >
                         {course.mentor_name}
-                      </button>
+                      </span>
                     </p>
 
                     {/* <p>Contents</p>
@@ -159,30 +171,30 @@ const ViewCoursespage = () => {
                         : null}
                     </ul> */}
                   </div>
-                  <div className="BottomSection">
+                  <div className='BottomSection'>
                     {/* <img
                       src={ImgArray[Math.floor(Math.random() * 5)]}
                       alt="mentorCourse"
                     /> */}
-                    <p className="Course_Duration">
+                    <p className='Course_Duration'>
                       <span>Duration : {course.course_duration} hours</span>
                       &nbsp;&nbsp;
                       <span>{course.lectures} lectures</span>
                     </p>
-                    <ul className="levels">
+                    <ul className='levels'>
                       {course.level
                         ? course.level.map((level, id) => {
                             return (
-                              <li key={id} className="skills">
+                              <li key={id} className='skills'>
                                 {level}
                               </li>
                             );
                           })
                         : null}
-                    </ul>{" "}
+                    </ul>{' '}
                     <p>Price : &#8377;{course.price}</p>
                     <button
-                      className="BTN ViewDetails"
+                      className='BTN ViewDetails'
                       onClick={(e) => viewCourseDetails(e, course._id)}
                     >
                       View Details

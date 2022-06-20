@@ -9,7 +9,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import dToken from './../../addons/tokenDecoder';
 import Navigationbar from '../Navigationbar/Navigationbar';
-import { toast } from 'react-toastify';
+
 export default function Loginpage() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,11 +36,9 @@ export default function Loginpage() {
       if (role === 'Student') {
         navigate('/homepage');
       } else if (role === 'Mentor') {
-        navigate('/addmentor');
-       // alert('Add some more additonal details...to get more exposure');
-        toast('Add more details for more applications', { type: 'success' });
+        navigate('/welcomepage');
       } else if (role === 'Admin') {
-        navigate('/adminhome');
+        navigate('/homepage');
       } else if (user.auth.error === 'Invalid password') {
         alert('Invalid password');
       } else {

@@ -1,47 +1,47 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const MentorSchema = new Schema({
-  // mentorName: {
-  //   type: String,
-  //   minLength: 3,
-  //   required: true,
-  // },
-  technologies:{
-    type:String,
-    required:true
-  },
-  yearExperience:{
-    type: Number,
+  mUserid: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true,
+    unique: true,
   },
-  monthExperience: {
-    type: Number,
-    required: true,
+  mCourses: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Course",
   },
-  mentorSkills: {
-    type: Array,
-    required: true,
-  },
-  // fees:{
-  //   type:Number,
-  // },
   imgUrl: {
     type: String,
-    required: true,
-    default: 'https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png',
+    default: "https://miro.medium.com/max/895/0*l0QEGkMny8Ifq5pQ.png",
   },
-  linkedinUrl:{
-    type:String,
+  mOcc: {
+    type: String,
   },
-  githubUrl:{
-    type:String,
+  mExp: {
+    type: Number,
   },
-  description:{
-    type:String,
+  mAbout: {
+    type: String,
+  },
+  mSkills: {
+    type: Array,
+  },
+  mWebsite: {
+    type: String,
+  },
+  mLinkedin: {
+    type: String,
+  },
+  mGithub: {
+    type: String,
+  },
+  mYTch: {
+    type: String,
   },
 });
 
-const Mentor = mongoose.model('Mentor', MentorSchema);
+const Mentor = mongoose.model("Mentor", MentorSchema);
 
 module.exports = Mentor;

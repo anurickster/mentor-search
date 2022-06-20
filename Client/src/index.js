@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import postReducer from './store/post-reducer';
 import authReducer from './store/auth-reducer';
+import courseReducer from './store/course-reducer';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import 'react-toastify/dist/ReactToastify.css';
 /*
 const datetime = (store) => (next) => (action) => {
   // console.log('dispatched at ', new Date());
@@ -29,7 +29,7 @@ const composedEnhancer = composeWithDevTools(
 );
 
 const store = createStore(
-  combineReducers({ postReducer, authReducer }),
+  combineReducers({ postReducer, authReducer, courseReducer }),
   composedEnhancer
 );
 
