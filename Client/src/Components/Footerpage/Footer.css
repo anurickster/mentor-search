@@ -1,19 +1,25 @@
 footer {
   padding: 5rem 0;
-  background-color: #182334;
-  color: #fff;
+  background-color: #e3e2ee;
+  color: rgb(14, 10, 10);
 }
 
 footer h1 {
-  color: #fff;
+  color: rgb(14, 10, 10);;
 }
 
 footer h2 {
-  color: #fff;
+  color: rgb(8, 5, 5);
+}
+
+footer h6 {
+  color:#828286;
+  font-weight: lighter;
+
 }
 
 footer h3 {
-  color: #fff;
+  color: #828286;
   font-size: 1.5rem;
   font-weight: lighter;
 }
@@ -22,7 +28,7 @@ footer li {
   list-style: none;
   font-size: 1.5rem;
   font-weight: lighter;
-  color: #fff;
+  color:#828286;
   cursor: pointer;
   margin: 1rem 0;
 }
@@ -44,7 +50,7 @@ footer .fontawesome-style {
 footer .fontawesome-style:hover {
   transition: all 1s;
   animation: rotatefont 1s linear infinite alternate-reverse;
-  color: #fff;
+  color: #828286;
 }
 
 @keyframes rotatefont {
@@ -62,5 +68,5 @@ footer .main-hero-para {
 
 footer a {
   text-decoration: none;
-  color: white;
+  color: #828286;
 }

@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import postReducer from './store/post-reducer';
+import authReducer from './store/auth-reducer';
+import courseReducer from './store/course-reducer';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 /*
@@ -26,7 +28,10 @@ const composedEnhancer = composeWithDevTools(
   applyMiddleware(thunkMiddleware) // we can also call this middleware (datetime, logger)
 );
 
-const store = createStore(postReducer, composedEnhancer);
+const store = createStore(
+  combineReducers({ postReducer, authReducer, courseReducer }),
+  composedEnhancer
+);
 
 ReactDOM.render(
   <Provider store={store}>

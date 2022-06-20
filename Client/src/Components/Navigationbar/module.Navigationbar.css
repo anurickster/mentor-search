@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
 :root {
   --bgcolor: #242524;
-  --primary-color: #6f5de7;
+  --primary-color: #e3e2ee;
   --text-color: #828286;
   --main-text-color: #333333;
 }
@@ -16,6 +14,11 @@
 .navbar-brand {
   font-size: 2rem;
 }
+/* .navbar {
+  position: absolute;
+  z-index: 11;
+  margin-bottom: 8rem;
+} */
 
 .navbar li {
   padding: 0 1rem;
@@ -69,5 +72,5 @@
 .nav-link {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 800;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }

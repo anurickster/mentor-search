@@ -19,10 +19,10 @@ const UserSchema = new Schema({
     type: Number,
     required: true,
   },
-  work: {
+  role: {
     type: String,
     required: true,
-    options: ['Student', 'Mentor', 'Developer', 'Others'],
+    options: ['User', 'Mentor', 'Admin'],
   },
   password: {
     type: String,
@@ -31,7 +31,7 @@ const UserSchema = new Schema({
   },
   role: {
     type: String,
-    default: 'user',
+    default: 'Student',
   },
   createdAt: {
     type: Date,

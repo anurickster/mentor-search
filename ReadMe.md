@@ -8,43 +8,32 @@ in category frontend and backend
 
 - Member Name: Member Action
 
-- add delete and update button in every component | Mohit
-- add login signup page in / route | Ashwini
--
-
 ### Backend
 
 Member Name: Member Action
 
-- error handling
-
-- login and signup is completed in backend
-
-### Component Assined
-
-- Mohit: Mentor, Homepage
-- Ashwini: Login, Register
-- Upendhar: inform me what to assign
-- Anurag: update mentor operations, rectify errors, code cleaning
-- Jayesh: associated with everyone
-
 ### Fixed
 
-- console.log errors
-- terminal warnings
-- minor UI issues
+- 27-4-2022
+  > Fixedview mentor profile role student and mentor
+  > component render with state
 
 ### Added
 
-- Update and Delete function working using redux-toolkit
-- new input added to form: mentor skills : Mentor route
-- named Toast popup on Update & Add Mentor
-- form can be submit on press enter
-- image input is working as URL input (Choose Image file will be added soon;)
+- 18-4-2022: authentication, private routes, minor fixes | Anurag
+- 19-4-2022:
+  > initialized mentor profile and apply to mentor pages
+  > session manager if user not intracting
+- 1-5-2022:
+  > using single UserID to post course fetchmentors and view course
+  > some bugs fixed
+  > modified backend for use 1 userID to serve all relations of data
+- 5-5-2022
+  > mentorProfilePage on submit action.payload data is shown and posted same data to server
 
 ### Removed
 
-- commented codes
+- redudant codes
 
 ### Changed
 
@@ -53,5 +42,4 @@ Member Name: Member Action
 ### need to be implemented
 
 - errorhandling
-- authentication
 - Image file input

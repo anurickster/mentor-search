@@ -1,8 +1,7 @@
-import React from "react";
-import "./Aboutpage.css";
-import web from "../Aboutpage/images/img1.png";
-import Navigationbar from "../Navigationbar/Navigationbar";
-import Footer from "../Footerpage/Footer";
+import React from 'react';
+import './Aboutpage.css';
+import web from '../Aboutpage/images/img1.png';
+import Navigationbar from '../Navigationbar/Navigationbar';
 
 const Aboutpage = () => {
   return (
@@ -41,7 +40,6 @@ const Aboutpage = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

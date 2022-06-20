@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './module.Navigationbar.css';
 import RenderList from './NavList';
+import decode from './../../addons/tokenDecoder';
 
 const Navigationbar = () => {
-  // const [auth, setAuth] = useSelector(false); // get state in this component auth: true // using use selector //
-
   return (
     <>
       <nav className='navbar navbar-expand-lg navbar-light bg-light '>
-        <a className='navbar-brand mx-5' href='/'>
+        <a className='navbar-brand mx-5' href='/homepage'>
           FindMentor
         </a>
         <button

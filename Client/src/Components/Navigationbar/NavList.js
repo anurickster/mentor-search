@@ -1,20 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import decode from './../../addons/tokenDecoder';
 
 const NavList = () => {
-  //   const { state, dispatch } = useContext(false);
-  let state = true;
-  if (state) {
-    console.log(`state true`, state);
+  const { role } = decode() || '';
+
+  if (role === 'Student') {
     return (
       <>
         <li className='nav-item active'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
             to='/homepage'
           >
             Home
@@ -22,11 +20,9 @@ const NavList = () => {
         </li>
         <li className='nav-item'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
             to='/about'
           >
             About us
@@ -34,24 +30,9 @@ const NavList = () => {
         </li>
         <li className='nav-item'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
-            to='/addmentor'
-          >
-            Mentor
-          </NavLink>
-        </li>
-
-        <li className='nav-item'>
-          <NavLink
-            // activeClassName='active-page'
-            className={(navData) =>
-              navData.isActive ? 'active-page nav-link' : 'nav-link'
-            }
-            // className='nav-link'
             to='/service'
           >
             Service
@@ -60,24 +41,102 @@ const NavList = () => {
 
         <li className='nav-item'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
             to='/contact'
           >
             Contact
           </NavLink>
         </li>
 
-        <li className='nav-item'>
+        <li className='nav-item' onClick={() => localStorage.clear()}>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
+            to='/'
+          >
+            Log out
+          </NavLink>
+        </li>
+      </>
+    );
+  } else if (role === 'Mentor') {
+    return (
+      <>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/welcomepage'
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/mentorprofile'
+          >
+            Your Profile
+          </NavLink>
+        </li>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/addcourse'
+          >
+            Add Course
+          </NavLink>
+        </li>
+
+        <li className='nav-item' onClick={() => localStorage.clear()}>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/'
+          >
+            Log out
+          </NavLink>
+        </li>
+      </>
+    );
+  } else if (role === 'Admin') {
+    return (
+      <>
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/homepage'
+          >
+            Home
+          </NavLink>
+        </li>
+
+        <li className='nav-item'>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
+            to='/addmentor'
+          >
+            Add Mentor
+          </NavLink>
+        </li>
+        <li className='nav-item' onClick={() => localStorage.clear()}>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? 'active-page nav-link' : 'nav-link'
+            }
             to='/'
           >
             Log out
@@ -90,23 +149,19 @@ const NavList = () => {
       <>
         <li className='nav-item active'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
             to='/homepage'
           >
-            Home{' '}
+            Home
           </NavLink>
         </li>
         <li className='nav-item'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
             to='/about'
           >
             About us
@@ -114,26 +169,12 @@ const NavList = () => {
         </li>
         <li className='nav-item'>
           <NavLink
-            // activeClassName='active-page'
             className={(navData) =>
               navData.isActive ? 'active-page nav-link' : 'nav-link'
             }
-            // className='nav-link'
             to='/contact'
           >
             Contact
-          </NavLink>
-        </li>
-        <li className='nav-item'>
-          <NavLink
-            // activeClassName='active-page'
-            className={(navData) =>
-              navData.isActive ? 'active-page nav-link' : 'nav-link'
-            }
-            // className='nav-link'
-            to='/'
-          >
-            log in
           </NavLink>
         </li>
       </>
